@@ -126,10 +126,10 @@ shot26 124.32252836116284 5329.4 [] 6.773 0.096 9.888 0.409 [np.int64(1)]
 ----- stderr -----
 <>:75: SyntaxWarning: invalid escape sequence '\l'
 <>:75: SyntaxWarning: invalid escape sequence '\l'
-/tmp/ipykernel_2364/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
+/tmp/ipykernel_2617/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
   plt.title('Qtz by $\lambda$: X=SOP b 1.8 g 2.3 y 3.5 r 4.8 μm')
 ----- stderr -----
-/tmp/ipykernel_2364/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
+/tmp/ipykernel_2617/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
   plt.title('Qtz by $\lambda$: X=SOP b 1.8 g 2.3 y 3.5 r 4.8 μm')
 ------------------
 
