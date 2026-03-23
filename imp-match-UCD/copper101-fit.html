@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fit Copper Hugoniot &#8212; Supplemental Materials for &#39;Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve&#39;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'imp-match-UCD/copper101-fit';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Impedance Match For UCD SiO\(_2\) Data" href="IM-MC-silica-plots-tables.html" />
+    <link rel="prev" title="Fit Al 2024 Hugoniot" href="steel304-fit.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Supplemental Materials for 'Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve'</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">EOS Model Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../input-parameters.html">Input Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geng-Mohn-2024.html">Geng &amp; Mohn 2024 data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dft-offset.html">Resolved silica liquid offsets between experiments and DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../melt-curve-fits.html">SiO₂ Melt Curve Fits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid-eos.html">Liquid Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../solid-eos.html">Solid Equations of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shock Data Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="steel304-fit.html">Fit Al 2024 Hugoniot</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fit Copper Hugoniot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IM-MC-silica-plots-tables.html">Impedance Match For UCD SiO<span class="math notranslate nohighlight">\(_2\)</span> Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imp-match-Lyzenga/fit-ta.html">Fit Tantalum Hugoniot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imp-match-Lyzenga/IM-MC-lyzenga-plots.html">Impedance Match For Lyzenga et al. 1983 Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shot50-decay.html">Shot 50 Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shot60-decay.html">Shot 60 Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shock Hugoniot Synthesis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hugoniot-fits-fused-silica.html">Hugoniot Fits: Fused Silica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hugoniot-fits-quartz.html">Hugoniot Fits: Quartz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hugoniot-fits-coesite.html">Hugoniot Fits: Coesite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hugoniot-fits-stishovite.html">Hugoniot Fits: Stishovite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tables.html">Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mc-convergence.html">Monte-Carlo uncertainties for Hugoniot fits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manuscript Figures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../additional-plots.html">Manuscript Figures</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Endnotes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgments.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ststewart/silica-supplement" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ststewart/silica-supplement/issues/new?title=Issue%20on%20page%20%2Fimp-match-UCD/copper101-fit.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/imp-match-UCD/copper101-fit.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fit Copper Hugoniot</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-im-module">About the IM_module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-material-data-csv-file">Step 1: load the material-data.csv file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data-and-fits">Plotting the data and fits</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fit-copper-hugoniot">
+<h1>Fit Copper Hugoniot<a class="headerlink" href="#fit-copper-hugoniot" title="Link to this heading">#</a></h1>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">exists</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">exists</span>
+
+<span class="c1"># Impedance Match Calculation classes and functions</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">IM_module</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">IM</span> <span class="c1"># classes and functions for this impedance match notebook</span>
+
+<span class="c1"># Collect files needed to run this notebook in the cloud (e.g., Google CoLab)</span>
+<span class="n">use_local_files</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># prefer local files than GitHub repo (change to false to refresh from repo)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section id="about-the-im-module">
+<h2>About the IM_module<a class="headerlink" href="#about-the-im-module" title="Link to this heading">#</a></h2>
+<p>The IM_module contains several function to interact with the shock Hugoniot data.
+Use the command help(IM) to list the classes and functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment the command below for information about the module</span>
+<span class="c1">#help(IM)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-load-the-material-data-csv-file">
+<h2>Step 1: load the material-data.csv file<a class="headerlink" href="#step-1-load-the-material-data-csv-file" title="Link to this heading">#</a></h2>
+<p>Load the material database with the following comment.
+The parameters are stored in a DataFrame object called matdata.
+The imat object contains indexing information for book-keeping purposes in the code.
+If you want to change the format of the database, update the material indices function to preserve the code functionality.</p>
+<p>For ease of use the materials database file uses g/cm3 and km/s, as is most common in the shockwave literature.</p>
+<p>The file is converted to MKS when it is read in and all the functions are expecting MKS units.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the materials data table; change matfilename if not using default</span>
+<span class="n">matdata</span><span class="p">,</span> <span class="n">imat</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">ReadMaterials</span><span class="p">(</span><span class="n">matfilename</span><span class="o">=</span><span class="s1">&#39;materials-data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-data-and-fits">
+<h2>Plotting the data and fits<a class="headerlink" href="#plotting-the-data-and-fits" title="Link to this heading">#</a></h2>
+<p>Examples of initializing material objects, fitting, and plotting functions.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hopefully everything in mks</span>
+<span class="n">up</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span><span class="o">/</span><span class="mf">100.</span><span class="o">*</span><span class="mi">10000</span>
+
+<span class="n">mat1</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">Material</span><span class="p">()</span> <span class="c1"># create material object named &#39;mat3&#39;</span>
+<span class="n">matname</span><span class="o">=</span><span class="s1">&#39;Copper&#39;</span> <span class="c1"># material name in the material-data.csv file</span>
+<span class="n">mat1</span><span class="o">.</span><span class="n">DefineParamsID</span><span class="p">(</span><span class="n">matname</span><span class="p">,</span><span class="n">matdata</span><span class="p">,</span><span class="n">imat</span><span class="p">)</span> <span class="c1"># load the parameters for this material</span>
+<span class="n">mat1</span><span class="o">.</span><span class="n">MakeHugoniot</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+
+<span class="n">mat2</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">Material</span><span class="p">()</span> <span class="c1"># create material object named &#39;mat3&#39;</span>
+<span class="n">matname</span><span class="o">=</span><span class="s1">&#39;Copper&#39;</span> <span class="c1"># material name in the material-data.csv file</span>
+<span class="n">mat2</span><span class="o">.</span><span class="n">DefineParamsID</span><span class="p">(</span><span class="n">matname</span><span class="p">,</span><span class="n">matdata</span><span class="p">,</span><span class="n">imat</span><span class="p">)</span> <span class="c1"># load the parameters for this material</span>
+<span class="n">mat2</span><span class="o">.</span><span class="n">MakeHugoniot</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+
+<span class="n">mat3</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">Material</span><span class="p">()</span> <span class="c1"># create material object named &#39;mat3&#39;</span>
+<span class="n">matname</span><span class="o">=</span><span class="s1">&#39;Fused-qtz-all&#39;</span> <span class="c1"># material name in the material-data.csv file</span>
+<span class="n">mat3</span><span class="o">.</span><span class="n">DefineParamsID</span><span class="p">(</span><span class="n">matname</span><span class="p">,</span><span class="n">matdata</span><span class="p">,</span><span class="n">imat</span><span class="p">)</span> <span class="c1"># load the parameters for this material</span>
+<span class="n">mat3</span><span class="o">.</span><span class="n">MakeHugoniot</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+
+<span class="n">vel</span><span class="o">=</span><span class="mf">5000.</span> <span class="c1"># m/s</span>
+<span class="n">IM12_success</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">IM_match</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">vel</span><span class="o">=</span><span class="n">vel</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">im1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="o">.</span><span class="n">up</span><span class="p">)</span>
+<span class="n">mat2</span><span class="o">.</span><span class="n">PlotCurves</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="o">.</span><span class="n">p</span><span class="p">,</span><span class="n">usemgmodelbool</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">impvel</span><span class="o">=</span><span class="n">vel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P = 170.03 (GPa), u&lt;sub&gt;p&lt;/sub&gt; = 2.5 (km/s), U&lt;sub&gt;S&lt;/sub&gt; = 0.0 (km/s), E = 3.12 (MJ/kg), &amp;#961; = 13.28 (g/cm&lt;sup&gt;3&lt;/sup&gt;)
+P = 170.03 (GPa), u&lt;sub&gt;p&lt;/sub&gt; = 2.5 (km/s), U&lt;sub&gt;S&lt;/sub&gt; = 7.62 (km/s), E = 3.12 (MJ/kg), &amp;#961; = 13.28 (g/cm&lt;sup&gt;3&lt;/sup&gt;)
+170028693124.99997
+2500.0
+</pre></div>
+</div>
+<img alt="../_images/30011cab6d5ca06d6f3fea8781f3b54478db7d7fc509b83d34476f09e56a333a.png" src="../_images/30011cab6d5ca06d6f3fea8781f3b54478db7d7fc509b83d34476f09e56a333a.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">uparr</span><span class="p">,</span><span class="n">mat2</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">parr</span><span class="o">/</span><span class="mf">1.e9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vel</span><span class="o">-</span><span class="n">mat1</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">uparr</span><span class="p">,</span><span class="n">mat1</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">parr</span><span class="o">/</span><span class="mf">1.e9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mat3</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">uparr</span><span class="p">,</span><span class="n">mat3</span><span class="o">.</span><span class="n">hug</span><span class="o">.</span><span class="n">parr</span><span class="o">/</span><span class="mf">1.e9</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Particle Velocity (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5500</span><span class="p">])</span>
+
+
+<span class="n">IM23_success</span> <span class="o">=</span> <span class="n">mat2</span><span class="o">.</span><span class="n">IM_match</span><span class="p">(</span><span class="n">mat3</span><span class="p">,</span><span class="n">vel</span><span class="o">=</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="o">.</span><span class="n">up</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">im1</span><span class="p">)</span> <span class="c1"># original flyer-&gt;driver IM</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">im1</span><span class="p">)</span> <span class="c1"># overwrites this state to new IM solution</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat3</span><span class="o">.</span><span class="n">im1</span><span class="p">)</span> <span class="c1"># target IM</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">mat1</span><span class="o">.</span><span class="n">im1</span><span class="o">.</span><span class="n">up</span><span class="o">-</span><span class="n">mat2</span><span class="o">.</span><span class="n">isen</span><span class="o">.</span><span class="n">uparr</span><span class="p">,</span><span class="n">mat2</span><span class="o">.</span><span class="n">isen</span><span class="o">.</span><span class="n">parr</span><span class="o">/</span><span class="mf">1.e9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P = 170.03 (GPa), u&lt;sub&gt;p&lt;/sub&gt; = 2.5 (km/s), U&lt;sub&gt;S&lt;/sub&gt; = 0.0 (km/s), E = 3.12 (MJ/kg), &amp;#961; = 13.28 (g/cm&lt;sup&gt;3&lt;/sup&gt;)
+P = 22.27 (GPa), u&lt;sub&gt;p&lt;/sub&gt; = 1.97 (km/s), U&lt;sub&gt;S&lt;/sub&gt; = 7.62 (km/s), E = 1.95 (MJ/kg), &amp;#961; = 12.53 (g/cm&lt;sup&gt;3&lt;/sup&gt;)
+P = 22.27 (GPa), u&lt;sub&gt;p&lt;/sub&gt; = 1.97 (km/s), U&lt;sub&gt;S&lt;/sub&gt; = 5.12 (km/s), E = 1.95 (MJ/kg), &amp;#961; = 3.59 (g/cm&lt;sup&gt;3&lt;/sup&gt;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f51dbd29950&gt;]
+</pre></div>
+</div>
+<img alt="../_images/50543bd2f8d66e082771deae9ad3fcf5c7d8aa897be775e40d29b0f8b0cfafe1.png" src="../_images/50543bd2f8d66e082771deae9ad3fcf5c7d8aa897be775e40d29b0f8b0cfafe1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat1</span><span class="o">.</span><span class="n">GetIHED</span><span class="p">(</span><span class="n">uselocalbool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mat1</span><span class="o">.</span><span class="n">PlotIHED</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copper fit (mks) c0= 4215.878127973101  s1= 1.3163399223097836  s2= 0.0  d= 0.0
+N=392. Fit stdev (km/s)=0.3071729810347357
+Primary Hugoniot parameters c0,s1,s2,d= 3975.0 1.471 -5.0099999999999995e-06 0.0
+</pre></div>
+</div>
+<img alt="../_images/455b35d031af1d0722119f70f2693a9c2fab62f1101beefe1053f8d9f078700a.png" src="../_images/455b35d031af1d0722119f70f2693a9c2fab62f1101beefe1053f8d9f078700a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">refid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do not include the zero value from IHED</span>
+<span class="c1"># do not include the maximum values</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">uparr</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">uparr</span> <span class="o">&lt;</span> <span class="mf">4000.</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">marr</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">up1</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">uparr</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+<span class="n">us1</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">ihed</span><span class="o">.</span><span class="n">usarr</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+<span class="n">upall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">up1</span><span class="p">)</span>
+<span class="n">usall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">us1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">upall</span><span class="p">,</span><span class="n">usall</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># linear fit</span>
+<span class="n">fitparams</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">FitUsUp</span><span class="p">(</span><span class="n">upall</span><span class="p">,</span><span class="n">usall</span><span class="p">,</span><span class="n">formflag</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">returncov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">res</span><span class="o">=</span><span class="n">fitparams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">supall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">upall</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supall</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">supall</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;linear fit and covariance matrix:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fitparams</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min up = &#39;</span><span class="p">,</span><span class="nb">min</span><span class="p">(</span><span class="n">supall</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max up = &#39;</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">supall</span><span class="p">))</span>
+
+<span class="c1"># quadratic fit same without the end points; use the linear fit</span>
+<span class="n">fitparams</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">FitUsUp</span><span class="p">(</span><span class="n">upall</span><span class="p">,</span><span class="n">usall</span><span class="p">,</span><span class="n">formflag</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">returncov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">res</span><span class="o">=</span><span class="n">fitparams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">supall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">upall</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supall</span><span class="p">,</span><span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">supall</span><span class="o">+</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">supall</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;quadratic fit and covariance matrix:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fitparams</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min up = &#39;</span><span class="p">,</span><span class="nb">min</span><span class="p">(</span><span class="n">supall</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max up = &#39;</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">supall</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Particle Velocity (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Shock Velocity (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Copper gas gun range&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>linear fit and covariance matrix:
+(array([1.50665209e+00, 3.90701770e+03]), array([[ 1.87979614e-05, -2.67603380e-02],
+       [-2.67603380e-02,  5.37786190e+01]]))
+min up =  175.0
+max up =  3988.0
+quadratic fit and covariance matrix:
+(array([-6.81859375e-06,  1.53002776e+00,  3.89324780e+03]), array([[ 2.36977063e-11, -8.12410426e-08,  4.78566704e-05],
+       [-8.12410426e-08,  2.97259929e-04, -1.90751807e-01],
+       [ 4.78566704e-05, -1.90751807e-01,  1.50278937e+02]]))
+min up =  175.0
+max up =  3988.0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f51d8358410&gt;
+</pre></div>
+</div>
+<img alt="../_images/e88a8b893bde3cf7283eb847dca427d8d56ad8c62dfc42ed08f2510ff0c651c9.png" src="../_images/e88a8b893bde3cf7283eb847dca427d8d56ad8c62dfc42ed08f2510ff0c651c9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat4</span> <span class="o">=</span> <span class="n">IM</span><span class="o">.</span><span class="n">Material</span><span class="p">()</span> <span class="c1"># create material object named mat4</span>
+<span class="n">matname</span><span class="o">=</span><span class="s1">&#39;Copper&#39;</span> <span class="c1"># material name in the material-data.csv file</span>
+<span class="n">mat4</span><span class="o">.</span><span class="n">DefineParamsID</span><span class="p">(</span><span class="n">matname</span><span class="p">,</span><span class="n">matdata</span><span class="p">,</span><span class="n">imat</span><span class="p">)</span> <span class="c1"># load the parameters for this material</span>
+<span class="n">mat4</span><span class="o">.</span><span class="n">MakeHugoniot</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat4</span><span class="o">.</span><span class="n">GetIHED</span><span class="p">()</span>
+<span class="n">mat4</span><span class="o">.</span><span class="n">PlotIHED</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Copper fit (mks) c0= 4215.878127973101  s1= 1.3163399223097836  s2= 0.0  d= 0.0
+N=392. Fit stdev (km/s)=0.3071729810347357
+Primary Hugoniot parameters c0,s1,s2,d= 3975.0 1.471 -5.0099999999999995e-06 0.0
+</pre></div>
+</div>
+<img alt="../_images/455b35d031af1d0722119f70f2693a9c2fab62f1101beefe1053f8d9f078700a.png" src="../_images/455b35d031af1d0722119f70f2693a9c2fab62f1101beefe1053f8d9f078700a.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./imp-match-UCD"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="steel304-fit.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fit Al 2024 Hugoniot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IM-MC-silica-plots-tables.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Impedance Match For UCD SiO<span class="math notranslate nohighlight">\(_2\)</span> Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-im-module">About the IM_module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-material-data-csv-file">Step 1: load the material-data.csv file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data-and-fits">Plotting the data and fits</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amodeo et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026 S. T. Stewart. All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

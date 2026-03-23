@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+usstart=7620 # Based on impedance match solution
+
+# pressure in IM solution 5/6/2025
+usstart = np.interp(68.06,fs_hug_stv.P,fs_hug_stv.us)*1000 # m/s
+print(usstart)
+
+fittime = calstreak[:,0]
+usfit = np.zeros(len(fittime))
+ind = np.where((fittime>0) & (fittime<tdecay))[0]
+usfit[ind]=usstart
+ind = np.where((fittime>tdecay))[0]
+usfit[ind]=(10000)*(tdecay-fittime[ind])+usstart
+ind = np.where((fittime>tkink))[0]
+usfit[ind]=np.interp(tkink,fittime,usfit)
+ind = np.where((fittime>tend))[0]
+usfit[ind]=0.
+
+fitus2=np.copy(usfit)
+plt.plot(fittime,fitus2)
+#plt.plot([0.,0.],[0,8000])
+#plt.plot([tend,tend],[0,8000])
+#plt.plot(pdv1data[:,0],pdv1data[:,1],'-+',label='Ch1')
+#plt.plot(pdv2data[:,0],pdv2data[:,1],'-+',label='Ch2')
+#plt.plot(pdv3data[:,0],pdv3data[:,1],'-+',label='Ch3')
+plt.xlabel('Time (microsec)')
+plt.ylabel('Shock velocity (m/s)')
+plt.plot([tkink,tkink],[0,8000])
+
+# use the model for solid fs hugoniot region to extract corresponding P and up
+pfit = np.interp(usfit/1.e3,fs_hug_stv.us,fs_hug_stv.P)
+ind = np.where(calstreak[:,0]<0)[0]
+pfit[ind]=0
+
+upfit = np.interp(usfit/1.e3,fs_hug_stv.us,fs_hug_stv.up)
+ind = np.where(calstreak[:,0]<0)[0]
+upfit[ind]=0
+
+print(usstart,usfit)
+plt.show()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 4[39m
+[32m      1[39m usstart=[32m7620[39m [38;5;66;03m# Based on impedance match solution[39;00m
+[32m      3[39m [38;5;66;03m# pressure in IM solution 5/6/2025[39;00m
+[32m----> [39m[32m4[39m usstart = np.interp([32m68.06[39m,[43mfs_hug_stv[49m.P,fs_hug_stv.us)*[32m1000[39m [38;5;66;03m# m/s[39;00m
+[32m      5[39m [38;5;28mprint[39m(usstart)
+[32m      7[39m fittime = calstreak[:,[32m0[39m]
+
+[31mNameError[39m: name 'fs_hug_stv' is not defined
+

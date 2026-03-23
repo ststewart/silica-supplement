@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+fig, ax = plt.subplots(figsize=fsize)
+ax.set_prop_cycle(custom_cycler)
+#plt.figure(figsize=fsize)
+
+plt.plot(shockdat_list[MDqtz70811['id']].us,shockdat_list[MDqtz70811['id']].T,'.',label='70811')
+plt.plot(shockdat_list[MDqtz70813['id']].us,shockdat_list[MDqtz70813['id']].T,'.',label='70813')
+plt.plot(shockdat_list[MDqtz70817['id']].us,shockdat_list[MDqtz70817['id']].T,'.',label='70817')
+plt.plot(shockdat_list[MDqtz70820['id']].us,shockdat_list[MDqtz70820['id']].T,'.',label='70820')
+
+
+plt.xlim(8,12)
+plt.ylim(4000,8000)
+plt.ylabel('Shock Temperature (K)')
+plt.xlabel('Shock Velocity (km/s)')
+# qtz_wiggle_us1 and qtz_wiggle_us2 set in define_eos.py
+plt.plot([qtz_wiggle_us1,qtz_wiggle_us1],[0,10000],'k--')
+plt.plot([qtz_wiggle_us2,qtz_wiggle_us2],[0,10000],'k--')
+plt.title('Quartz Temperature Inversion')
+plt.legend()
+plt.tight_layout()
+plt.savefig(outputfigpath+tag+'1-Omega-qtz-Us-T.pdf')
+plt.show()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 5[39m
+[32m      2[39m ax.set_prop_cycle(custom_cycler)
+[32m      3[39m [38;5;66;03m#plt.figure(figsize=fsize)[39;00m
+[32m----> [39m[32m5[39m plt.plot([43mshockdat_list[49m[MDqtz70811[[33m'[39m[33mid[39m[33m'[39m]].us,shockdat_list[MDqtz70811[[33m'[39m[33mid[39m[33m'[39m]].T,[33m'[39m[33m.[39m[33m'[39m,label=[33m'[39m[33m70811[39m[33m'[39m)
+[32m      6[39m plt.plot(shockdat_list[MDqtz70813[[33m'[39m[33mid[39m[33m'[39m]].us,shockdat_list[MDqtz70813[[33m'[39m[33mid[39m[33m'[39m]].T,[33m'[39m[33m.[39m[33m'[39m,label=[33m'[39m[33m70813[39m[33m'[39m)
+[32m      7[39m plt.plot(shockdat_list[MDqtz70817[[33m'[39m[33mid[39m[33m'[39m]].us,shockdat_list[MDqtz70817[[33m'[39m[33mid[39m[33m'[39m]].T,[33m'[39m[33m.[39m[33m'[39m,label=[33m'[39m[33m70817[39m[33m'[39m)
+
+[31mNameError[39m: name 'shockdat_list' is not defined
+

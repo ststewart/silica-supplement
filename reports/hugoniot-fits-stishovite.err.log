@@ -1,0 +1,152 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+fitx = shockdat[iM15stvhug.i].up
+fitf= shockdat[iM15stvhug.i].us
+fitx_std = shockdat[iM15stvhug.i].up_std
+fitf_std = shockdat[iM15stvhug.i].us_std
+fitrefid = np.full(len(fitx), shockdat[iM15stvhug.i].refidlist[1], dtype=int)
+fitreflist=[]
+for i in np.unique(fitrefid):
+    fitreflist.append(str(i)+': '+ref_list[i].reference[0])
+
+
+# initialize the HPeos_Fit class
+stv_fit_liq = hp.HPeos_Fit()
+stv_fit_liq.matid = 149
+stv_fit_liq.material = 'Stishovite'
+stv_fit_liq.formula = 'SiO2'
+stv_fit_liq.rho_ref = 4.29
+stv_fit_liq.rho_ref_std = 0.03
+stv_fit_liq.rho_ref_units = 'g/cm³'
+stv_fit_liq.x = fitx
+stv_fit_liq.f = fitf
+stv_fit_liq.x_std = fitx_std
+stv_fit_liq.f_std = fitf_std
+stv_fit_liq.refid = fitrefid
+stv_fit_liq.reflist = fitreflist
+stv_fit_liq.x_var = 'up'
+stv_fit_liq.f_var = 'us'
+stv_fit_liq.x_units = 'km/s'
+stv_fit_liq.f_units = 'km/s'
+stv_fit_liq.x_desc = 'Particle Velocity'
+stv_fit_liq.f_desc = 'Shock Velocity'
+stv_fit_liq.phase_fit = 'liquid'
+stv_fit_liq.remlist.append('Fit to liquid region on the Hugoniot.')
+DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+stv_fit_liq.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'new fit']]
+
+stv_fit_liq.curvetype = 'linear'
+stv_fit_liq.outputfitpath = outputfitpath # in load_paths.py
+stv_fit_liq.filename = 'stv_fit_liq_linear'
+stv_fit_liq.fit()
+#print('FIT EOS a = ',stv_fit_liq.a)
+#print('FIT EOS cov = ',stv_fit_liq.cov)
+#stv_fit_liq.savejson()
+#stv_fit_liq.savereadable()
+#print('rms = ',stv_fit_liq.rms)
+
+if 1:
+    ind = np.where(shockdat[iM15stvhug.i].up<18)
+    fitx = shockdat[iM15stvhug.i].up[ind]
+    fitf= shockdat[iM15stvhug.i].us[ind]
+    fitx_std = shockdat[iM15stvhug.i].up_std[ind]
+    fitf_std = shockdat[iM15stvhug.i].us_std[ind]
+    fitrefid = np.full(len(fitx), shockdat[iM15stvhug.i].refidlist[1], dtype=int)
+    fitreflist=[]
+    for i in np.unique(fitrefid):
+        fitreflist.append(str(i)+': '+ref_list[i].reference[0])
+    
+    
+    # initialize the HPeos_Fit class
+    stv_fit_liqalt = hp.HPeos_Fit()
+    stv_fit_liqalt.matid = 149
+    stv_fit_liqalt.material = 'Stishovite'
+    stv_fit_liqalt.formula = 'SiO2'
+    stv_fit_liqalt.rho_ref = 4.29
+    stv_fit_liqalt.rho_ref_std = 0.03
+    stv_fit_liqalt.rho_ref_units = 'g/cm³'
+    stv_fit_liqalt.x = fitx
+    stv_fit_liqalt.f = fitf
+    stv_fit_liqalt.x_std = fitx_std
+    stv_fit_liqalt.f_std = fitf_std
+    stv_fit_liqalt.refid = fitrefid
+    stv_fit_liqalt.reflist = fitreflist
+    stv_fit_liqalt.x_var = 'up'
+    stv_fit_liqalt.f_var = 'us'
+    stv_fit_liqalt.x_units = 'km/s'
+    stv_fit_liqalt.f_units = 'km/s'
+    stv_fit_liqalt.x_desc = 'Particle Velocity'
+    stv_fit_liqalt.f_desc = 'Shock Velocity'
+    stv_fit_liqalt.phase_fit = 'liquid'
+    stv_fit_liqalt.remlist.append('Fit to liquid region on the Hugoniot for up<18km/s.')
+    DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+    stv_fit_liqalt.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'new fit']]
+    
+    stv_fit_liqalt.curvetype = 'linear'
+    stv_fit_liqalt.outputfitpath = outputfitpath # in load_paths.py
+    stv_fit_liqalt.filename = 'stv_fit_liq_linear_up18'
+    stv_fit_liqalt.fit()
+    print('FIT EOS a = ',stv_fit_liqalt.a)
+    print('FIT EOS cov = ',stv_fit_liqalt.cov)
+    stv_fit_liqalt.savejson()
+    stv_fit_liqalt.savereadable()
+    print('rms = ',stv_fit_liqalt.rms)
+
+    print('stv_fit_liqalt check:')
+    stv_fit_liqalt.comparecoefs(stv_fit_liq0.a)
+
+
+#plt.plot(fitx,fitf,'kx',markersize=10)
+nup = np.arange(5,20,.01)
+nus = stv_fit_liq.calcf(nup)
+nusalt = stv_fit_liqalt.calcf(nup)
+plt.plot(nup,nusalt,'-',color='firebrick',label='Linear fit up<18 km/s')
+#plt.plot(nup,nus,'-',color='cyan',label='linear all')
+#plt.plot(m15dat[:,5],m15dat[:,0],'k-',label='M15 stv Hugoniot')
+plt.plot(shockdat[iM15stv.i].up,shockdat[iM15stv.i].us,'k-',label='M15 stv Hugoniot')
+plt.errorbar(fitx,fitf,xerr=fitx_std,yerr=fitf_std,fmt='x',label=iM15stvhug.label+' steady shock')
+
+plt.xlabel('Particle velocity (km/s)')
+plt.ylabel('Shock velocity (km/s)')
+plt.legend()
+plt.show()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m fitx = [43mshockdat[49m[iM15stvhug.i].up
+[32m      2[39m fitf= shockdat[iM15stvhug.i].us
+[32m      3[39m fitx_std = shockdat[iM15stvhug.i].up_std
+
+[31mNameError[39m: name 'shockdat' is not defined
+

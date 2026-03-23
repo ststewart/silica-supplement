@@ -1,0 +1,108 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+plt.errorbar(eosdat_list[G16mc['id']].P[5:8],eosdat_list[G16mc['id']].T[5:8],fmt='s--',mfc='white',yerr=eosdat_list[G16mc['id']].T_std[5:8],label=G16mcb['lab']) # cotunnite structure
+plt.errorbar(eosdat_list[G16mc['id']].P[8:11],eosdat_list[G16mc['id']].T[8:11],fmt='o--',mfc='white',yerr=eosdat_list[G16mc['id']].T_std[8:11],label=G16mcc['lab']) # Fe2P structure
+
+plt.errorbar(eosdat_list[G16mc['id']].P[::],eosdat_list[G16mc['id']].T[::],fmt='kx',yerr=eosdat_list[G16mc['id']].T_std[::],label=G16mcb['lab']+'all pts')
+
+fitx = eosdat_list[G16mc['id']].P[5:11]
+fitf= eosdat_list[G16mc['id']].T[5:11]
+fitx_std = eosdat_list[G16mc['id']].P[5:11]*.01
+fitf_std = eosdat_list[G16mc['id']].T_std[5:11]
+fitrefid = np.full(len(fitx), eosdat_list[G16mc['id']].refidlist[1], dtype=int)
+fitreflist=[]
+for i in np.unique(fitrefid):
+    fitreflist.append(str(i)+': '+ref_list[i].reference[0])
+
+# initialize the HPeos_Fit class
+sio2_mc_G16 = hp.HPeos_Fit()
+sio2_mc_G16.formula = 'SiO2'
+sio2_mc_G16.x = fitx
+sio2_mc_G16.f = fitf
+sio2_mc_G16.x_std = fitx_std
+sio2_mc_G16.f_std = fitf_std
+sio2_mc_G16.refid = fitrefid
+sio2_mc_G16.reflist = fitreflist
+sio2_mc_G16.x_var = 'P'
+sio2_mc_G16.f_var = 'T'
+sio2_mc_G16.x_units = 'GPa'
+sio2_mc_G16.f_units = 'K'
+sio2_mc_G16.x_desc = 'Pressure'
+sio2_mc_G16.f_desc = 'Temperature'
+sio2_mc_G16.phase_fit = 'melt curve'
+DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+sio2_mc_G16.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'new fit']]
+
+sio2_mc_G16.curvetype = 'simons'
+sio2_mc_G16.outputfitpath = outputfitpath # in load_paths.py
+sio2_mc_G16.filename = 'SiO2_fitG16_simons'
+sio2_mc_G16.a0 = np.asarray([2000,300,.2])
+sio2_mc_G16.fit()
+print('FIT EOS a = ',sio2_mc_G16.a)
+print('FIT EOS cov = ',sio2_mc_G16.cov)
+sio2_mc_G16.savejson()
+sio2_mc_G16.savereadable()
+print('rms = ',sio2_mc_G16.rms)
+#plt.errorbar(fitx,fitf,xerr=fitx_std,yerr=fitf_std,fmt='x',label='fitted points')
+
+P_var = np.arange(400,6000,1)
+T_var = sio2_mc_G16.calcf(P_var)
+
+plt.plot(P_var,T_var,'r-',label='Fit to G16 >500 GPa')
+#plt.plot(stsmcsmooth.P,stsmcsmooth.T,'m-',linewidth=3)
+
+
+plt.plot(gm24mc.P,gm24mc.T,'-',color='c',label='G24 MC 2phase PBE')
+
+
+plt.xlabel('Pressure (GPa)')
+plt.ylabel('Temperature (GPa)')
+plt.xlim(-100,6000)
+plt.ylim(2500,22000)
+#plt.xlim(0,600)
+#plt.ylim(2500,10000)
+plt.legend()
+plt.show()
+
+x,y=intersection(gm24mc.P,gm24mc.T,P_var,T_var)
+print('No intersection: ',x,y)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m plt.errorbar([43meosdat_list[49m[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[[32m5[39m:[32m8[39m],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[[32m5[39m:[32m8[39m],fmt=[33m'[39m[33ms--[39m[33m'[39m,mfc=[33m'[39m[33mwhite[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[[32m5[39m:[32m8[39m],label=G16mcb[[33m'[39m[33mlab[39m[33m'[39m]) [38;5;66;03m# cotunnite structure[39;00m
+[32m      2[39m plt.errorbar(eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[[32m8[39m:[32m11[39m],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[[32m8[39m:[32m11[39m],fmt=[33m'[39m[33mo--[39m[33m'[39m,mfc=[33m'[39m[33mwhite[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[[32m8[39m:[32m11[39m],label=G16mcc[[33m'[39m[33mlab[39m[33m'[39m]) [38;5;66;03m# Fe2P structure[39;00m
+[32m      4[39m plt.errorbar(eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[::],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[::],fmt=[33m'[39m[33mkx[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[::],label=G16mcb[[33m'[39m[33mlab[39m[33m'[39m]+[33m'[39m[33mall pts[39m[33m'[39m)
+
+[31mNameError[39m: name 'eosdat_list' is not defined
+

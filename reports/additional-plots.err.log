@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ind = [0,1,3,5] # no IM
+print(shockdat_list[B88qtz['id']].P[ind])
+ind = np.where((shockdat_list[B88RRqtz['id']].orientation == 'z') & (shockdat_list[B88RRqtz['id']].T > 0))[0]
+print(ind) # Z
+print(shockdat_list[B88RRqtz['id']].P[ind])
+ind = np.where((shockdat_list[B88RRqtz['id']].orientation == 'pz') & (shockdat_list[B88RRqtz['id']].T>0))[0]
+print(shockdat_list[B88RRqtz['id']].P[ind])
+print(ind)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 2[39m
+[32m      1[39m ind = [[32m0[39m,[32m1[39m,[32m3[39m,[32m5[39m] [38;5;66;03m# no IM[39;00m
+[32m----> [39m[32m2[39m [38;5;28mprint[39m([43mshockdat_list[49m[B88qtz[[33m'[39m[33mid[39m[33m'[39m]].P[ind])
+[32m      3[39m ind = np.where((shockdat_list[B88RRqtz[[33m'[39m[33mid[39m[33m'[39m]].orientation == [33m'[39m[33mz[39m[33m'[39m) & (shockdat_list[B88RRqtz[[33m'[39m[33mid[39m[33m'[39m]].T > [32m0[39m))[[32m0[39m]
+[32m      4[39m [38;5;28mprint[39m(ind) [38;5;66;03m# Z[39;00m
+
+[31mNameError[39m: name 'shockdat_list' is not defined
+

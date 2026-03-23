@@ -1,0 +1,203 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# Compare streak fits first
+
+colarr = ['b','g','r','c','m','y','k','darkorange','limegreen','grey','darkviolet']
+print('Shot#, Pressure (GPa), T_shock (K), T_source, Vi (km/s), Vi_err (km/s), Us (km/s), Us_err (km/s)')
+
+isort = np.argsort(qtz_p_list)
+
+for i in isort:
+    #print(i,qtz_list[i].streak_flag[0])
+    if qtz_list[i].streak_flag[0]:
+        rind = np.where(ka_redo_ref == qtz_list[i].ref[0])[0]
+        #print(rind)
+        if len(rind) > 0:
+            oneshot = ka_redo[rind[0]]
+            T=np.mean(oneshot.loc[:,'fit_T_MC'])
+            T_err=np.mean(oneshot.loc[:,'fit_T_MC_error'])
+            T_rel=np.mean(oneshot.loc[:,'fit_T_MC_R'])
+            T_rel_err=np.mean(oneshot.loc[:,'fit_T_MC_R_error'])
+            print('streak comp: ',qtz_list[i].ref[0],T,T_err,T_rel,T_rel_err)
+            #plt.errorbar(qtz_list[i].P[0],oneshot.loc[:,'fit_T_MC'][0],xerr=qtz_list[i].P_std[0],yerr=oneshot.loc[:,'fit_T_MC_error'][0],fmt='X',markersize=10,mfc='k')
+            #plt.errorbar(qtz_list[i].P[0],T_rel,xerr=qtz_list[i].P_std[0],yerr=T_rel_err,fmt='X',markersize=10,mfc='white',mec='k')
+
+for i in isort:
+#    if not(qtz_list[i].streak_flag[0]):
+    if 1:
+        rind = np.where(ka_redo_ref == qtz_list[i].ref[0])[0]
+        if len(rind) > 0:
+            print(ka_redo_ref[rind[0]])
+            oneshot = ka_redo[rind[0]]
+            T=np.mean(oneshot.loc[:,'fit_T_MC'])
+            T_err=np.mean(oneshot.loc[:,'fit_T_MC_error'])
+            T_rel=np.mean(oneshot.loc[:,'fit_T_MC_R'])
+            T_rel_err=np.mean(oneshot.loc[:,'fit_T_MC_R_error'])
+            if  (qtz_list[i].ref[0]=='shot48'):
+                T=np.mean(oneshot.loc[:,'extract_T'][[3]])
+                T_err=np.mean(oneshot.loc[:,'extract_T_er'][[3]])
+                #T_rel=np.mean(oneshot.loc[:,'Tmean_release'][[0,1,3]])
+                #T_rel_err=np.mean(oneshot.loc[:,'Tmean_release_er'][[0,1,3]])            
+                T_rel=np.mean(oneshot.loc[:,'release_Tr'][[0,1,3]])
+                T_rel_err=np.mean(oneshot.loc[:,'release_Tr_er'][[0,1,3]])            
+            #if  (qtz_list[i].ref[0]=='shot28'):
+            if  1:
+                T=np.mean(oneshot.loc[:,'extract_T'][[3]])
+                T_err=np.mean(oneshot.loc[:,'extract_T_er'][[3]])
+                #T_rel=np.mean(oneshot.loc[:,'Tmean_release'][[3]])
+                #T_rel_err=np.mean(oneshot.loc[:,'Tmean_release_er'][[3]])            
+                T_rel=np.mean(oneshot.loc[:,'release_Tr'][[3]])
+                T_rel_err=np.mean(oneshot.loc[:,'release_Tr_er'][[3]])
+            print('NIR comp: ',qtz_list[i].ref[0],T,T_err,T_rel,T_rel_err)
+            #plt.errorbar(qtz_list[i].P[0],T,xerr=qtz_list[i].P_std[0],yerr=T_err,fmt='X',markersize=10,mfc='r',mec='r')
+            #plt.errorbar(qtz_list[i].P[0],T_rel,xerr=qtz_list[i].P_std[0],yerr=T_rel_err,fmt='X',markersize=10,mfc='white',mec='r')
+            #plt.errorbar(qtz_list[i].P[0],qtz_list[i].T_rel[0],xerr=qtz_list[i].P_std[0],yerr=qtz_list[i].T_rel_std[0],fmt='s',mfc='white',markersize=6,ecolor=colarr[i],mec=colarr[i])
+            plt.errorbar(qtz_list[i].P[0],oneshot.loc[:,'extract_T'][[0]],fmt='D',markersize=5,mfc='b',mec=colarr[i],label=qtz_list[i].ref[0]+' '+str(np.round(qtz_list[i].P[0]*10.)/10)+' GPa')
+            plt.errorbar(qtz_list[i].P[0],oneshot.loc[:,'extract_T'][[1]],fmt='D',markersize=5,mfc='g',mec=colarr[i])
+            plt.errorbar(qtz_list[i].P[0],oneshot.loc[:,'extract_T'][[2]],fmt='D',markersize=5,mfc='yellow',mec=colarr[i])
+            plt.errorbar(qtz_list[i].P[0],oneshot.loc[:,'extract_T'][[3]],fmt='D',markersize=5,mfc='r',mec=colarr[i])
+
+for i in isort:
+    if (qtz_list[i].ref[0] != 'shot28') and (qtz_list[i].ref[0] != 'shot48'):
+        plt.plot(qtz_list[i].P,qtz_list[i].T,'X',markersize=10,color=colarr[i],label=qtz_list[i].ref[0]+' '+str(np.round(qtz_list[i].P[0]*10.)/10)+' GPa')
+    #plt.errorbar(qtz_list[i].P[0],qtz_list[i].T_rel[0],xerr=qtz_list[i].P_std[0],yerr=qtz_list[i].T_rel_std[0],fmt='s',mfc='white',markersize=6,ecolor=colarr[i],mec=colarr[i])
+print(qtz_list[i].ref[0],qtz_list[i].P[0],qtz_list[i].T[0],qtz_list[i].rem,qtz_list[i].uflyer[0],qtz_list[i].uflyer_std[0],qtz_list[i].us[0],qtz_list[i].us_std[0],qtz_list[i].streak_flag)
+
+if 0:
+    plt.errorbar(shockdat_list[B88qtz['id']].P,shockdat_list[B88qtz['id']].T,fmt='go-',mfc='white',yerr=shockdat_list[B88qtz['id']].T_std,label=B88qtz['lab'])
+    plt.errorbar(shockdat_list[B88qtz['id']].P,shockdat_list[B88qtz['id']].T,fmt='go',mfc='white',yerr=shockdat_list[B88qtz['id']].T_std,label=B88qtz['lab']+'(no imp info)')
+    ind = np.where(shockdat_list[B88Rqtz['id']].us>0)
+    plt.errorbar(shockdat_list[B88Rqtz['id']].P[ind],shockdat_list[B88Rqtz['id']].T[ind],fmt='go',mfc='yellow',\
+                     yerr=shockdat_list[B88Rqtz['id']].T_std[ind],label=B88Rqtz['lab']+'(z)')
+                #ind = np.where(shockdat_list[B88Rqtz['id']].orientation == 'pz')[0]
+
+plt.xlabel('Pressure (GPa)')
+plt.ylabel('Temperature (K)')
+plt.ylim(2500,7000)
+plt.title('Qtz by $\lambda$: X=SOP b 1.8 g 2.3 y 3.5 r 4.8 μm')
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize='small')
+plt.tight_layout()
+plt.savefig('../output-figs/UCD-QTZ-wavelength.pdf')
+
+------------------
+
+----- stdout -----
+Shot#, Pressure (GPa), T_shock (K), T_source, Vi (km/s), Vi_err (km/s), Us (km/s), Us_err (km/s)
+streak comp:  shot27 3412.766828 91.982392 2568.939585 132.078856
+streak comp:  shot33 4729.72652 205.452965 4118.465343 144.829828
+shot27
+NIR comp:  shot27 3263.832281 122.740921 1857.671301 2.472874
+shot28
+NIR comp:  shot28 4142.510301 169.457238 3160.742536 2.160646
+shot48
+NIR comp:  shot48 4136.765735 169.151493 3306.557492 2.583736
+shot33
+NIR comp:  shot33 5335.669233 234.618127 4572.998027 1.51388
+shot26 124.32252836116284 5329.4 [] 6.773 0.096 9.888 0.409 [np.int64(1)]
+----- stderr -----
+<>:75: SyntaxWarning: invalid escape sequence '\l'
+<>:75: SyntaxWarning: invalid escape sequence '\l'
+/tmp/ipykernel_2364/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
+  plt.title('Qtz by $\lambda$: X=SOP b 1.8 g 2.3 y 3.5 r 4.8 μm')
+----- stderr -----
+/tmp/ipykernel_2364/1960572815.py:75: SyntaxWarning: invalid escape sequence '\l'
+  plt.title('Qtz by $\lambda$: X=SOP b 1.8 g 2.3 y 3.5 r 4.8 μm')
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[17][39m[32m, line 78[39m
+[32m     76[39m plt.legend(loc=[33m'[39m[33mcenter left[39m[33m'[39m, bbox_to_anchor=([32m1[39m, [32m0.5[39m),fontsize=[33m'[39m[33msmall[39m[33m'[39m)
+[32m     77[39m plt.tight_layout()
+[32m---> [39m[32m78[39m [43mplt[49m[43m.[49m[43msavefig[49m[43m([49m[33;43m'[39;49m[33;43m../output-figs/UCD-QTZ-wavelength.pdf[39;49m[33;43m'[39;49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/pyplot.py:1251[39m, in [36msavefig[39m[34m(*args, **kwargs)[39m
+[32m   1248[39m fig = gcf()
+[32m   1249[39m [38;5;66;03m# savefig default implementation has no return, so mypy is unhappy[39;00m
+[32m   1250[39m [38;5;66;03m# presumably this is here because subclasses can return?[39;00m
+[32m-> [39m[32m1251[39m res = [43mfig[49m[43m.[49m[43msavefig[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m  [38;5;66;03m# type: ignore[func-returns-value][39;00m
+[32m   1252[39m fig.canvas.draw_idle()  [38;5;66;03m# Need this if 'transparent=True', to reset colors.[39;00m
+[32m   1253[39m [38;5;28;01mreturn[39;00m res
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/figure.py:3490[39m, in [36mFigure.savefig[39m[34m(self, fname, transparent, **kwargs)[39m
+[32m   3488[39m     [38;5;28;01mfor[39;00m ax [38;5;129;01min[39;00m [38;5;28mself[39m.axes:
+[32m   3489[39m         _recursively_make_axes_transparent(stack, ax)
+[32m-> [39m[32m3490[39m [38;5;28;43mself[39;49m[43m.[49m[43mcanvas[49m[43m.[49m[43mprint_figure[49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/backend_bases.py:2184[39m, in [36mFigureCanvasBase.print_figure[39m[34m(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)[39m
+[32m   2180[39m [38;5;28;01mtry[39;00m:
+[32m   2181[39m     [38;5;66;03m# _get_renderer may change the figure dpi (as vector formats[39;00m
+[32m   2182[39m     [38;5;66;03m# force the figure dpi to 72), so we need to set it again here.[39;00m
+[32m   2183[39m     [38;5;28;01mwith[39;00m cbook._setattr_cm([38;5;28mself[39m.figure, dpi=dpi):
+[32m-> [39m[32m2184[39m         result = [43mprint_method[49m[43m([49m
+[32m   2185[39m [43m            [49m[43mfilename[49m[43m,[49m
+[32m   2186[39m [43m            [49m[43mfacecolor[49m[43m=[49m[43mfacecolor[49m[43m,[49m
+[32m   2187[39m [43m            [49m[43medgecolor[49m[43m=[49m[43medgecolor[49m[43m,[49m
+[32m   2188[39m [43m            [49m[43morientation[49m[43m=[49m[43morientation[49m[43m,[49m
+[32m   2189[39m [43m            [49m[43mbbox_inches_restore[49m[43m=[49m[43m_bbox_inches_restore[49m[43m,[49m
+[32m   2190[39m [43m            [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2191[39m [38;5;28;01mfinally[39;00m:
+[32m   2192[39m     [38;5;28;01mif[39;00m bbox_inches [38;5;129;01mand[39;00m restore_bbox:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/backend_bases.py:2040[39m, in [36mFigureCanvasBase._switch_canvas_and_return_print_method.<locals>.<lambda>[39m[34m(*args, **kwargs)[39m
+[32m   2036[39m     optional_kws = {  [38;5;66;03m# Passed by print_figure for other renderers.[39;00m
+[32m   2037[39m         [33m"[39m[33mdpi[39m[33m"[39m, [33m"[39m[33mfacecolor[39m[33m"[39m, [33m"[39m[33medgecolor[39m[33m"[39m, [33m"[39m[33morientation[39m[33m"[39m,
+[32m   2038[39m         [33m"[39m[33mbbox_inches_restore[39m[33m"[39m}
+[32m   2039[39m     skip = optional_kws - {*inspect.signature(meth).parameters}
+[32m-> [39m[32m2040[39m     print_method = functools.wraps(meth)([38;5;28;01mlambda[39;00m *args, **kwargs: [43mmeth[49m[43m([49m
+[32m   2041[39m [43m        [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43m{[49m[43mk[49m[43m:[49m[43m [49m[43mv[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mk[49m[43m,[49m[43m [49m[43mv[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mkwargs[49m[43m.[49m[43mitems[49m[43m([49m[43m)[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mk[49m[43m [49m[38;5;129;43;01mnot[39;49;00m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mskip[49m[43m}[49m[43m)[49m)
+[32m   2042[39m [38;5;28;01melse[39;00m:  [38;5;66;03m# Let third-parties do as they see fit.[39;00m
+[32m   2043[39m     print_method = meth
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/backends/backend_pdf.py:2779[39m, in [36mFigureCanvasPdf.print_pdf[39m[34m(self, filename, bbox_inches_restore, metadata)[39m
+[32m   2777[39m     file = filename._ensure_file()
+[32m   2778[39m [38;5;28;01melse[39;00m:
+[32m-> [39m[32m2779[39m     file = [43mPdfFile[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43mmetadata[49m[43m=[49m[43mmetadata[49m[43m)[49m
+[32m   2780[39m [38;5;28;01mtry[39;00m:
+[32m   2781[39m     file.newPage(width, height)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/backends/backend_pdf.py:687[39m, in [36mPdfFile.__init__[39m[34m(self, filename, metadata)[39m
+[32m    685[39m [38;5;28mself[39m.original_file_like = [38;5;28;01mNone[39;00m
+[32m    686[39m [38;5;28mself[39m.tell_base = [32m0[39m
+[32m--> [39m[32m687[39m fh, opened = [43mcbook[49m[43m.[49m[43mto_filehandle[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[33;43m"[39;49m[33;43mwb[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mreturn_opened[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[32m    688[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m opened:
+[32m    689[39m     [38;5;28;01mtry[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/cbook.py:546[39m, in [36mto_filehandle[39m[34m(fname, flag, return_opened, encoding)[39m
+[32m    544[39m         fh = bz2.BZ2File(fname, flag)
+[32m    545[39m     [38;5;28;01melse[39;00m:
+[32m--> [39m[32m546[39m         fh = [38;5;28;43mopen[39;49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[43mflag[49m[43m,[49m[43m [49m[43mencoding[49m[43m=[49m[43mencoding[49m[43m)[49m
+[32m    547[39m     opened = [38;5;28;01mTrue[39;00m
+[32m    548[39m [38;5;28;01melif[39;00m [38;5;28mhasattr[39m(fname, [33m'[39m[33mseek[39m[33m'[39m):
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: '../output-figs/UCD-QTZ-wavelength.pdf'
+
