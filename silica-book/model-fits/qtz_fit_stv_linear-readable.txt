@@ -1,0 +1,51 @@
+filename: qtz_fit_stv_linear
+outputfitpath: output-fits/
+matid: 174
+material: Quartz
+formula: SiO2
+rho_ref: 2.65
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [1.52569548 1.7767883 ]
+cov: [[ 0.04325045 -0.01350526]
+ [-0.01350526  0.00425656]]
+xrange: [2.7  3.52]
+npts: 12
+rms: 0.06548426167295733
+phase_fit: stishovite
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T19:54:08+00:00', 'new fit']]
+remlist: ['Fit to stishovite region on the Hugoniot.', 'Only including single wave shock data on alpha-quartz: x,y,z cut from Wackerle 1962. z-cut from Amodeo et al. in prep.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      2.70000000e+00,       2.70000000e-02,       6.29000000e+00,       3.14500000e-02,    289
+      2.89000000e+00,       2.89000000e-02,       6.66000000e+00,       3.33000000e-02,    289
+      3.03000000e+00,       3.03000000e-02,       6.95000000e+00,       3.47500000e-02,    289
+      3.52000000e+00,       3.52000000e-02,       7.70000000e+00,       3.85000000e-02,    289
+      3.50000000e+00,       3.50000000e-02,       7.63000000e+00,       3.81500000e-02,    289
+      2.89000000e+00,       2.89000000e-02,       6.66000000e+00,       3.33000000e-02,    289
+      3.03000000e+00,       3.03000000e-02,       6.95000000e+00,       3.47500000e-02,    289
+      3.50000000e+00,       3.50000000e-02,       7.72000000e+00,       3.86000000e-02,    289
+      3.52000000e+00,       3.52000000e-02,       7.75000000e+00,       3.87500000e-02,    289
+      3.42000000e+00,       3.42000000e-02,       7.76000000e+00,       3.88000000e-02,    289
+      3.49000000e+00,       3.49000000e-02,       7.76000000e+00,       3.88000000e-02,    289
+      3.31758783e+00,       7.75337181e-02,       7.43000000e+00,       5.20000000e-02,    288
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.
+289: Wackerle, J., 1962. Shock‐wave compression of quartz. Journal of applied physics, 33(3), pp.922-937.

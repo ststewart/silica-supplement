@@ -1,0 +1,47 @@
+filename: fs_fit_trans_linear
+outputfitpath: output-fits/
+matid: 143
+material: Quartz amorphous
+formula: SiO2
+rho_ref: 2.204
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [-0.02305409  1.90150855]
+cov: [[ 1.48218835 -0.34719062]
+ [-0.34719062  0.08142545]]
+xrange: [4.163      4.60988345]
+npts: 7
+rms: 0.115573791164668
+phase_fit: transition from stv to liquid
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T20:11:48+00:00', 'new fit']]
+remlist: ['Fit to transition region on the Hugoniot from the onset of optically thick shock front to the melt curve.', 'Did not include Jackson & Ahrens JGR 1979 (refid=301) because much too dense; there is a problem with this data.', 'Did not include Amodeo thesis points (refid=308) that are based on Hugoniot fits.', 'Did not include Lyzenga et al. JGR 1983 (refid=285) and Boslough JGR 1988 (refid=300) points that lack impedance match information.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      4.16300000e+00,       1.10000000e-02,       7.89000000e+00,       5.00000000e-02,    298
+      4.43144137e+00,       6.54495689e-02,       8.57900000e+00,       1.31000000e-01,    288
+      4.50130409e+00,       2.28036436e-01,       8.54400000e+00,       3.50000000e-01,    288
+      4.39802734e+00,       2.42570557e-01,       8.56900000e+00,       2.50000000e-02,    288
+      4.60988345e+00,       7.26393272e-02,       8.64250000e+00,       3.26400000e-02,    288
+      4.21094297e+00,       1.44665270e-02,       7.98000000e+00,       1.40000000e-01,    302
+      4.44226571e+00,       1.41754678e-02,       8.42000000e+00,       1.10000000e-01,    302
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.
+298: Berryman, E.J., Winey, J.M., Gupta, Y.M. and Duffy, T.S., 2019. Sound Velocities in Shock‐Synthesized Stishovite to 72 GPa. Geophysical Research Letters, 46(23), pp.13695-13703.
+302: Lyzenga et al. 1983 and Boslough 1988 redo impedance match in Amodeo et al. in prep.

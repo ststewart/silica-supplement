@@ -1,0 +1,44 @@
+filename: cst_fit_liq_linear
+outputfitpath: output-fits/
+matid: 149
+material: Coesite
+formula: SiO2
+rho_ref: 2.92
+rho_ref_std: 0.03
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [4.00563039 1.40740132]
+cov: [[ 0.32098594 -0.03182132]
+ [-0.03182132  0.00338922]]
+xrange: [ 6.574 13.88 ]
+npts: 6
+rms: 0.24594546590549066
+phase_fit: liquid
+actions: [['Sarah T. Stewart', 'create', '2025-10-20T18:30:08+00:00', 'new fit']]
+remlist: ['Fit to liquid region on the Hugoniot.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      6.57400000e+00,       1.80000000e-01,       1.29900000e+01,       2.60000000e-01,    303
+      7.83000000e+00,       1.90000000e-01,       1.49200000e+01,       1.80000000e-01,    303
+      7.86000000e+00,       1.90000000e-01,       1.53600000e+01,       2.10000000e-01,    303
+      9.65000000e+00,       2.50000000e-01,       1.80000000e+01,       2.80000000e-01,    303
+      1.09300000e+01,       2.80000000e-01,       1.92700000e+01,       1.88000000e-01,    303
+      1.38800000e+01,       2.00000000e-01,       2.34400000e+01,       1.80000000e-01,    303
+
+REFERENCES
+303: Feng, X., Katagiri, K., Qu, J., Nonaka, K., Sun, L., Zhu, P., et al. (2024). Shock Compression of Coesite up to 950 GPa. Geophysical Research Letters, 51(24), e2024GL109873. https://doi.org/10.1029/2024GL109873

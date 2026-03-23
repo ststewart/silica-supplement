@@ -1,0 +1,7 @@
+# Berryman et al. Fused Silica Shots
+# Table 1
+Shot no., transit time (microsec), err, shock velocity (km/s), err, particle velocity (km/s), err, stress (GPa), err, Density (g/cm3), err
+17-2S49, 0.320, .002, 6.27, .04, 3.203, 0.014, 44.2, .3, 4.50, .04
+18-2S13, 0.208, .002, 6.87, .07, 3.622, .007, 54.8, .5, 4.66, .05
+17-2S50, 0.203, .002, 7.41, .07, 3.913, .019, 63.8, .7, 4.67, .06
+18-2SH10, .165, .002, 7.89, .05, 4.163, .011, 72.3, .5, 4.66, .04

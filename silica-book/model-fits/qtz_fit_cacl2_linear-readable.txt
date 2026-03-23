@@ -1,0 +1,49 @@
+filename: qtz_fit_cacl2_linear
+outputfitpath: output-fits/
+matid: 174
+material: Quartz
+formula: SiO2
+rho_ref: 2.65
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [2.61789622 1.50630632]
+cov: [[ 0.00905888 -0.00226045]
+ [-0.00226045  0.0005673 ]]
+xrange: [3.7721416  4.45071699]
+npts: 9
+rms: 0.06592360696934678
+phase_fit: CaCl2
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T19:54:08+00:00', 'new fit']]
+remlist: ['Fit to CaCl2-type region on the Hugoniot.', 'Only including single wave shock data on alpha-quartz: x,y,z cut from Wackerle 1962. z-cut from Amodeo et al. in prep.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      4.01998145e+00,       3.26417984e-02,       8.65000000e+00,       4.00000000e-02,    299
+      4.02241575e+00,       3.24598213e-02,       8.71000000e+00,       4.00000000e-02,    299
+      4.02817136e+00,       3.25143814e-02,       8.75000000e+00,       4.00000000e-02,    299
+      4.29605353e+00,       3.88325765e-02,       9.25000000e+00,       4.00000000e-02,    299
+      3.89976088e+00,       4.86329164e-02,       8.46000000e+00,       1.50000000e-02,    288
+      4.45071699e+00,       5.53843923e-03,       9.31700000e+00,       1.11000000e-02,    288
+      4.28110121e+00,       7.74873517e-03,       9.03200000e+00,       4.60000000e-02,    288
+      3.77214160e+00,       5.25196388e-03,       8.29940000e+00,       4.20000000e-03,    288
+      4.36841491e+00,       1.78149478e-02,       9.27000000e+00,       1.60000000e-01,    302
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.
+299: Knudson, M.D. and Desjarlais, M.P., 2013. Adiabatic release measurements in α-quartz between 300 and 1200 GPa: Characterization of α-quartz as a shock standard in the multimegabar regime. Physical Review B, 88(18), p.184107.
+302: Lyzenga et al. 1983 and Boslough 1988 redo impedance match in Amodeo et al. in prep.

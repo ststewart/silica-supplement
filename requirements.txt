@@ -1,0 +1,6 @@
+numpy==2.2.5
+scipy==1.15.2
+matplotlib==3.10.3
+ipympl==0.9.7
+jupyter-book==1.0.4.post1
+pandas==2.2.3

@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red96\green202\blue243;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c37647\c79216\c95294;}
+{\info
+{\author Amodeo, Kaitlyn M}}\margl1440\margr1440\vieww25680\viewh13980\viewkind1\viewscale168
+\deftab720
+\pard\pardeftab720\ri0\partightenfactor0
+
+\f0\fs24 \cf0 IR March 6, 2024\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf2 Red shots have streak. The following in the output files are for streak using the MC fits.\
+fit_T_MC, fit_T_MC_error, fit_T_cov, fit_T_MC_R, fit_T_MC_R_error, fit_T_R_cov\
+shock T fit, shock T fit error, shock T fit covariance, release T fit, release T fit error, release T fit covariance.\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf3 Wiggles\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf0 For IR, use the following:\
+1, 2, 3: extract_T, extract_T_er (last 10 ns temperature and error)\
+4: T_cor, T_high, T_low (Luo fitted T. Has uneven error bars)\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf3 \
+\pard\pardeftab720\ri0\partightenfactor0
+\cf0 On shots without streak, the fit_T_MC, fit_T_MC_error, fit_T_cov, fit_T_MC_R, fit_T_MC_R_error, fit_T_R_cov variables can be used for a \'93bulk\'94 temperature or you can take an average of what\'92s available. \
+\
+Emissivity: I did minimal emissivity corrections in the shock, just enough to change channels that consistently have an \'93obvious\'94 emissivity dependence (i.e. ch. 4 was consistently low for all shots of a similar pressure range). I did not make any emissivity corrections to release for now. Depending on what is chosen for shock emissivity, I think it makes sense that the release is either the same or higher since it\'92s likely dominated by melt.\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf3 \
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf0 \
+\page \
+20: Relatively good agreement in shock. Release scattered.\
+\
+21: Ch. 4 removed \'96 clipped. Relatively good agreement between other channels.\'92\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf2 22\cf0 : Relatively good agreement between IR and streak for shock.IR release scattered, similar to above.\
+\
+23: Somewhat close in shock and release, larger scatter than previous shots.\
+\
+25: Large scatter in shock and release. Ch. 3 and 4 were filtered and should not have been; signals are very low and likely outside of the linear response range.\
+\
+\cf2 26*: \cf0 Only streak should be used. While the IR looks great and works for noting signal shape, the signals are anomalously low (>1000 K lower than streak). Streak is also excellent, so we predicted something must have been blocking part of the fiber or something similar to lower light for all channels. Streak temperatures are loaded separately in the plotting script.\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf3 27\cf0 : A little scattered shock and release. The signal shape is a little confusing because of the wiggles and potentially more temperatures can be used from this signal?\
+\
+\cf3 28\cf0 : Ch.4 is a lot lower than the other channels. Would require very low emissivity to be close to the other channels, not clear why this is the case. \
+\
+31: IR is close, but there is some distinct scatter in shock and release. Ch.1 in particular is low.\
+\
+32: Shock is scattered, but somewhat close. Release should NOT include Ch. 1, \'93ghost\'94 shock repeated/overlaid on release. \
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf2 33\cf0 : IR 2-4 high, 1 low compared to streak.\
+\
+\pard\pardeftab720\ri0\partightenfactor0
+\cf3 41\cf0 : IR 2-4 relatively close to one another, ch. 1 much lower in shock and release.\
+\
+\cf3 48\cf0 : Strange spread of 1 and 2 agree, 3 and 4 agree. Each group does not agree. \
+}

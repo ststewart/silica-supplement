@@ -1,0 +1,21 @@
+# Lyzenga, G.A., Ahrens, T.J., 1980. Shock temperature measurements in
+# Mg 2 SiO 4 and SiO 2 at high pressures. Geophys. Res. Lett. 7,
+# 141–144. https://doi.org/10.1029/GL007i002p00141, c=z axis, nc is
+# perpendicular to z axis
+# uses Wackerle 1962 for calibration with Ta flyers; assume rho*us was
+# primary calibration for pressure with impedance match solution
+phase, rho0 (g/cm3), P (GPa), sig_P, T (K), sig_T, emissivity, sig_e, direction, Us (km/s), sig_Us, up (km/s), sig_up, direction
+qtz, 2.65,  75.5, 0.8, 4600.,    150, .70, .05, nc
+qtz, 2.65,  86.0, 1.0, 4860.,    150, .90, .07, c
+qtz, 2.65,  92.0, 1.0, 5400.,    150, .87, .07, nc
+qtz, 2.65,  98.0, 1.0, 5470.,    150, .97, .07, nc
+qtz, 2.65, 106.5, 1.0, 5820.,    150, .97, .07, c
+qtz, 2.65, 108.0, 1.0, 5700.,    150, .96, .07, nc
+qtz, 2.65, 115.0, 1.0, 4880.,    150, .88, .07, c
+FQ, 2.204, 71.5, 1.0, 4700, 150, .79, .05,
+FQ, 2.204, 80.0, 0.5, 5360, 150, .75, 0.05,
+FQ, 2.204, 88.0, 1.0, 5300., 300., 1, 0.,
+FQ, 2.204, 90.0, 1.5, 5800., 200., .94, 0.04,
+FQ, 2.204, 97.0, 2.0, 5650., 200., 1., 0.,
+FQ, 2.204, 102.5, 2.0, 6500., 300., 0.9, 1.0,
+FQ, 2.204, 108.0, 2.0, 6800., 300., 1.0, 0., 

@@ -1,0 +1,13 @@
+#Melting curve SiO2, F. González-Cataldo, Sergio Davis and Gonzalo Gutiérrez. Scientific Reports, 6, 26537 (2016).
+#Simon Fit: Tm(P)= 6551.246 K * (1 + (P-317.068 GPa)/116.7226 GPa )^0.2966; rho are rho_liquid on the phase boundaries
+Pyrite, P[GPa]=,     130.103,  T[K]=,   5916.379,    19.873,   E[eV/SiO2]= -14.877,   rho[g/cc]=,  4.94023333 
+Pyrite, P[GPa]=,     218.141,  T[K]=,   6382.679,   122.840,   E[eV/SiO2]= -11.604, rho[g/cc]=,  5.68012142 
+Pyrite, P[GPa]=,     252.749,  T[K]=,   6429.589,   117.309,   E[eV/SiO2]= -11.604, rho[g/cc]=,  5.84555161 
+Pyrite, P[GPa]=,     317.068,  T[K]=,   6551.246,    75.763,   E[eV/SiO2]= -10.046, rho[g/cc]=,   6.19619393 
+Pyrite, P[GPa]=,     382.334,  T[K]=,   7654.207,    52.611,   E[eV/SiO2]=  -5.985, rho[g/cc]=,  6.57545056 
+Cotunnite, P[GPa]=,     511.059,  T[K]=,   8702.972,   13.576,    E[eV/SiO2]=  -4.53692, rho[g/cc]=,  7.36966000 
+Cotunnite, P[GPa]=,     831.001,  T[K]=,  10720.528,  487.107,    E[eV/SiO2]=   3.26621, rho[g/cc]=,  8.42098547 
+Cotunnite, P[GPa]=,     1263.79,  T[K]=,  12358.399,   21.962,    E[eV/SiO2]=  14.0412, rho[g/cc]=,  9.68217830 
+Fe2P, P[GPa]=,     1962.72,  T[K]=,  14885.626,  67.659,     E[eV/SiO2]=  29.440133, rho[g/cc]=, 11.32595197 
+Fe2P, P[GPa]=,     3635.54,  T[K]=,  18109.961,  64.321,     E[eV/SiO2]=  59.925333, rho[g/cc]=, 14.36089215 
+Fe2P, P[GPa]=,     5626.48,  T[K]=,  20263.420,  58.951,     E[eV/SiO2]=  91.028133, rho[g/cc]=, 17.22535721 

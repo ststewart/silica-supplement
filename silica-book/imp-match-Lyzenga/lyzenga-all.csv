@@ -1,0 +1,18 @@
+﻿shot,sample,rho0,rho0_std,uflyer,uflyer_std,uflyer_source,us,us_std,us_source,orientation,T,T_std,T_source,T_rel,T_rel_std,T_rel_source,P,P_std,Notes
+Q1,Perp Z-cut Alpha Quartz,2.648,0.002,5.172,0.007,xray,8.640,0.060,pyrometry,a,5430.00,120.00,Boslough88,3920.00,70.00,Boslough88,92.50,1.00,Pressures from Lyzenga et al. 1983
+Q2,Z-cut Alpha Quartz,2.648,0.002,5.620,0.010,xray,9.270,0.160,pyrometry,b,5900.00,200.00,Boslough88,0.00,0.00,None,106.50,1.90,"Probably same as 107.8 P,T point; assumed to be the case"
+Q3,Unknown Alpha Quartz,2.648,0.002,5.871,0.010,xray,9.730,0.060,streak camera,None,0.00,0.00,None,0.00,0.00,None,116.00,1.40,Reported in Table 3; no orientation info; no pyro
+Q4,Z-cut Alpha Quartz,2.648,0.002,5.926,0.011,xray,9.700,0.120,pyrometry,b,4910.00,110.00,Boslough88,3890.00,110.00,Boslough88,116.50,1.00,a=shock perpendicular to (0001) axis
+Q5,Perp Z-cut Alpha Quartz,2.648,0.002,6.297,0.012,xray,9.820,0.100,pyrometry,a,5320.00,90.00,Boslough88,4150.00,20.00,Boslough88,126.60,1.00,b=shock paraelle to (0001) axis=z cut
+Q6,Z-cut Alpha Quartz,2.648,0.002,6.600,0.012,xray,10.300,0.100,pyrometry,b,5760.00,90.00,Boslough88,0.00,0.00,Boslough88,137.00,1.00,
+QT1,Perp Z-cut Alpha Quartz,2.648,0.002,0.000,0.000,None,0.000,0.000,None,a,4440.00,40.00,Boslough88,0.00,0.00,Boslough88,75.90,0.80,
+QT2,Z-cut Alpha Quartz,2.648,0.002,0.000,0.000,None,0.000,0.000,None,b,4850.00,130.00,Boslough88,3660.00,40.00,Boslough88,85.90,1.00,
+QT3,Perp Z-cut Alpha Quartz,2.648,0.002,0.000,0.000,None,0.000,0.000,None,a,5630.00,140.00,Boslough88,4000.00,80.00,Boslough88,99.30,1.00,
+QT4,Perp Z-cut Alpha Quartz,2.648,0.002,0.000,0.000,None,0.000,0.000,None,a,6100.00,190.00,Boslough88,0.00,0.00,Boslough88,109.70,1.00,
+FS1,Fused Silica,2.204,0.002,5.134,0.007,xray,7.980,0.140,pyrometry,None,4620.00,80.00,Boslough88,3910.00,50.00,Boslough88,73.30,1.00,Multiwave fluctuating structure; not a single shock state
+FS2,Fused Silica,2.204,0.002,5.445,0.009,xray,8.420,0.110,pyrometry,None,5080.00,70.00,Boslough88,0.00,0.00,Boslough88,81.20,1.00,
+FS3,Fused Silica,2.204,0.002,5.888,0.011,xray,9.080,0.100,pyrometry,None,5770.00,120.00,Boslough88,0.00,0.00,Boslough88,93.20,1.50,
+FS4,Fused Silica,2.204,0.002,6.285,0.007,xray,9.400,0.100,pyrometry,None,6530.00,170.00,Boslough88,0.00,0.00,Boslough88,104.20,2.00,
+FS5,Fused Silica,2.204,0.002,6.499,0.010,xray,9.730,0.090,pyrometry,None,7080.00,220.00,Boslough88,0.00,0.00,Boslough88,109.90,2.00,
+FT1,Fused Silica,2.204,0.002,0.000,0.000,None,0.000,0.000,None,None,4960.00,90.00,Boslough88,3740.00,50.00,Boslough88,58.90,1.00,
+FT2,Fused Silica,2.204,0.002,0.000,0.000,None,0.000,0.000,None,None,5110.00,70.00,Boslough88,0.00,0.00,Boslough88,68.50,1.00,

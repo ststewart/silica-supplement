@@ -1,0 +1,44 @@
+filename: stv_fit_liq_linear_up18
+outputfitpath: output-fits/
+matid: 149
+material: Stishovite
+formula: SiO2
+rho_ref: 4.29
+rho_ref_std: 0.03
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [7.13305468 1.30849513]
+cov: [[ 1.30433373 -0.09247795]
+ [-0.09247795  0.00676061]]
+xrange: [11.12 17.48]
+npts: 6
+rms: 0.23534310351489302
+phase_fit: liquid
+actions: [['Sarah T. Stewart', 'create', '2025-10-20T18:31:21+00:00', 'new fit']]
+remlist: ['Fit to liquid region on the Hugoniot for up<18km/s.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      1.49300000e+01,       3.30000000e-01,       2.66000000e+01,       3.90000000e-01,    308
+      1.31400000e+01,       3.60000000e-01,       2.40100000e+01,       3.40000000e-01,    308
+      1.74800000e+01,       3.70000000e-01,       2.98000000e+01,       4.50000000e-01,    308
+      1.18700000e+01,       3.70000000e-01,       2.30700000e+01,       3.80000000e-01,    308
+      1.11200000e+01,       2.10000000e-01,       2.16500000e+01,       2.00000000e-01,    308
+      1.63900000e+01,       2.70000000e-01,       2.87200000e+01,       2.10000000e-01,    308
+
+REFERENCES
+308: Millot, M., Dubrovinskaia, N., Černok, A., Blaha, S., Dubrovinsky, L., Braun, D. G., et al. (2015). Shock compression of stishovite and melting of silica at planetary interior conditions. Science, 347(6220), 418–420. https://doi.org/10.1126/science.1261507

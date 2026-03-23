@@ -1,0 +1,11 @@
+Tracy, S.J., Turneaure, S.J. and Duffy, T.S., 2020. Structural response of α-quartz
+under plate-impact shock compression. Science Advances, 6(35), p.eabb3913.']
+Figure 1 red points. See Tables S2 and S4 : density reported here is the tabulated d-NiAs solution in S4
+Shot No., target,  Upr, Upr_err, P, P_err,rho, rho_err
+ -    , -              , km/s, km/s, GPa, GPa, g/cm3, g/cm3
+16-5-022, z-cut/LiF, 5.52, 0.02, 65, 2, 4.82, 0.03  
+16-5-022, z-cut/LiF, 5.52, 0.02, 56, 1, 4.73, 0.03  
+16-5-007, z-cut/LiF, 5.38, 0.04, 54, 1, 4.69, 0.03
+16-5-023, z-cut/LiF, 4.9,   0.2,   46, 3, 4.57, 0.03
+16-5-029, z-cut/LiF, 4.71, 0.02, 44, 1, 4.61, 0.03
+16-5-120, z-cut/LiF, 4.41, 0.01, 39, 1, 4.52, 0.03

@@ -1,0 +1,39 @@
+filename: Berryman2019-Table2.csv
+material: Fused Silica
+formula: SiO2
+material_info:
+- Fused silica samples obtained from Corning (grade 7940 HPFS).
+- Reported by manufacturer to have 800-1000 ppm OH.
+rho_ref: 2.201
+rho_ref_std: 0.002
+rho_ref_units: g/cm^3
+c_long_amb: 5.97
+c_long_amb_std: 0.01
+c_long_amb_units: km/s
+c_shear_amb: 3.79
+c_shear_amb_std: 0.01
+c_shear_amb_units: km/s
+bibkey: Berryman2019
+bibtex: "@article{Berryman2019, author = {E. J. Berryman and J. M. Winey and Y. M. Gupta and T. S. Duffy}, doi = {10.1029/2019GL085301}, journal = {Geophysical Research Letters}, pages = {13695--13703}, title = {Sound Velocities in Shock-Synthesized Stishovite to 72 GPa}, volume = {46}, year = {2019}}"
+platform: Two-stage light-gas gun at the Institute for Shock Physics, Washington State University.
+methods:
+- Front-Surface-Impact (FSI) experiments were used to determine longitudinal sound speeds.
+- Fused silica mounted on the projectile impacted a LiF window.
+- Two identical experiments were carried out at most target stresses to establish reproducibility.
+calibration:
+- Shock velocity in the fused silica impactor was determined using the particle velocity and a linear Us-Up relationship determined from wave-transmission experiments: Us = 0.62(7) + 1.74(2)Up.
+actions:
+- Gemini
+- create
+- 2025-09-08
+- Extracted experimental data from Front-Surface-Impact experiments from Table 2.
+exp_type:
+- single-shock
+- PV
+- sound-speed
+diagnostics:
+- VISAR (Velocity Interferometer System for Any Reflector)
+- PDV (Photon Doppler Velocimetry)
+primary_data:
+- up_fs
+- dt_release

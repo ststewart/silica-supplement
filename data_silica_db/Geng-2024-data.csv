@@ -1,0 +1,87 @@
+﻿solid-phase,T(K),P(Gpa),rho(g/cm3),t_equil(ps),final-phase
+stishovite,5750,78,4.49,6,L
+stishovite,5750,69,4.37,5.2,L
+stishovite,5750,59,4.24,3,L
+stishovite,5500,60,4.37,10.4,L
+stishovite,5500,55,4.24,3,L
+stishovite,5500,48,4.12,3,L
+stishovite,5500,43,4,2,L
+stishovite,5250,55,4.24,9.5,L
+stishovite,5250,41,4,3.6,L
+stishovite,5250,37,3.89,1.9,L
+stishovite,5000,45,4.12,5,L
+stishovite,5500,100,4.93,6,S (stishovite w defects)
+stishovite,5500,85,4.77,8.8,S (stishovite w extended defects)
+stishovite,5500,70,4.64,8.4,S (stishovite)
+stishovite,5500,55,4.5,19.4,S (stishovite)
+stishovite,5250,100,4.93,8.2,S (stishovite)
+stishovite,5250,86,4.77,4.5,S (stishovite)
+stishovite,5250,62,4.5,6.6,S (stishovite)
+stishovite,5250,58,4.37,5.2,S (stishovite)
+beta-stishovite,6000,90,4.6,3,L
+beta-stishovite,6000,100,4.74,8,L
+beta-stishovite,6250,100,4.74,2.4,L
+beta-stishovite,6250,111,4.88,7.2,L
+beta-stishovite,6250,131,5.03,18,L
+beta-stishovite,6500,146,5.19,5.4,L
+beta-stishovite,5750,81,4.74,13.8,S ( -stishovite)
+beta-stishovite,5750,75,4.6,7.8,S ( -stishovite
+beta-stishovite,6250,141,5.12,8,S ( -stishovite w. defect cluster)
+beta-stishovite,6250,156,5.35,14,S ( -stishovite)
+beta-stishovite,6250,182,5.52,16.4,S ( -stishovite)
+beta-stishovite,6000,180,5.52,4.2,S ( -stishovite) above stab. field
+beta-stishovite,6000,158,5.35,8,S ( -stishovite)
+beta-stishovite,6000,136,5.19,4,S ( -stishovite)
+beta-stishovite,6000,117,5.03,5.6,S ( -stishovite w. extended defects)
+beta-stishovite,6000,102,4.88,5.1,S ( -stishovite)
+seifertite,6500,214,5.77,22,S (seifertite)
+seifertite,6500,141,5.28,11.4,L
+seifertite,6750,161,5.28,8.4,L
+seifertite,6750,179,5.43,8.3,L
+seifertite,7000,180,5.43,6.1,L
+seifertite,7000,164,5.28,3,L
+pyrite,6500,152,5.78,12.6,S (pyrite)
+pyrite,6500,178,5.62,7.4,S (pyrite)
+pyrite,6750,173,5.32,14.6,S (pyrite)
+pyrite,6750,194,5.47,2,S (pyrite)
+pyrite,6750,218,5.32,2,S (pyrite)
+pyrite,6750,245,5.17,2.6,S (pyrite)
+pyrite,7000,248,5.17,2.8,S (pyrite)
+pyrite,7000,224,5.32,4.4,S (pyrite)
+pyrite,7250,224,5.94,8.3,S (pyrite)
+pyrite,7250,251,5.17,3,S (pyrite)
+pyrite,7250,289,6.28,4,S (pyrite)
+pyrite,7500,282,6.28,3.2,S (pyrite)
+pyrite seed 2,7500,284,6.28,5.2,S (pyrite)
+pyrite,7500,314,6.47,2.3,S (pyrite)
+pyrite,7750,319,4.88,4.5,S (pyrite)
+pyrite,8000,330,6.47,11.9,S (pyrite)
+pyrite,8000,357,6.66,11.1,S (pyrite)
+pyrite,8000,399,6.85,4.2,S (pyrite)
+pyrite,8000,441,7.06,13.9,S (pyrite)
+pyrite,8250,400,6.85,2.6,S (pyrite)
+pyrite seed 2 ,8250,399,6.85,2.8,S (pyrite)
+pyrite,8250,443,7.06,14.4,S (pyrite)
+pyrite seed 2,8250,443,7.06,5,S (pyrite)
+pyrite,8500,546,4.21,9.6,S (pyrite)
+pyrite,8500,494,4.34,32.5,S (pyrite)
+pyrite,7000,206,5.62,5,L
+pyrite,7250,250,5.32,14.2,L
+pyrite,7250,228,5.77,8.8,L
+pyrite,7250,205,5.62,2.7,L
+pyrite,7500,209,5.62,1.8,L
+pyrite,7500,249,5.94,4.4,L
+pyrite,7500,229,5.77,1.5,L
+pyrite,7500,280,6.11,8.8,L
+pyrite,7750,311,5.02,5,L
+pyrite,7750,283,5.17,2.8,L
+pyrite,7750,257,5.32,2.4,L
+pyrite,8000,306,6.28,2.7,L
+pyrite,8000,286,5.17,2,L
+pyrite,8250,373,6.65,8,L
+pyrite seed 2,8250,376,6.65,6,L
+pyrite,8250,348,4.88,3,L
+pyrite seed 2,8250,347,4.88,2.9,L
+pyrite,8500,385,4.74,3,L
+pyrite,8500,422,4.61,2.6,L
+pyrite,8500,463,4.47,4.6,L

@@ -1,0 +1,4 @@
+# Luo et al. 2004
+# Ta flyer and driver
+sample, rho0 (g/cm3), P (GPa), sig_P, T (K), sig_T, direction, u_fp (km/s), Us (km/s), sig_Us, up (km/s), sig_up, rho (g/cm3), sig_rho
+qtz, 2.650, 106, 1.0, 6680, 420, x-cut, 5.64, 9.23, 0.07, 4.36, 0.04, 5.02, .005

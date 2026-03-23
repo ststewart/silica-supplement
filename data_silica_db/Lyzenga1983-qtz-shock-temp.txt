@@ -1,0 +1,21 @@
+# Lyzenga et al. 1983 has more information on Hugoniot states 
+# c=z axis, nc is perpendicular to z axis
+# uses Wackerle 1962 for calibration with Ta flyers; assume rho*us was
+# primary calibration for pressure with impedance match solution
+sample, rho0 (g/cm3), P (GPa), sig_P, T (K), sig_T, direction
+qtz, 2.65, 75.9, 0.8, 4435.,      40, nc 
+qtz,  2.65, 85.9, 1.0, 4840.,    135, c
+qtz,  2.65, 92.5, 1.0, 5395.,    125, nc
+qtz,  2.65,  99.3, 1.0, 5590.,    170, nc
+qtz,  2.65, 107.8, 1.0, 5840.,   235, c
+qtz,  2.65, 109.7, 1.0, 6030.,       0, nc
+qtz,  2.65, 116.5, 1.0, 4900,    110, c
+qtz,  2.65, 126.6, 1.0, 5295.,   105, nc
+qtz,  2.65, 137.0, 1.0, 5720.,   130, c  
+FQ, 2.204, 58.9, 1.0, 4960, 100,
+FQ,  2.204, 68.5, 1.0, 5095, 105,
+FQ,  2.204, 73.3, 1.0, 4600, 75,
+FQ,  2.204, 81.2, 1.0, 5070, 70,
+FQ,  2.204, 93.2, 1.5, 5730, 165,
+FQ,  2.204, 104.2, 2.0, 6460, 220,
+FQ,  2.204, 109.9, 2.0, 6990, 355, 

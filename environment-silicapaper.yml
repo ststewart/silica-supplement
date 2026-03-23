@@ -1,0 +1,13 @@
+name: silicapaper
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13.3
+  - numpy=2.2.5
+  - scipy=1.15.2
+  - matplotlib=3.10.3
+  - ipympl=0.9.7
+  - jupyterlab=4.4.2
+  - jupyter-book=1.0.4.post1
+  - pandas=2.2.3

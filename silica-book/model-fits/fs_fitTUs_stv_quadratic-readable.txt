@@ -1,0 +1,61 @@
+filename: fs_fitTUs_stv_quadratic
+outputfitpath: output-fits/
+matid: 143
+material: Quartz amorphous
+formula: SiO2
+rho_ref: 2.204
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: us
+f_var: T
+x_units: km/s
+f_units: K
+x_desc: Shock Velocity
+f_desc: Temperature
+curvetype: quadratic
+equation: f(x) = a[0] + a[1]*x + a[2]*x^2
+a0: []
+a: [ 7684.97862763 -2052.46473422   226.34570845]
+cov: [[ 9.48579941e+07 -2.86527222e+07  2.14760421e+06]
+ [-2.86527222e+07  8.66518235e+06 -6.50261573e+05]
+ [ 2.14760421e+06 -6.50261573e+05  4.88581482e+04]]
+xrange: [5.71973498 7.61973498]
+npts: 21
+rms: 40.170901724918664
+phase_fit: stishovite
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T20:11:49+00:00', 'new fit']]
+remlist: ['Fit to stishovite region on the Hugoniot up to the onset of optically thick shock front.', 'Based on steady-then-decaying shot50 from Amodeo thesis (refid=308) for 4.8 μm optically thick shock front fit.', 'Did not include Lyzenga et al. JGR 1983 (refid=285) and Boslough JGR 1988 (refid=300) points that lack impedance match information.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+      Shock Velocity,                stdev,          Temperature,                stdev,  refid
+                km/s,                 km/s,                    K,                    K,      -
+      7.49486061e+00,       4.00000000e-02,       4.96759045e+03,       2.92009975e+02,    288
+      7.39435809e+00,       4.00000000e-02,       4.89051513e+03,       2.92009975e+02,    288
+      7.29385558e+00,       4.00000000e-02,       4.79544356e+03,       2.92009975e+02,    288
+      7.19335307e+00,       4.00000000e-02,       4.74254643e+03,       2.92009975e+02,    288
+      7.09285056e+00,       4.00000000e-02,       4.51165261e+03,       2.92009975e+02,    288
+      6.99234804e+00,       4.00000000e-02,       4.40825161e+03,       2.92009975e+02,    288
+      6.89184553e+00,       4.00000000e-02,       4.24353021e+03,       2.92009975e+02,    288
+      6.79134302e+00,       4.00000000e-02,       4.17685988e+03,       2.92009975e+02,    288
+      6.69084051e+00,       4.00000000e-02,       4.01635707e+03,       2.92009975e+02,    288
+      6.59033799e+00,       4.00000000e-02,       3.98949861e+03,       2.92009975e+02,    288
+      6.48983548e+00,       4.00000000e-02,       3.90313302e+03,       2.92009975e+02,    288
+      6.38933297e+00,       4.00000000e-02,       3.73823078e+03,       2.92009975e+02,    288
+      6.28883046e+00,       4.00000000e-02,       3.71522149e+03,       2.92009975e+02,    288
+      6.18832794e+00,       4.00000000e-02,       3.70116759e+03,       2.92009975e+02,    288
+      6.08782543e+00,       4.00000000e-02,       3.58673993e+03,       2.92009975e+02,    288
+      5.98732292e+00,       4.00000000e-02,       3.51544827e+03,       2.92009975e+02,    288
+      5.88682041e+00,       4.00000000e-02,       3.46857909e+03,       2.92009975e+02,    288
+      5.78631789e+00,       4.00000000e-02,       3.37177002e+03,       2.92009975e+02,    288
+      5.71973498e+00,       4.00000000e-02,       3.31114224e+03,       2.92009975e+02,    288
+      7.61973498e+00,       4.00000000e-02,       5.17092050e+03,       2.92009975e+02,    288
+      6.10000000e+00,       6.10000000e-02,       3.60000000e+03,       1.08000000e+02,    288
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.
+294: Sugiura, H., Kondo, K.I. and Sawaoka, A., 1980. Method for the measurement of temperature in shock compression of solids. Review of Scientific Instruments, 51(6), pp.750-752.

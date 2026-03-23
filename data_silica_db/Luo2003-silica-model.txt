@@ -1,0 +1,14 @@
+Luo, S.N., Ahrens, T.J. and Asimow, P.D., 2003. Polymorphism, superheating, and
+amorphization of silica upon shock wave loading and release. Journal of Geophysical Research: Solid Earth, 108(B9).
+Table 2: aSubscript H: Hugoniot; R, post-shock (ambient pressure); a:
+given volume. TR,s is obtained assuming frozen-phase release.
+The sig_1, the experimental uniaxial stress, is corrected to hydrostatic stress (pressure) PH with P H 1⁄4 s H  23 Y .
+#
+sig_1, P_H, P_Hc, V_H, T_Ha, T_Ha_er, T_Hc, T_rb, T_rc, S_H
+GPa,  GPa,  GPa,   cm3/g,    K,     K,        K,       K,      K,    J/K/g
+75.9, 73.0, 73.6, 0.2065, 4440,  40,  4425, NaN, 3279, 3.365
+85.9, 83.0, 83.3, 0.2042, 4850, 130, 5090, 3660, 3589, 3.527
+92.5, 89.6, 90.3, 0.2025, 5430, 120, 5535, 3920, 3756, 3.621
+99.3, 96.4, 97.3, 0.2009, 5630, 140, 6000, 4000, 3906, 3.712
+107.8, 104.9, 106.0, 0.1990, 5900, 200, 6585, NaN, 4048, 3.817
+109.7, 106.8, 107.6, 0.1987, 6100, 190, 6715, NaN, 4074, 3.839

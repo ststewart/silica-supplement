@@ -1,0 +1,29 @@
+﻿Material,Density(g/cm3),rho0_err,c0(km/s),c0_err,s1,s1_err,s2(s/km),s2_err,d(s/km),d_err,g0,g0_err,q,q_err,up_low(km/s),up_high(km/s),IHED_id,Date,Notes
+Steel304-l2,7.87,-1,4.58,-1,1.49,-1,0,-1,0,0,2.2,-1,1,-1,0.17,3.607,347,9/4/23,STS refit Duffy+IHED RECOMMENDED
+Fused-qtz-stv,2.204,-1,1.10726163,-1,1.60694544,-1,0,0,0,0,0.65,-1,1,-1,2.8,4,143,5/13/25,STS fit to stv region RECOMMENDED
+Fused-qtz-stv-old,2.204,-1,1.3828177,-1,1.535125,-1,0,0,0,0,0.65,-1,1,-1,2.8,4,143,9/4/23,STS fit to stv region 
+qtz-CaCl2-region-old,2.65,-1,1.79725088,-1,1.6883539,-1,0,-1,0,0,1,-1,1,-1,0,-1,174,9/4/23,Stewart fit CaCl2 region 2023
+Aluminium 6061,2.683,-1,5.349,-1,1.338,-1,0,-1,0,0,1,-1,1,-1,-1,-1,324,11/11/22,Duffy & Ahrens 1998 NEED TO ADD Z data
+Steel 304,7.87,-1,4.58,-1,1.49,-1,0,-1,0,0,2.2,-1,1,-1,0.209,1.485,347,11/11/22,Duffy & Ahrens 1998
+Steel304-q,7.87,-1,4.579,-1,1.533428,-1,-1.44E-02,-1,0,0,2.2,-1,1,-1,0.17,4.73,347,11/11/22,STS refit Duffy+IHED 9/4/2023 NOT RECOMMENDED
+Copper,8.924,-1,3.975,-1,1.471,-1,-5.01E-03,-1,0,0,1.96,-1,1,-1,0,40.8,45,11/11/22,IHED fit; g0 Gilev 2018 and q is quess
+Tantalum,16.649,-1,3.31,-1,1.306,-1,0,-1,0,0,1.62,-1,1,-1,0,-1,75,11/11/22,AGU Reference Shelf+Katahara et al. 1979+Cohen-2001
+Tungsten,19.235,-1,3.994,-1,1.2788,-1,-4.94E-03,-1,0,0,1.81,-1,0.71,-1,0,16.45,79,11/11/22,IHED fit and Litasov 2013 for gamma
+PMMA,1.186,-1,2.817,-1,1.389,-1,-4.80E-03,-1,0,0,0.3,-1,1,-1,0,17,130,11/11/22,Duffy & Ahrens 1998 - updated to IHED fit g0 from Coe et al. 2022 - q not fit
+Fused-qtz-low,2.204,-1,7.906,-1,0.9486,-1,5.455,-1,0.4123,0,0.65,-1,0,-1,1,10,143,11/12/22,STS fit to 2<up<10 km/s const gamma
+Fused-qtz-all,2.204,-1,6.2396,-1,1.1536,-1,3.4133,-1,0.3464,0,0.65,-1,0,-1,7,18.3,143,11/13/22,STS fit to all IHED and Root Z data const gamma
+Fused-qtz-root,2.2,-1,4.925,-1,1.234,-1,2.074,-1,0.352,0,0.65,-1,0,-1,7,18.3,143,11/12/22,Root-Townsend-2019 Universal Hugoniot const gamma
+LiF,2.65,-1,5.181,-1,1.306,-1,0,-1,0,0,1.6,-1,1,-1,-1,-1,162,11/11/22,Duffy & Ahrens 1998 & IHED
+Basalt-hpp-quad,2.8,-1,3.125,-1,1.269,-1,3.743e-2,-1,0,0,1.39,-1,1,-1,2,5.94,635,11/11/22,AGU Reference Shelf and OA72 sts quad fit to IHED 635 and 636 up>2 km/s
+Basalt-hpp-ulh,2.8,-1,5.397,-1,1.279,-1,2.55,-1,0.44726,0,1.39,-1,1,-1,0.5,5.94,635,11/13/22,AGU Reference Shelf and OA72 sts ULH fit to IHED 635 and 636 up>0.5 km/s
+Water-ulh,0.998,-1,1.336,-1,1.3385,-1,-1.236,-1,0.354,0,0.85,-1,0.21,-1,3,35,122,11/11/22,IHED fit with univeral liquid Hugoniot
+Ice,0.91,-1,1.593,-1,1.44,-1,0,-1,0,0,0.85,-1,0.21,-1,0,-1,184,11/11/22,Stewart & Ahrens 2005 & fit to IHED data
+qtz-dNiAs-region,2.65,-1,0.72099782,-1,2.05795207,-1,0,-1,0,0,1,-1,1,-1,0,-1,174,8/6/23,Stewart fit
+qtz-zcutHEL,2.65,-1,6.319,-1,1.289,-1,0.353,-1,0,0,1,-1,1,-1,0,-1,174,8/7/23,Tracy & Duffy Zcut HEL fit
+sapphire,3.977,-1,8.686,-1,0.9627,-1,0,-1,0,0,1,-1,1,-1,1.94,5.947,455,8/2/23,Stewart fit to IHED data did not look up gamma or q yet
+Cu-lin-gg,8.924,-1,3.907,-1,1.5067,-1,0.00E+00,-1,0,0,1.96,-1,1,-1,0,4,45,11/11/22,IHED fit; g0 Gilev 2018 and q is quess; STS fit to up<4000 gas gun range linear for MCIM
+Fused-qtz-R19L83,2.204,-1,1.19787099,-1,1.68788392,-1,-0.01429898,-1,0,0,0.65,-1,0,-1,4.2,18.3,143,8/3/24,"Stewart quadratic fit to R19, L83 reanalysis 2024"
+Fused-qtz-liq-2025,2.204,-1,1.22948909,-1,1.68176281,-1,-0.01401847,-1,0,0,0.65,-1,0,-1,4.75,18.3,132,5/13/24,"Stewart quadratic fit to R19, L83 reanalysis 2025 RECOMMENDED"
+qtz-CaCl2-region-2024,2.65,-1,1.81158429,-1,1.7109961,-1,0,-1,0,0,1,-1,1,-1,0,-1,174,8/3/24,Stewart fit CaCl2 region old
+qtz-CaCl2-region-2025,2.65,-1,2.61396984,-1,1.507252,-1,0,-1,0,0,1,-1,1,-1,0,-1,174,5/13/25,Stewart fit CaCl2 region RECOMMENDED
+qtz-stv-region-2025,2.65,-1,1.52780599,-1,1.77602923,-1,0,-1,0,0,1,-1,1,-1,0,-1,174,5/13/25,Stewart fit stv region RECOMMENDED

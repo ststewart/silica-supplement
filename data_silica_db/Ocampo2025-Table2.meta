@@ -1,0 +1,35 @@
+filename: Ocampo2025-Table2.csv
+material: Fused Silica
+formula: SiO2
+material_info:
+- High-purity fused silica samples (Corning 7980 HPFS 0F Grade, 800-1100 ppm H2O).
+rho_ref: 2.200
+rho_ref_std: 0.004
+rho_ref_units: g/cm^3
+bibkey: Ocampo2025
+bibtex: "@article{Ocampo2025, author = {L. K. Ocampo and J. M. Winey and T. S. Duffy}, doi = {10.1029/2025JB031366}, journal = {Journal of Geophysical Research: Solid Earth}, pages = {e2025JB031366}, title = {Sound velocity and Grüneisen parameter in shock-melted silica at deep Earth pressures}, volume = {130}, year = {2025}}"
+platform: Two-stage light gas gun at the Institute for Shock Physics at Washington State University.
+methods:
+- Plate-impact experiments using either a Release Wave Overtake (RWO) or a wave transmission configuration.
+- The impactor was either OFE C101 copper or platinum.
+- A Monte Carlo approach was used to propagate uncertainties in the measured quantities.
+calibration:
+- The Hugoniot states were determined using standard impedance matching methods at the impact surface.
+- The impactor Hugoniot equations of state for copper and platinum were used as standards.
+- Wave profiles were corrected for shock-induced changes in the refractive index of the [100] LiF window.
+actions:
+- Gemini
+- create
+- 2025-09-08
+- Extracted experimental data from wave profile measurements for RWO and transmission experiments from Table 2.
+exp_type:
+- single-shock
+- PV
+- sound-speed
+diagnostics:
+- VISAR (Velocity Interferometer System for Any Reflector)
+- PDV (Photon Doppler Velocimetry)
+primary_data:
+- uflyer
+- us
+- up_window

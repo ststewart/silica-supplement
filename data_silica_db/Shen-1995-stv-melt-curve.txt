@@ -1,0 +1,12 @@
+Shen & Lazor JGR 1995
+Melt curve of SiO2; laser-heated DAC
+phase, P_cold (GPa), P_hot (GPa), P_grad (GPa), T (K), T_grad (K)
+qtz, 6.5, 5.26, 0.6, 2750, 100
+qtz, 9.0, 8.6, 1.0, 2900, 70
+stv, 15, 14.9, 1., 3400, 130
+stv, 18, 15.5, 1.3, 3450, 120
+stv, 22, 20.5, 2, 3900, 150
+stv, 25, 23.7, 1.5, 4100, 180
+stv, 27, 24, 2, 3950, 180
+stv, 30, 29, 1, 4100, 280
+stv, 37, 34, 2, 4250, 200

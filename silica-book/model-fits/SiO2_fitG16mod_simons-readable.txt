@@ -1,0 +1,45 @@
+filename: SiO2_fitG16mod_simons
+outputfitpath: output-fits/
+matid: 0
+material: 
+formula: SiO2
+rho_ref: 0.0
+rho_ref_std: 0.0
+rho_ref_units: 
+aliases: []
+phase: []
+orientation: []
+x_var: P
+f_var: T
+x_units: GPa
+f_units: K
+x_desc: Pressure
+f_desc: Temperature
+curvetype: simons
+equation: f(x) = a[0] + a[1]*x^a[2]
+a0: [2.e+03 3.e+02 2.e-01]
+a: [-5.89112815e+03  3.22036386e+03  2.43745258e-01]
+cov: [[ 2.24243236e+06 -1.05537438e+06  2.84290722e+01]
+ [-1.05537438e+06  4.98144932e+05 -1.34400139e+01]
+ [ 2.84290722e+01 -1.34400139e+01  3.62961481e-04]]
+xrange: [ 511.059 5626.48 ]
+npts: 6
+rms: 207.65082999888475
+phase_fit: melt curve
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T20:07:48+00:00', 'new fit modified lowest pressure point to intersect Geng & Mohn 2024']]
+remlist: ['Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+            Pressure,                stdev,          Temperature,                stdev,  refid
+                 GPa,                  GPa,                    K,                    K,      -
+      5.11059000e+02,       5.11059000e+00,       8.83596332e+03,       1.35760000e+01,    313
+      8.31001000e+02,       8.31001000e+00,       1.07205280e+04,       4.87107000e+02,    313
+      1.26379000e+03,       1.26379000e+01,       1.23583990e+04,       2.19620000e+01,    313
+      1.96272000e+03,       1.96272000e+01,       1.48856260e+04,       6.76590000e+01,    313
+      3.63554000e+03,       3.63554000e+01,       1.81099610e+04,       6.43210000e+01,    313
+      5.62648000e+03,       5.62648000e+01,       2.02634200e+04,       5.89510000e+01,    313
+
+REFERENCES
+313: González-Cataldo, F., Davis, S. and Gutiérrez, G., 2016. Melting curve of SiO2 at multimegabar pressures: implications for gas giants and super-Earths. Scientific Reports, 6(1), p.26537.

@@ -1,0 +1,241 @@
+ 1. P. W. Bridgman, “Recent Work in the Field of High Pressures,” Revs. Mod. 
+ Phys. 18, l-93 (1946). 
+
+ 2. J. M. Walsh and R. H. Christian, “Equation of State of Metals from Shock 
+ Wave Measurements,” Phys. Rev. 97, 1544-1556 (1955). 
+
+ 3. R. W. Goranson, D. Bancroft, B. L. Burton, T. Blechar, E. E. Houston, E. F. 
+ Gittings, and S. A. Landeen, “Dynamic Determination of the Compressibility 
+ of Metals,” J. Appl. Phys. 26, 1472-1479 (1955). 
+
+ 4. R. G. McQueen and S. P. Marsh, “Equation of State for Nineteen Metallic Elements 
+ from Shock-Wave Measurements to Two Megabars,” J. Appl. Phys, 31, 
+1253-1269 (1960).
+
+ 5. R. G. McQueen, “Laboratory Techniques for Very High Pressures and the 
+ Behavior of Metals Under Dynamic Loading,” in Metallurgy at High Pressures 
+ and High Temperatures, K. A. Gschneidner, Jr., M. T. Hepworth, and N. A. 
+ D. Parlee, Eds., Metallurgical Society Conferences, Vol. 22 (Gordon and 
+ Breach, New York, 1964), pp. 44-132. 
+
+ 6. M. Van Thiel, A. S. Kusubov, and A. C. Mitchell, Eds., “Compendium of 
+ Shock Wave Data,” Lawrence Radiation Laboratory (Livermore) report UCRL- 
+50108 (1967).
+
+ 7. R. H. Warnes, “Investigation of a Shock-Induced Phase Transition in Antimony,” 
+ J. Appl. Phys. 38, 4629 (1967). 
+
+ 8. Wendell L. Seitz and Jerry Wackerle, ‘Reflected-Shock Hugoniot for Liquid 
+ Argon Between 0.26 and 0.74 Megabars,” Bull. Am. Phys. Sot. 17,1093 (1972). 
+
+ 9. R. D. Dick, R. H. Warnes, and J. Skalyo, Jr., “Shock Compression of Solid 
+ Argon,” J. Chem. Phys. 53, 1648 (1970). 
+
+ 10. J. Skalyo, Jr., R. D. Dick, and R. H. Warnes, “Shock Compression of Solid 
+ Argon,” Bull. Am. Phys. Sot. 13, 579 (1968). 
+
+ 11. J. M. Walsh, M. H. Rice, R. G. McQueen, and F. L. Yarger, “Shock-Wave 
+ Compressions of Twenty-Seven Metals. Equations of State of Metals,” Phys. 
+ Rev. 108, 196-216 (1957). 
+
+ 12. M. H. Rice, R. G. McQueen, and J. M. Walsh, “Compression of Solids by 
+ Strong Shock Waves,” in Solid State Physics, Vol. 6, F. Seitz and D. Turnbull, 
+ Eds. (Academic Press, New York, 1958), pp. l-63. 
+
+ 13. R. G. McQueen, S. P. Marsh, J. W. Taylor, J. N. Fritz, and W. J. Carter, “The 
+ Equation of State of Solids from Shock Wave Studies,” in High-Velocity Impact 
+ Phenomena, R. Kinslow, Ed. (Academic Press, New York, 1970), pp. 293- 
+ 417, 521-568. 
+
+ 14. R. G. McQueen and S. P. Marsh, “Hugoniots of Graphites of Various Initial 
+ Densities and the Equation of State of Carbon,” in Behavior of Dense Media 
+ under High Dynamic Pressures, Symposium on the Behavior of Dense Media 
+ under High Dynamic Pressures, Paris, September, 1967 (Gordon and Breach, 
+ New York, 1968), pp. 207-216. 
+
+ 15. W. J. Carter, J. N. Fritz, S. P. Marsh, and R. G. McQueen, “Hugoniot Equation 
+ of State of the Lanthanides,” J. Phys. Chem. Solids 36, 741-752 (1975). 
+
+ 16. M. H. Rice, “Pressure-Volume Relations for the Alkali Metals from Shock- 
+ Wave Measurements,” J. Phys. Chem. Solids 26, 483-492 (1965). 
+
+ 17. R. G. McQueen, S. P. Marsh, and W. J. Carter, “The Determination of New 
+ Standards for Shock Wave Equation-of-State Work,” in Behavior of Dense 
+ Media under High Dynamic Pressures, Symposium on the Behavior of Dense 
+ Media under High Dynamic Pressures, Paris, September, 1967 (Gordon and 
+ Breach, New York, 1968), pp. 67-83. 
+
+ 18. W. J. Carter, S. P. Marsh, J. N. Fritz, and R. G. McQueen, “The Equation of 
+ State of Selected Materials for High-Pressure References,” in Accurate Charucterizatio 
+ of the High-Pressure Environment, Proceedings of a symposium held 
+ at the National Bureau of Standards, Gaithersburg, Maryland, October 14-18, 
+ 1968 (NBS, Washington, DC, 1971), Special Publication 326. 
+
+ 19. R. G. McQueen, W. J. Carter, J. N. Fritz, and S. P. Marsh, “The Solid-Liquid 
+ Phase Line in Cu,” in Accurate Characterization of the High-Pressure 
+ Environment, Proceedings of a Symposium held at the National Bureau of 
+ Standards, Gaithersburg, Maryland, October 14-18, 1968 (NBS, Washington, 
+ DC, 1971), Special Publication 326. 
+
+ 20. Richard D. Dick, “Some Hugoniot Data for Liquid Deuterium and Hydrogen,” 
+ Bull. Am Phys. Sot. 17, 1092 (1972). 
+
+ 21. Richard D. Dick, “Shock Wave Data for Liquid Hydrogen Initially at 20” K,” 
+ Bull. Am. Phys. Sot. 21, 1302 (1972). 
+
+ 22. R. G. McQueen and S. P. Marsh, “Shock-Wave Compression of Iron-Nickel 
+ Alloys and the Earth’s Core,” J. Geophys. Res. 71, 1751-1756 (1966). 
+
+ 23. J. M. Walsh and M. H. Rice, “Dynamic Compression of Liquids from Measurements 
+ of Strong Shock Waves,” J. Chem. Phys. 26, 815-823 (1957). 
+
+ 24. R. D. Dick, “Shock Wave Compression of Benzene, Carbon Disulfide, Carbon 
+ Tetrachloride, and Liquid Nitrogen,” Los Alamos Scientific Laboratory report 
+LA-3915 (1968).
+
+ 25. Richard D. Dick, “Shock Wave Compression of Benzene, Carbon Disulfide, 
+ Carbon Tetrachloride, and Liquid Nitrogen,” J. Chem. Phys. 52, 6021 (1970). 
+
+ 26. R. D. Dick, “Shock Compression of Liquid Benzene, Carbon Disulfide, Carbon 
+ Tetrachloride, and Nitrogen,” Bull. Am. Phys. Sot. 13, 579 (1968). 
+
+ 27. Jerry Wackerle, W. L. Seitz, and J. C. Jamieson, “Shock-Wave Equation of 
+ State for High-Density Oxygen,” in Behavior of Dense Media Under High 
+ Dynamic Pressures (Gordon and Breach, New York, 1968), p. 85. 
+
+ 28. J. A. Morgan, “The Equation of State of Platinum to 680 GPa,” High 
+ Temperatures-High Pressures 6, 195-202 (1974). 
+
+ 29. R. H. Warnes, “Shock Wave Compression of Three Polynuclear Aromatic Compounds,” 
+ J. Chem. Phys. 53, 1088 (1970). 
+
+ 30. R. G. McQueen, “The Equation of State of Mixtures, Alloys, and Compounds,” 
+ in Seismic Coupling, G. Simmons, Ed., Proceedings of a meeting sponsored by 
+ the Advanced Research Projects Agency at Stanford Research Institute, Menlo 
+ Park, California, January 15-16, 1968. 
+
+ 31. J. A. Morgan, “The Equation of State of 347 Stainless Steel to 384 GPa,” High 
+ Temperatures-High Pressures 7, 65-79 (1975). 
+
+ 32. F. Birch, “Compressibility; Elastic Constants,” in Handbook of Physical 
+ Constants, revised edition, S. P. Clark, Jr., Ed. (The Geological Society of 
+ America, Inc., New York, 1966), pp. 153-159. 
+
+ 33. S. P. Marsh, “Hugoniot Equation of State of Beryllium Oxide,” High 
+ Temperatures-High Pressures 5, 503-508 (1973). 
+
+ 34. S. P. Marsh and W. J. Carter, “Equation of State of Hafnium Titanate,” Los 
+Alamos Scientific Laboratory report LA-4629-MS (1971).
+
+ 35. H. H. Demarest, Jr., “Lattice Model Calculation of Hugoniot Curves and the 
+ Griineisen Parameter at High Pressure for the Alkali Halides,” J. Phys. Chem. 
+ Solids 35, 1393-1404 (1974). 
+
+ 36. S. P. Marsh, “Hugoniot Equations of State of LiaH, LisD, Li”H, and Li”D,” Los 
+Alamos Scientific Laboratory report LA-4942 (1972).
+
+ 37. W. J. Carter, “Hugoniot Equation of State of Some Alkali Halides,” High 
+ Temperatures-High Pressures 5, 313-318 (1973). 
+
+ 38. J. Wackerle, “Shock-Wave Compression of Quartz,” J. Appl. Phys. 33, 922-937 
+(1962).
+
+ 39. R. G. McQueen, J. N. Fritz, and S. P. Marsh, “On the Equation of State of 
+ Stishovite,” J. Geophys. Res. 68, 2319-2322 (1963). 
+
+ 40. R. G. McQueen, J. C. Jamieson, and S. P. Marsh, “Shock-Wave Compression 
+ and X-Ray Studies of Titanium Dioxide,” Science 155, 1401-1404 (1967). 
+
+ 41. J. N. Fritz, S. P. Marsh, W. J. Carter, and R. G. McQueen, “The Hugoniot 
+ Equation of State of Sodium Chloride in the Sodium Chloride Structure,” in 
+ Accurate Characterization of the High-Pressure Environment, Proceedings of a 
+ symposium held at the National Bureau of Standards, Gaithersburg, 
+ Maryland, October 14-18, 1968 (NBS, Washington, DC, 1971), Special 
+Publication 326.
+
+ 42. R. G. McQueen, S. P. Marsh, and J. N. Fritz, “Hugoniot Equation of State of 
+ Twelve Rocks,” J. Geophys. Res. 72, 4999-5036 (1967). 
+
+ 43. R. G. McQueen and S. P. Marsh, “Equation of State of Nevada Alluvium” Los 
+Alamos Scientific Laboratory report LAMS-2760 (1962).
+
+ 44. D. S. Hughes and R. G. McQueen, “Density of Basic Rocks at Very High 
+ Pressures,” Trans. Am. Geophys. Union 39, 959-965 (1958). 
+
+ 45. Richard D. Dick, Thomas A. Weaver, and Bart Olinger, “Shock Compression of 
+ the Webster Dunite,” EOS 54, 475 (1973). 
+
+ 46. B. W. Olinger, “Dynamic Properties of Devonian Shales,” in “Evaluation of 
+ Methods for Stimulation and Characterization of Eastern Gas Shales, April- 
+ June 1977,” Los Alamos Scientific Laboratory report LA-7094-PR, W. J. Carter 
+ and N. E. Vanderborgh, Compilers (1978). 
+
+ 47. W. J. Carter and B. W. Olinger, Proceedings, ERDA Enhanced Oil, Gas 
+ Recovery and Improved Drilling Methods, Vol. 2 (Petroleum Publishing Company, 
+ Tulsa, 1977). 
+
+ 48. W. J. Carter, “Hugoniots of Green River Oil Shale,” in Proceedings of the 6th 
+ international Conference on High Pressure Physics and Technology, Boulder, 
+ Colorado, June, 1977. (To be published). 
+
+ 49. W. J. Carter, “Hugoniots of Green River Oil Shale,” in “Explosively Produced 
+ Fracture of Oil Shale-Annual Report, March 1976-March 1977,” Los Alamos 
+Scientific Laboratory report LA-6817-PR (1977).
+
+ 50. J. N. Fritz and J. W. Taylor, “An Equation of State for Adiprene Foam and Its 
+ Application in Producing Low Pressure Long Time Pulses,” Los Alamos Scientific 
+Laboratory report LA-3400-MS (1966).
+
+ 51. W. J. Carter and S. P. Marsh, “Hugoniot Equations of State of Polymers,” Los 
+Alamos Scientific Laboratory unpublished report LA-UR-77-2062 (1977).
+
+ 52. Jerry Wackerle, J. 0. Johnson, and P. M. Halleck, “Projectile-Velocity 
+Measurements and Quartz- and Manganin-Gauge Pressure Determinations in
+ Gas-Gun Experiments,” Los Alamos Scientific Laboratory report LA-5844 
+(June 1975).
+
+ 53. W. E. Deal, “Shock Wave Research on Inert Solids,” in Fourth Symposium on 
+ Detonation, U. S. Naval Ordnance Laboratory, White Oak, Maryland, October 
+ 12-15, 1965 (Office of Naval Research, Symposium Report ACR-126), pp. 321- 
+344
+
+ 54. Charles L. Mader and William J. Carter, “An Equation of State for Shocked 
+ Polyurethane Foam, ” Los Alamos Scientific Laboratory report LA-4059 (1969). 
+
+ 55. William B. Harvey and Richard D. Dick, “Shock Compression of Liquid Ammonia,” 
+ Bull. Am. Phys. Sot. 20, 48 (1975). 
+
+ 56. R. D. Dick, “Shock Compression of Liquid Carbon Tetrachloride and Benzene,” 
+ Bull. Am. Phys. Sot. 9, 547 (1964). 
+
+ 57. Richard D. Dick, “Hugoniot Data for Several Benzene Ring Liquids,” Bull. Am. 
+ Phys. Sot. 20, 1514 (1975). 
+
+ 58. R. D. Dick and R. H. Warnes, “Shock Wave Study of Liquid Chloroform, 
+ Cyclohexane, and Hexane,” Bull. Am. Phys. Sot. 15, 1626 (1970). 
+
+ 59. Richard D. Dick and R. H. Warnes, “Hugoniot Curves for Several Substituted 
+ Methane Liquids,” Bull. Am. Phys. Sot. 17, 1092 (1972). 
+
+ 60. M. H. Rice and J. M. Walsh, “Equation of State of Water to 250 Kilobars,” J. 
+ Chem. Phys. 26, 824-830 (1957). 
+
+ 61. I. E. Lindstrom “Plane Shock Initiation of an RDX Plastic-Bonded Explosive,” 
+ J. Appl. Phys. 37, 4873 (1966). 
+
+ 62. P. M. Halleck and Jerry Wackerle, “Dynamic Elastic-Plastic Properties of 
+ Single-Crystal Pentaerythritol tetranitrate,” J. Appl. Phys. 47, 976 (1976). 
+
+ 63. Jerry Wackerle, J. 0. Johnson, and P. M. Halleck, “Shock Initiation of High- 
+ Density PETN,” Sixth Symposium (International) on Detonation, San Diego, 
+ California August 24-27, 1976, (Office of Naval Research Symposium Report 
+ ACR-221), pp. 20-28. 
+
+ 64. Dante Stirpe, J. 0. Johnson, and Jerry Wackerle, “Shock Initiation of XTX- 
+ 8003 and Pressed PETN,” J. Appl. Phys. 41. 3884 (1970). 
+
+ 65. I. E. Lindstrom, “Planar Shock Initation of Porous Tetryl,” J. Appl. Phys. 41, 
+337 (1970).
+
+ 66. W. B. Garn, “Determination of the Unreacted Hugoniot for Liquid TNT,” J. 
+ Chem. Phys. 30, 819-822 (1958). 

@@ -1,0 +1,7 @@
+Luo et al 2002 EPSL MD stv melt curve; Ta 2-phase results; 1b 1-phase results Table 4
+P (GPa), T_a (K), T_err (K), T_b (K)
+20, 3125, 125, 3625
+40, 4125, 125, 4500
+60, 4625, 125, 5500
+80, 4900, 125, 6000
+120, 5437.5, 75, 7000

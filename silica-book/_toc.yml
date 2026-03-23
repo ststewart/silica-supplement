@@ -1,0 +1,42 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: EOS Model Development
+  chapters:
+  - file: input-parameters
+  - file: Geng-Mohn-2024
+  - file: dft-offset
+  - file: melt-curve-fits
+  - file: liquid-eos
+  - file: solid-eos
+- caption: Shock Data Analysis
+  chapters:
+  - file: imp-match-UCD/steel304-fit
+  - file: imp-match-UCD/copper101-fit
+# real MC analysis notebook -- the plots notebook is for compiling the book
+#  - file: imp-match-UCD/IM-MC-silica
+  - file: imp-match-UCD/IM-MC-silica-plots-tables
+  - file: imp-match-Lyzenga/fit-ta
+# real MC analysis notebook -- the plots notebook is for compiling the book
+#  - file: imp-match-Lyzenga/IM-MC-lyzenga
+  - file: imp-match-Lyzenga/IM-MC-lyzenga-plots
+  - file: shot50-decay
+  - file: shot60-decay
+- caption: Shock Hugoniot Synthesis
+  chapters:
+  - file: hugoniot-fits-fused-silica
+  - file: hugoniot-fits-quartz
+  - file: hugoniot-fits-coesite
+  - file: hugoniot-fits-stishovite
+  - file: tables
+  - file: mc-convergence
+- caption: Manuscript Figures
+  chapters:
+  - file: additional-plots
+- caption: Endnotes
+  chapters:
+  - file: acknowledgments
+  - file: bibliography

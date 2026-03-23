@@ -1,0 +1,21 @@
+Boslough, M.B., 1988. Postshock temperatures in silica. Journal of
+Geophysical Research: Solid Earth, 93(B6), pp.6477-6484.
+P, T, T_sig, T_rel, T_rel_sig, Us, phase
+GPa, K, K, K, K, phase
+75.9 ,   4440 ,   40 ,   NaN  ,  NaN, NaN , qtz
+85.9 ,   4850 ,   130, 3660,    40, NaN, qtz
+92.5 ,   5430 ,   120, 3920,    70, NaN, qtz
+99.3  ,  5630 ,   140, 4000,    80, NaN, qtz
+107.8 ,  5900 ,   200, NaN , NaN  , NaN, qtz  
+109.7 ,  6100 ,   190,  NaN  , NaN  , NaN, qtz
+116.5 ,  4910 ,   110, 3890,    110, NaN, qtz
+126.6 ,  5320 ,   90,  4150,    20,  NaN , qtz
+137.0 ,  5760 ,   90,   NaN , NaN , NaN , qtz
+58.9, 4960, 90, 3740, 50, 4450, NaN, FQ
+68.5, 5110, 70, NaN, NaN, NaN, NaN, FQ
+73.3, 4620, 80, 3910, 50, NaN, 7.98, FQ
+81.2, 5080, 70, NaN, NaN, NaN, 8.42, FQ
+93.2, 5770, 120, NaN, NaN, NaN, 9.08, FQ
+104.2, 6530, 170, NaN, NaN, NaN, 9.40, FQ
+109.9, 7080, 220, NaN, NaN, NaN, 9.73, FQ
+

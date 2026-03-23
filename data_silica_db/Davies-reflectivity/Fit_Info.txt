@@ -1,0 +1,19 @@
+Reflectivity fitting.
+
+
+Hill Fit
+
+def hill_func(x,b,c,n):
+    return 0+ (((b-0)*(x**n))/(c**n + x**n))
+
+Hill Fit Parameters:  b =  34.83429698142966 , c =  16.669015166876896 , n =  7.506880387676727
+Where x is shock velocity, and outputs reflectivity with units of precentage.
+
+
+
+Uncertainty Fit:
+def function1(x,b,c):
+    return b*x + c
+
+Fit uncertainty Parameters:  b =  0.23414888231363454 , c =  -1.7499999999999998
+where x is shock velocity, outputs same units as reflectivity.

@@ -1,0 +1,44 @@
+filename: qtz_fitTus_stv_quadratic
+outputfitpath: output-fits/
+matid: 174
+material: Quartz
+formula: SiO2
+rho_ref: 2.65
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: us
+f_var: T
+x_units: km/s
+f_units: K
+x_desc: Shock Velocity
+f_desc: Temperature
+curvetype: quadratic
+equation: f(x) = a[0] + a[1]*x + a[2]*x^2
+a0: []
+a: [16761.58264843 -4576.92823054   375.03397584]
+cov: [[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+xrange: [7.03590587 8.53030889]
+npts: 5
+rms: 10.101283364933966
+phase_fit: stishovite
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T19:54:09+00:00', 'new fit']]
+remlist: ['Fit to stishovite region on the Hugoniot.', 'Temperatures are based on STV EOS model using the fitted Us-up Hugoniot.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+      Shock Velocity,                stdev,          Temperature,                stdev,  refid
+                km/s,                 km/s,                    K,                    K,      -
+      7.03590587e+00,       0.00000000e+00,       3.13000000e+03,       0.00000000e+00,    288
+      7.48351544e+00,       0.00000000e+00,       3.50000000e+03,       0.00000000e+00,    288
+      7.89194089e+00,       0.00000000e+00,       4.00000000e+03,       0.00000000e+00,    288
+      8.22325352e+00,       0.00000000e+00,       4.50000000e+03,       0.00000000e+00,    288
+      8.53030889e+00,       0.00000000e+00,       5.00000000e+03,       0.00000000e+00,    288
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.

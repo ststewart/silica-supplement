@@ -1,0 +1,45 @@
+filename: cst_fit_cacl2_linear
+outputfitpath: output-fits/
+matid: 149
+material: Coesite
+formula: SiO2
+rho_ref: 2.92
+rho_ref_std: 0.03
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: up
+f_var: us
+x_units: km/s
+f_units: km/s
+x_desc: Particle Velocity
+f_desc: Shock Velocity
+curvetype: linear
+equation: f(x) = a[0] + a[1]*x
+a0: []
+a: [2.59532144 1.68055338]
+cov: [[ 0.15506464 -0.0452009 ]
+ [-0.0452009   0.01334589]]
+xrange: [2.86 4.05]
+npts: 6
+rms: 0.06196020877346302
+phase_fit: CaCl2
+actions: [['Sarah T. Stewart', 'create', '2025-10-20T18:30:08+00:00', 'new fit']]
+remlist: ['Fit to solid region on the Hugoniot.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+   Particle Velocity,                stdev,       Shock Velocity,                stdev,  refid
+                km/s,                 km/s,                 km/s,                 km/s,      -
+      2.86000000e+00,       5.72000000e-02,       7.40000000e+00,       1.48000000e-01,    305
+      3.48000000e+00,       6.96000000e-02,       8.32000000e+00,       1.66400000e-01,    305
+      4.05000000e+00,       8.10000000e-02,       9.40000000e+00,       1.88000000e-01,    305
+      3.78000000e+00,       1.00000000e-02,       8.90000000e+00,       9.00000000e-02,    304
+      2.99000000e+00,       1.00000000e-02,       7.62000000e+00,       7.00000000e-02,    304
+      3.66000000e+00,       1.00000000e-02,       8.82000000e+00,       9.00000000e-02,    304
+
+REFERENCES
+304: Luo, S.-N., Mosenfelder, J. L., Asimow, P. D., & Ahrens, T. J. (2002). Direct shock wave loading of Stishovite to 235 GPa: Implications for perovskite stability relative to an oxide assemblage at lower mantle conditions. Geophysical Research Letters, 29(14), 36-1-36–4. https://doi.org/10.1029/2002GL015627
+305: M. A. Podurets, G. V. Simakov, G. S. Telegin, R. F. Trunin, Polymorphism of silica in shock waves and equation of state of coesite and stishovite, Izv. Akad. Nauk SSSR. Fiz. Zemli 1, 16-25 (1981) [in Russian]

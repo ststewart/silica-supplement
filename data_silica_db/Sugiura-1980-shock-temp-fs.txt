@@ -1,0 +1,12 @@
+# Sugiura, H., Kondo, K.I. and Sawaoka, A., 1980. Method for the measurement of temperature in shock
+compression of solids. Review of Scientific Instruments, 51(6), pp.750-752
+# Fused Quartz example for new streaked spectrum instrument
+# STS 5/15/2023: redid impedance match calculation for density
+# Tungsten flyer -> copper driver -> fused silica
+# reported copper shock 6.8 km/s and fs shock 6.1 km/s
+# from impedance matching Vi ~ 3.05-3.065 km/s; error of 0.03 GPa
+# density IM solution was the same to the 2nd digit
+# papers gives example uncertainty of 3% in temperature
+P (GPa), P_err (GPa), T (K), T_err, rho (g/cm3), rho_err, up (km/s), us (km/s)
+40.0, 0.03, 3600, 108, 4.42, 0.01, 3.03, 6.1
+

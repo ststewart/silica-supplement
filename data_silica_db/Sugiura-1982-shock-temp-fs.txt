@@ -1,0 +1,16 @@
+# Sugiura, H., Kondo, K. and Sawaoka, A., 1982. Shock temperatures in
+  fused silica measured by optical technique. Journal of Applied
+  Physics, 53(6), pp.4512-4514.
+# Fused Quartz data
+P (GPa), T_620 (K), T_810 (K)
+31.8, 2010, 1960
+35.0, 2590, 0
+36.3, 2610, 0
+40.5, 3510, 3090
+45.0, 3390, 3460
+46.7, 3540, 0
+47.5, 3670, 3700
+48.0, 3520, 3530
+53.8, 3800, 0
+62.2, 4190, 0
+65.1, 4090, 4390

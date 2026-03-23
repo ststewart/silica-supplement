@@ -1,0 +1,17 @@
+Park, D., Deng, X., & Deng, J. (2025, October 15). Melting phase relation of seifertite and pyrite-type SiO2 determined by machine learning potentials. arXiv. https://doi.org/10.48550/arXiv.2510.13119
+Phase,P,Tm_SCAN,Tm_PBEsol,rho_sol_SCAN,rho_sol_PBEsol,rho_liq_SCAN,rho_liq_PBEsol
+-, GPa, K, K, g/cm3, g/cm3, g/cm3, g/cm3
+Seifertite,100,NaN,5830,NaN,4.96,NaN,4.75
+Seifertite,120,6585,6055,5.11,5.12,4.89,4.95
+Seifertite,140,6795,6220,5.26,5.28,5.08,5.14
+Seifertite,160,6970,6355,5.40,5.42,5.25,5.31
+Seifertite,180,7125,6450,5.54,5.56,5.41,5.48
+Seifertite,200,7225,6515,5.67,5.67,5.57,5.63
+Seifertite,220,7310,NaN,5.79,NaN,5.71,NaN
+Pyrite-type,140,NaN,6015,NaN,5.42,NaN,5.16
+Pyrite-type,160,6650,6305,5.56,5.56,5.28,5.32
+Pyrite-type,180,6955,6555,5.69,5.69,5.42,5.47
+Pyrite-type,200,7225,6810,5.81,5.82,5.56,5.61
+Pyrite-type,220,7465,7005,5.93,5.94,5.70,5.74
+Pyrite-type,240,7665,7195,6.04,6.06,5.83,5.88
+Pyrite-type,260,7865,NaN,6.16,NaN,5.95,NaN

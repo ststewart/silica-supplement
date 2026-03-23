@@ -1,0 +1,44 @@
+filename: cst_fitTus_cacl2_quadratic
+outputfitpath: output-fits/
+matid: 149
+material: Coesite
+formula: SiO2
+rho_ref: 2.92
+rho_ref_std: 0.0
+rho_ref_units: g/cm³
+aliases: []
+phase: []
+orientation: []
+x_var: us
+f_var: T
+x_units: km/s
+f_units: K
+x_desc: Shock Velocity
+f_desc: Temperature
+curvetype: quadratic
+equation: f(x) = a[0] + a[1]*x + a[2]*x^2
+a0: []
+a: [28300.89021108 -6631.87343907   441.70627827]
+cov: [[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+xrange: [8.66547753 9.88137306]
+npts: 5
+rms: 2.2771351063525387
+phase_fit: CaCl2
+actions: [['Sarah T. Stewart', 'create', '2025-10-21T22:40:58+00:00', 'new fit']]
+remlist: ['Fit to model of solid region temperatures on the coesite Hugoniot.', 'Fit with scipy ODR version 1.15.2']
+hpeos_version: 0.3
+scipy_version: 1.15.2
+
+TABLE
+      Shock Velocity,                stdev,          Temperature,                stdev,  refid
+                km/s,                 km/s,                    K,                    K,      -
+      8.66547753e+00,       0.00000000e+00,       4.00000000e+03,       0.00000000e+00,    288
+      9.07901767e+00,       0.00000000e+00,       4.50000000e+03,       0.00000000e+00,    288
+      9.40474001e+00,       0.00000000e+00,       5.00000000e+03,       0.00000000e+00,    288
+      9.68565928e+00,       0.00000000e+00,       5.50000000e+03,       0.00000000e+00,    288
+      9.88137306e+00,       0.00000000e+00,       5.90000000e+03,       0.00000000e+00,    288
+
+REFERENCES
+288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.

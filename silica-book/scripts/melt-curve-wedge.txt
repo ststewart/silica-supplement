@@ -1,0 +1,40 @@
+P (GPa), T_low (K), T_high (K), phase, note
+13.7, 2700., 3135. ,stv,exp and calc
+14.5, 3100., 3530. ,stv,exp and calc
+20., 3650., 4030. ,stv,exp and calc
+23.75, 3700., 4265. ,stv,exp and calc
+28.0, 3700., 4270. ,stv,exp and calc
+34.0, 4065., 4500. ,stv,exp and calc
+36.0, 4350., 4800. ,stv,exp and calc
+37.5, 4350., 4890. ,stv,exp and calc
+40.0, 4500., 5000. ,stv,exp and calc
+42.0, 4800., 5080. ,stv,exp and calc
+46.0, 4750., 5040. ,stv,exp and calc
+NaN, NaN, NaN
+55.0, 4730., 5040. ,stv,exp and calc
+60., 4810., 5160. ,stv,exp and calc
+66., 5025., 5200. ,stv,exp and calc
+74., 4810., 5100. ,stv,exp and calc  
+NaN, NaN, NaN
+100., 5460., 5830. ,CaCl2,exp and calc
+102., 5530., 5800. ,CaCl2,exp and calc
+114, 5900, 6140 ,CaCl2,exp and calc
+117, 6100., 6350 ,CaCl2,exp and calc
+NaN, NaN, NaN
+135, 5100., 6000. ,aPbO2,calc
+155, 5100., 6000. ,aPbO2,calc
+NaN, NaN, NaN
+217.5, 6260.,6500.,pyrite,calc
+218.5, 6260.,6500.,pyrite,calc
+NaN, NaN, NaN
+53.6,  4850, 5390,stv,shock
+60.5,4800,5500,stv,shock
+72.0,4600,5100,stv,shock
+85.2,4750,5200,CaCl2,shock
+92.5,5120,5625,CaCl2,shock
+108.0,5700,6170,CaCl2,shock
+110.,5000,6250,CaCl2,shock
+114.,4750,5200,CaCl2,shock
+116.,4700,5250,aPbO2,shock
+125,4960,5450,aPbO2,shock
+140,5550,6150,aPbO2,shock
