@@ -101,6 +101,8 @@ conda activate silicapaper<p>
 
 To rebuild the html Jupyterbook:<p>
 
+mkdir silica-book/output-fits
+mkdir silica-book/output-figs
 jupyter-book build silica-book<p>
 
 The output is in:<p>
