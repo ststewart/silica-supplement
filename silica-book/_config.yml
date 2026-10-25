@@ -10,6 +10,7 @@ copyright : "2026 S. T. Stewart. All rights reserved"
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  timeout: 3600 # -1 for no per-cell limit; 3600 for 1 hour
 
 # Define the name of the latex output file for PDF builds
 latex:
