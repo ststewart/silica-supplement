@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -53,7 +53,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -61,6 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'input-parameters';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,47 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
     </header>
   
 
@@ -193,7 +240,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Manuscript Figures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="additional-plots.html">Manuscript Figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional-plots.html">Manuscript Figures Revised</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Endnotes</span></p>
@@ -610,7 +657,7 @@ sft_cvfactor = 3.5 # seifertite has a lower heat capacity than stishovite (Drive
 # read in Us-up fit record
 fs_fit_liq0 = hp.HPeos_Fit()
 fs_fit_liq0.outputfitpath = modelfitpath # in load_paths.py
-fs_fit_liq0.filename = &#39;fs_fit_liq_quadratic&#39;
+fs_fit_liq0.filename = 'fs_fit_liq_quadratic'
 fs_fit_liq0.loadjson()
 
 # create reference Hugoniot from fit
@@ -623,7 +670,7 @@ fs_hug_liq.calcPrho()
 # read in T-Us fit record
 fs_fitTus_liq0 = hp.HPeos_Fit()
 fs_fitTus_liq0.outputfitpath = modelfitpath # in load_paths.py
-fs_fitTus_liq0.filename = &#39;fs_fitTus_liq_cubic&#39;
+fs_fitTus_liq0.filename = 'fs_fitTus_liq_cubic'
 fs_fitTus_liq0.loadjson()
 fs_hug_liq.T = fs_fitTus_liq0.calcf(fs_hug_liq.us) # calculate temperatures on the Hugoniot
 
@@ -639,7 +686,7 @@ if 0:
     # read in fit record
     fs_fit_tra0 = hp.HPeos_Fit()
     fs_fit_tra0.outputfitpath = modelfitpath # in load_paths.py
-    fs_fit_tra0.filename = &#39;fs_fit_trans_linear&#39;
+    fs_fit_tra0.filename = 'fs_fit_trans_linear'
     fs_fit_tra0.loadjson()
     
     # Fused Silica TRANSITION stv-liquid region
@@ -656,7 +703,7 @@ if 0:
 # read in fit record
 fs_fit_stv0 = hp.HPeos_Fit()
 fs_fit_stv0.outputfitpath = modelfitpath # in load_paths.py
-fs_fit_stv0.filename = &#39;fs_fit_stv_linear&#39;
+fs_fit_stv0.filename = 'fs_fit_stv_linear'
 fs_fit_stv0.loadjson()
 
 fs_hug_stv = hp.HPeos_Shock()
@@ -667,7 +714,7 @@ fs_hug_stv.calcPrho()
 
 fs_fitTus_stv0 = hp.HPeos_Fit()
 fs_fitTus_stv0.outputfitpath = modelfitpath # in load_paths.py
-fs_fitTus_stv0.filename = &#39;fs_fitTus_stv_quadratic&#39;
+fs_fitTus_stv0.filename = 'fs_fitTus_stv_quadratic'
 fs_fitTus_stv0.loadjson()
 fs_hug_stv.T = fs_fitTus_stv0.calcf(fs_hug_stv.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -690,6 +737,7 @@ fs_wiggle_rho2 = np.interp(fs_wiggle_us2,fs_hug_liq.us,fs_hug_liq.rho)
 # in melt-curve-fits.ipynb
 fs_startliq_P =  90.5101601196313  # GPa
 fs_startliq_us = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.us)
+fs_startliq_up = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.up)
 fs_startliq_T = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.T)
 fs_startliq_rho = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.rho)
 # amorphous to stv transition
@@ -718,7 +766,7 @@ fs_liquidus_P = fs_startliq_P
 # read in fit record
 qtz_fit_liq0 = hp.HPeos_Fit()
 qtz_fit_liq0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fit_liq0.filename = &#39;qtz_fit_liq_cubic&#39;
+qtz_fit_liq0.filename = 'qtz_fit_liq_cubic'
 qtz_fit_liq0.loadjson()
 
 qtz_hug_liq = hp.HPeos_Shock()
@@ -729,7 +777,7 @@ qtz_hug_liq.calcPrho()
 
 qtz_fitTus_liq0 = hp.HPeos_Fit()
 qtz_fitTus_liq0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fitTus_liq0.filename = &#39;qtz_fitTus_liq_cubic&#39;
+qtz_fitTus_liq0.filename = 'qtz_fitTus_liq_cubic'
 qtz_fitTus_liq0.loadjson()
 qtz_hug_liq.T = qtz_fitTus_liq0.calcf(qtz_hug_liq.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -743,7 +791,7 @@ qtz_hug_liq_K12.S_std    = (127.3+0.328*qtz_hug_liq.P-0.000193*np.power(qtz_hug_
 # read in fit record
 qtz_fit_solid0 = hp.HPeos_Fit()
 qtz_fit_solid0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fit_solid0.filename = &#39;qtz_fit_solid_linear&#39;
+qtz_fit_solid0.filename = 'qtz_fit_solid_linear'
 qtz_fit_solid0.loadjson()
 
 qtz_hug_solid = hp.HPeos_Shock()
@@ -754,7 +802,7 @@ qtz_hug_solid.calcPrho()
 
 qtz_fitTus_solid0 = hp.HPeos_Fit()
 qtz_fitTus_solid0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fitTus_solid0.filename = &#39;qtz_fitTus_solid_quadratic&#39;
+qtz_fitTus_solid0.filename = 'qtz_fitTus_solid_quadratic'
 qtz_fitTus_solid0.loadjson()
 qtz_hug_solid.T = qtz_fitTus_solid0.calcf(qtz_hug_solid.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -763,7 +811,7 @@ qtz_hug_solid.T = qtz_fitTus_solid0.calcf(qtz_hug_solid.us) # calculate temperat
 # read in fit record
 qtz_fit_cacl20 = hp.HPeos_Fit()
 qtz_fit_cacl20.outputfitpath = modelfitpath # in load_paths.py
-qtz_fit_cacl20.filename = &#39;qtz_fit_cacl2_linear&#39;
+qtz_fit_cacl20.filename = 'qtz_fit_cacl2_linear'
 qtz_fit_cacl20.loadjson()
 
 qtz_hug_cacl2 = hp.HPeos_Shock()
@@ -774,7 +822,7 @@ qtz_hug_cacl2.calcPrho()
 
 qtz_fitTus_cacl20 = hp.HPeos_Fit()
 qtz_fitTus_cacl20.outputfitpath = modelfitpath # in load_paths.py
-qtz_fitTus_cacl20.filename = &#39;qtz_fitTus_cacl2_linear&#39;
+qtz_fitTus_cacl20.filename = 'qtz_fitTus_cacl2_linear'
 qtz_fitTus_cacl20.loadjson()
 qtz_hug_cacl2.T = qtz_fitTus_cacl20.calcf(qtz_hug_cacl2.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -785,7 +833,7 @@ qtz_hug_cacl2.T = qtz_fitTus_cacl20.calcf(qtz_hug_cacl2.us) # calculate temperat
 # read in fit record
 qtz_fit_stv0 = hp.HPeos_Fit()
 qtz_fit_stv0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fit_stv0.filename = &#39;qtz_fit_stv_linear&#39;
+qtz_fit_stv0.filename = 'qtz_fit_stv_linear'
 qtz_fit_stv0.loadjson()
 
 qtz_hug_stv = hp.HPeos_Shock()
@@ -796,7 +844,7 @@ qtz_hug_stv.calcPrho()
 
 qtz_fitTus_stv0 = hp.HPeos_Fit()
 qtz_fitTus_stv0.outputfitpath = modelfitpath # in load_paths.py
-qtz_fitTus_stv0.filename = &#39;qtz_fitTus_stv_quadratic&#39;
+qtz_fitTus_stv0.filename = 'qtz_fitTus_stv_quadratic'
 qtz_fitTus_stv0.loadjson()
 qtz_hug_stv.T = qtz_fitTus_stv0.calcf(qtz_hug_stv.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -868,8 +916,8 @@ cst_wiggle_us2 = 10.3 # km/s
 # read in fit record
 cst_fit_cacl20 = hp.HPeos_Fit()
 cst_fit_cacl20.outputfitpath = modelfitpath # in load_paths.py
-cst_fit_cacl20.filename = &#39;cst_fit_cacl2_linear&#39;
-#cst_fit_cacl20.filename = &#39;cst_fit_stv_linear&#39;
+cst_fit_cacl20.filename = 'cst_fit_cacl2_linear'
+#cst_fit_cacl20.filename = 'cst_fit_stv_linear'
 cst_fit_cacl20.loadjson()
 
 cst_hug_cacl2 = hp.HPeos_Shock()
@@ -880,8 +928,8 @@ cst_hug_cacl2.calcPrho()
 
 cst_fitTus_cacl20 = hp.HPeos_Fit()
 cst_fitTus_cacl20.outputfitpath = modelfitpath # in load_paths.py
-cst_fitTus_cacl20.filename = &#39;cst_fitTus_cacl2_quadratic&#39;
-#cst_fitTus_cacl20.filename = &#39;cst_fitTus_stv_quadratic&#39;
+cst_fitTus_cacl20.filename = 'cst_fitTus_cacl2_quadratic'
+#cst_fitTus_cacl20.filename = 'cst_fitTus_stv_quadratic'
 cst_fitTus_cacl20.loadjson()
 cst_hug_cacl2.T = cst_fitTus_cacl20.calcf(cst_hug_cacl2.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -890,7 +938,7 @@ cst_hug_cacl2.T = cst_fitTus_cacl20.calcf(cst_hug_cacl2.us) # calculate temperat
 # read in fit record
 cst_fit_liq0 = hp.HPeos_Fit()
 cst_fit_liq0.outputfitpath = modelfitpath # in load_paths.py
-cst_fit_liq0.filename = &#39;cst_fit_liq_linear&#39;
+cst_fit_liq0.filename = 'cst_fit_liq_linear'
 cst_fit_liq0.loadjson()
 
 cst_hug_liq = hp.HPeos_Shock()
@@ -901,7 +949,7 @@ cst_hug_liq.calcPrho()
 
 cst_fitTus_liq0 = hp.HPeos_Fit()
 cst_fitTus_liq0.outputfitpath = modelfitpath # in load_paths.py
-cst_fitTus_liq0.filename = &#39;cst_fitTus_liq_quadratic&#39;
+cst_fitTus_liq0.filename = 'cst_fitTus_liq_quadratic'
 cst_fitTus_liq0.loadjson()
 cst_hug_liq.T = cst_fitTus_liq0.calcf(cst_hug_liq.us) # calculate temperatures on the solid branch Hugoniot
 
@@ -950,7 +998,7 @@ cst_liq_cross.rho = np.interp(cst_liquidus_P,cst_hug_liq.P,cst_hug_liq.rho)
 # read in fit record
 stv_fit_liq0 = hp.HPeos_Fit()
 stv_fit_liq0.outputfitpath = modelfitpath # in load_paths.py
-stv_fit_liq0.filename = &#39;stv_fit_liq_linear_up18&#39;
+stv_fit_liq0.filename = 'stv_fit_liq_linear_up18'
 stv_fit_liq0.loadjson()
 
 stv_hug_liq = hp.HPeos_Shock()
@@ -961,7 +1009,7 @@ stv_hug_liq.calcPrho()
 
 stv_fitTus_liq0 = hp.HPeos_Fit()
 stv_fitTus_liq0.outputfitpath = modelfitpath # in load_paths.py
-stv_fitTus_liq0.filename = &#39;stv_fitTus_liq_fourthpoly&#39;
+stv_fitTus_liq0.filename = 'stv_fitTus_liq_fourthpoly'
 stv_fitTus_liq0.loadjson()
 stv_hug_liq.T = stv_fitTus_liq0.calcf(stv_hug_liq.us) # calculate temperatures on the solid branch Hugoniot
 stv_hug_liq.T_std = np.interp(stv_hug_liq.us,shockdat[iM15stv.i].us,shockdat[iM15stv.i].T_std)
@@ -974,7 +1022,7 @@ stv_wiggle2.us = 17.4 # km/s
 stv_wiggle2.P = np.interp(stv_wiggle2.us,stv_hug_liq.us,stv_hug_liq.P)
 stv_wiggle2.rho = np.interp(stv_wiggle2.us,stv_hug_liq.us,stv_hug_liq.rho)
 stv_wiggle2.up = np.interp(stv_wiggle2.us,stv_hug_liq.us,stv_hug_liq.up)
-stv_wiggle2.note = &#39;km/s, km/s, GPa, g/cm3&#39;
+stv_wiggle2.note = 'km/s, km/s, GPa, g/cm3'
 
 # new estimate of solidus, liquidus crossings May 2025
 # linear_up18 fit and shifted Gonzales et al. 2016 melt curve with conservative errors
@@ -1090,8 +1138,8 @@ By Amodeo et al.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

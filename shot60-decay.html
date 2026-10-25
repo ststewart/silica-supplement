@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -53,7 +53,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -61,6 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'shot60-decay';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -193,7 +244,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Manuscript Figures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="additional-plots.html">Manuscript Figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional-plots.html">Manuscript Figures Revised</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Endnotes</span></p>
@@ -391,7 +442,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-configuration">Target Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mavis-impact-velocity-system">MAVIS Impact Velocity system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-impedance-match">Initial Impedance Match</a></li>
@@ -432,8 +483,8 @@ Updated May 13, 2025<br></p>
 
 
 <span class="c1"># Z Hugoniot fit</span>
-<span class="c1">#qtz_liq_hug = &#39;KD09&#39; # or `KD13` # pick which quartz Hugoniot equation</span>
-<span class="c1">#qtz_liq_hug = &#39;NEW&#39; # or `KD13` # pick which quartz Hugoniot equation</span>
+<span class="c1">#qtz_liq_hug = 'KD09' # or `KD13` # pick which quartz Hugoniot equation</span>
+<span class="c1">#qtz_liq_hug = 'NEW' # or `KD13` # pick which quartz Hugoniot equation</span>
 <span class="o">%</span><span class="n">run</span> <span class="o">-</span><span class="n">i</span> <span class="n">scripts</span><span class="o">/</span><span class="n">set_paths</span>
 <span class="o">%</span><span class="n">run</span> <span class="o">-</span><span class="n">i</span> <span class="n">scripts</span><span class="o">/</span><span class="n">load_modules</span>
 <span class="o">%</span><span class="n">run</span> <span class="o">-</span><span class="n">i</span> <span class="n">scripts</span><span class="o">/</span><span class="n">load_silica_data</span>
@@ -452,87 +503,24 @@ Updated May 13, 2025<br></p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_silica_data</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">45</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="n">fsdf</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">rusbanktodf</span><span class="p">([</span><span class="n">rbfs</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">rusbank_path</span><span class="o">+</span><span class="s1">&#39;rusbankref_list.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>      
-<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="c1"># Call load method to deserialze</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="n">ref_list</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ref_list</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/IPython/core/interactiveshell.py:346,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">346</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/sts/Library/CloudStorage/Dropbox-Personal/eos/github/silica-supplement/py-rusbank/rusbankref_list.pkl&#39;
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">define_mc</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">dat</span><span class="o">.</span><span class="n">formula</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SiO2&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">dat</span><span class="o">.</span><span class="n">rho_ref</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.650</span><span class="p">]</span> <span class="c1"># g/cm3</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">dat</span><span class="o">.</span><span class="n">P</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">dat_file</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">dat</span><span class="o">.</span><span class="n">P_units</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GPa&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">dat</span><span class="o">.</span><span class="n">T_s</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">dat_file</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1395,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1392</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1393</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1395</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1396</span>             <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1397</span>             <span class="n">unpack</span><span class="o">=</span><span class="n">unpack</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1398</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1400</span> <span class="k">return</span> <span class="n">arr</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1022,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">encoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:192,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> </span>
-<span class="sd">   (...)    188 </span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">192</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:529,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">529</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: /Users/sts/Library/CloudStorage/Dropbox-Personal/eos/github/silica-supplement/silica-book/scripts/melt-curve-wedge.txt not found.
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">define_eos</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">208</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="n">fs_fit_liq0</span><span class="o">.</span><span class="n">outputfitpath</span> <span class="o">=</span> <span class="n">modelfitpath</span> <span class="c1"># in load_paths.py</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="n">fs_fit_liq0</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;fs_fit_liq_quadratic&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">208</span> <span class="n">fs_fit_liq0</span><span class="o">.</span><span class="n">loadjson</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="c1"># create reference Hugoniot from fit</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">fs_hug_liq</span> <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">HPeos_Shock</span><span class="p">()</span>
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">define_eos</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">265</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="n">fs_fitTus_stv0</span><span class="o">.</span><span class="n">outputfitpath</span> <span class="o">=</span> <span class="n">modelfitpath</span> <span class="c1"># in load_paths.py</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span> <span class="n">fs_fitTus_stv0</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'fs_fitTus_stv_quadratic'</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="n">fs_fitTus_stv0</span><span class="o">.</span><span class="n">loadjson</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">T</span> <span class="o">=</span> <span class="n">fs_fitTus_stv0</span><span class="o">.</span><span class="n">calcf</span><span class="p">(</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">us</span><span class="p">)</span> <span class="c1"># calculate temperatures on the solid branch Hugoniot</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="c1"># -------  Fused Silica Transitions  -----------</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="c1"># FS Pressure bounds on the Omega data wiggles</span>
 
 <span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:351,</span> in <span class="ni">HPeos_Fit.loadjson</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="k">def</span><span class="w"> </span><span class="nf">loadjson</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">349</span>     <span class="c1"># read in json formatted fit record file and then reconstruct a dictionary</span>
 <span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="c1"># need to add a function to load the readable version</span>
-<span class="ne">--&gt; </span><span class="mi">351</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputfitpath</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">351</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputfitpath</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="o">+</span><span class="s1">'.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="n">filetext</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># read in whole file into text</span>
 <span class="g g-Whitespace">    </span><span class="mi">353</span>     <span class="n">datadict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">filetext</span><span class="p">)</span> <span class="c1"># convert long string into dictionary</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/sts/Library/CloudStorage/Dropbox-Personal/eos/github/silica-supplement/silica-book/model-fits/fs_fit_liq_quadratic.txt&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: './model-fits/fs_fitTus_stv_quadratic.txt'
 </pre></div>
 </div>
 </div>
@@ -618,7 +606,7 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 
 <span class="c1"># offset 3769 m/s</span>
 <span class="c1"># n = 1.444</span>
-<span class="n">pdv2data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch2-wider.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">pdv2data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch2-wider.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv2data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="mf">.06</span>
@@ -637,7 +625,7 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 
 <span class="c1"># offset 4495 m/s</span>
 <span class="c1"># n = 1.444</span>
-<span class="n">pdv3data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch3-wider.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">max_rows</span><span class="o">=</span><span class="mi">66</span><span class="p">)</span>
+<span class="n">pdv3data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch3-wider.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">max_rows</span><span class="o">=</span><span class="mi">66</span><span class="p">)</span>
 <span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv3data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="mf">.045</span>
@@ -646,17 +634,17 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 <span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">*=</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># in m/s</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch3&#39;</span><span class="p">)</span>
-<span class="c1">#plt.plot(pdv3data[:,0],pdv3data[:,1]+40,&#39;-+&#39;,label=&#39;Ch3&#39;) # error is about 40 m/s</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch3'</span><span class="p">)</span>
+<span class="c1">#plt.plot(pdv3data[:,0],pdv3data[:,1]+40,'-+',label='Ch3') # error is about 40 m/s</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">7500</span><span class="p">,</span><span class="mi">9000</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch2 and Ch3; Using Ch2 so no wiggle at end&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Shock Velocity (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch2 and Ch3; Using Ch2 so no wiggle at end'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Shock Velocity (m/s)'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -664,7 +652,7 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Shock Velocity (m/s)&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'Shock Velocity (m/s)')
 </pre></div>
 </div>
 <img alt="_images/966a8aceef61be732af41e9ce27fe170b72ce83169d16d948f5fdf0c4b7db4ae.png" src="_images/966a8aceef61be732af41e9ce27fe170b72ce83169d16d948f5fdf0c4b7db4ae.png" />
@@ -672,12 +660,12 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.errorbar(pdv2data[:,0],pdv2data[:,1],yerr=pdv2data[:,2],fmt=&#39;r+&#39;,label=&#39;Ch2&#39;)</span>
-<span class="c1">#plt.errorbar(pdv3data[:,0],pdv3data[:,1],yerr=pdv3data[:,2],fmt=&#39;b+&#39;,label=&#39;Ch3&#39;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.errorbar(pdv2data[:,0],pdv2data[:,1],yerr=pdv2data[:,2],fmt='r+',label='Ch2')</span>
+<span class="c1">#plt.errorbar(pdv3data[:,0],pdv3data[:,1],yerr=pdv3data[:,2],fmt='b+',label='Ch3')</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">))</span>
-<span class="c1">#plt.plot(pdv2data[:,0],uss,&#39;k-&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">userr2</span><span class="p">,</span><span class="s1">&#39;m--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">userr1</span><span class="p">,</span><span class="s1">&#39;c--&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot(pdv2data[:,0],uss,'k-')</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">userr2</span><span class="p">,</span><span class="s1">'m--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">userr1</span><span class="p">,</span><span class="s1">'c--'</span><span class="p">)</span>
 <span class="c1">#plt.ylim(4000,10000)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">userr2</span><span class="o">-</span><span class="n">userr1</span><span class="p">)</span>
@@ -713,18 +701,18 @@ Using Sandia SMASH-SIHREN2 v2.0 May 2023 to convert to shock front velocities.<b
 <span class="c1">## 0.02-0.15 microsec</span>
 <span class="n">ind1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.02</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">.15</span><span class="p">)</span>  <span class="p">)</span> 
 <span class="c1">#ind1=np.where((pdv3data[:,0]&gt;0.0) &amp; (pdv3data[:,0]&lt;.15)  ) </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PDV3 Us, Us_std (m/s)=&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'PDV3 Us, Us_std (m/s)='</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">ind</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.02</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">.15</span><span class="p">)</span>  <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PDV2 Us, Us_std (m/s)=&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'PDV2 Us, Us_std (m/s)='</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PDV2+PDV3 Us, Us_std (m/s)=&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'PDV2+PDV3 Us, Us_std (m/s)='</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean err=&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]))</span>
-<span class="c1">#print(&#39;mean err=&#39;,np.mean(pdv3data[ind1,2]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'mean err='</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]))</span>
+<span class="c1">#print('mean err=',np.mean(pdv3data[ind1,2]))</span>
 
 <span class="n">Ussteady</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">Ussteady_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">pdv2data</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">pdv3data</span><span class="p">[</span><span class="n">ind1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
@@ -775,9 +763,9 @@ mean err= 16.63664036863414
 
 <span class="n">xpos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xpos2</span><span class="p">)</span><span class="o">/</span><span class="mf">1.e3</span> <span class="c1"># convert to mm</span>
 <span class="n">xpos3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xpos3</span><span class="p">)</span><span class="o">/</span><span class="mf">1.e3</span> <span class="c1"># convert to mm</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shock travel distance (PDV2,PDV3) in mm = &#39;</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">xpos2</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">xpos3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Shock travel distance (PDV2,PDV3) in mm = '</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">xpos2</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">xpos3</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Actual target thickness in center = 5.182+-0.0022 mm&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Actual target thickness in center = 5.182+-0.0022 mm'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -796,18 +784,18 @@ Actual target thickness in center = 5.182+-0.0022 mm
 <p>Using 10 ns moving average for temperature vs. time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calstreak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/shot60-temp-time-2.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calstreak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/shot60-temp-time-2.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
 <span class="n">calstreak</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">calstreak</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">dtstreak</span><span class="o">=-</span><span class="mf">0.07</span>
 <span class="n">calstreak</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">dtstreak</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">calstreak</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 Streak Temperature R=0&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 Streak Temperature R=0'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperature (K)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">6500</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -872,45 +860,31 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fitup2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">lastup2</span> <span class="o">=</span> <span class="n">fitup2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitpres2</span><span class="p">,</span><span class="s1">&#39;-+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitpres2</span><span class="p">,</span><span class="s1">'-+'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitup2</span><span class="p">,</span><span class="s1">&#39;-+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitup2</span><span class="p">,</span><span class="s1">'-+'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Particle velocity (km/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Particle velocity (km/s)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># convert Us to P using the liquid region fused silica fit</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># latest version in scripts/define_eos.py</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#fsresliq = [-0.01452743,  1.69390958,  1.15979627]</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>      <span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># orig</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">fitpres2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">us</span><span class="p">,</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">P</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">fitup2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">pdv2data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">us</span><span class="p">,</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">up</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># fix the very first point at time zero</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1">#ind0 = np.where(np.abs(pdv2data[:,0])&lt;1.e-10)[0]</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1">#print(ind0)</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">19</span> <span class="c1">#print(pdv2data[ind0+1,0]) #.01 microsec</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># zero out earlier time pressures</span>
-
-<span class="ne">NameError</span>: name &#39;fs_hug_liq&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.211424537057542
 </pre></div>
 </div>
+<img alt="_images/54acb86a19fca17fe2099e4bd87f19b18b873405b608eaf817c484dd497a4888.png" src="_images/54acb86a19fca17fe2099e4bd87f19b18b873405b608eaf817c484dd497a4888.png" />
+<img alt="_images/a947b09e6eb7078f0728ab58147530bc48808a6b776e11494fe3c55b65da4ad0.png" src="_images/a947b09e6eb7078f0728ab58147530bc48808a6b776e11494fe3c55b65da4ad0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -944,21 +918,21 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fitup3</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">lastup3</span> <span class="o">=</span> <span class="n">fitup3</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitpres3</span><span class="p">,</span><span class="s1">&#39;-+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitpres3</span><span class="p">,</span><span class="s1">'-+'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch3&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch3'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitup3</span><span class="p">,</span><span class="s1">&#39;-+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">fitup3</span><span class="p">,</span><span class="s1">'-+'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch3&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Particle velocity (km/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch3'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Particle velocity (km/s)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -967,8 +941,8 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
 </pre></div>
 </div>
-<img alt="_images/f4cd775b9124089b80a0ec2f80b3c69a29e69fea5502547c07c74d1798776697.png" src="_images/f4cd775b9124089b80a0ec2f80b3c69a29e69fea5502547c07c74d1798776697.png" />
-<img alt="_images/d37119c7b64620affd601772c1a5104850919150bb7a77174270d0b2f7234a94.png" src="_images/d37119c7b64620affd601772c1a5104850919150bb7a77174270d0b2f7234a94.png" />
+<img alt="_images/bbcb87f6c1069b58270d23f1cd5be5aeb20514c2142dd9643812c601ad01943f.png" src="_images/bbcb87f6c1069b58270d23f1cd5be5aeb20514c2142dd9643812c601ad01943f.png" />
+<img alt="_images/8723c82088fb2e6c863723e86591897d33c982336f4e91ac3717f8ae5748b06c.png" src="_images/8723c82088fb2e6c863723e86591897d33c982336f4e91ac3717f8ae5748b06c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1021,22 +995,22 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <span class="c1"># remove the time period where the temperature is still rising in the streak camera</span>
 <span class="n">ind60</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">s60time</span> <span class="o">&gt;</span> <span class="mf">0.02</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">s60time</span> <span class="o">&lt;=</span><span class="mf">0.6</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">,</span><span class="n">s60temp</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">,</span><span class="n">s60temp</span><span class="p">,</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6500</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">],[</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6500</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">.3</span><span class="p">,</span><span class="mf">.3</span><span class="p">],[</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6500</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 Fused Silica Decay: Streak Camera and PDV&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperature (K)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 Fused Silica Decay: Streak Camera and PDV'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 Fused Silica Decay: Streak Camera and PDV&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60time</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 Fused Silica Decay: Streak Camera and PDV'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -1057,15 +1031,15 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 
 <span class="n">isort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">])</span>
 <span class="c1">#print(isort)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6500</span><span class="p">)</span>
 <span class="c1">#plt.xlim(60,90)</span>
 <span class="c1">#plt.ylim(0,6500)</span>
 <span class="c1">#plt.xlim(0,90)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 Fused Silica Decay: Streak Camera and PDV&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperature (K)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 Fused Silica Decay: Streak Camera and PDV'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1075,14 +1049,14 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
 </pre></div>
 </div>
-<img alt="_images/93bef985d52a9be827a6980df7e3d58e48014a699b1176942bbebe3e672ba6dc.png" src="_images/93bef985d52a9be827a6980df7e3d58e48014a699b1176942bbebe3e672ba6dc.png" />
-<img alt="_images/07f6a50de6aa1297a60bace39c1ed350bfaef6ac4d33376c3845d8937d41fbea.png" src="_images/07f6a50de6aa1297a60bace39c1ed350bfaef6ac4d33376c3845d8937d41fbea.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.37549163492137 0.14386630934250794
+<img alt="_images/7fee4389054387468e9952fb5f2c927710c39a0268978a38327853a0cfe0e133.png" src="_images/7fee4389054387468e9952fb5f2c927710c39a0268978a38327853a0cfe0e133.png" />
+<img alt="_images/97b8b03728684e3b0313ce322ca7aa3e334ae9d9b28b2025e249a80516469fcb.png" src="_images/97b8b03728684e3b0313ce322ca7aa3e334ae9d9b28b2025e249a80516469fcb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.37609773291368 0.143866147346624
 5239.107596759999 61.87697604796183
-5239.107596759999 362.8754952119999 87.37549163492137 0.14386630934250794 8642.464574898786 16.63664036863414
+5239.107596759999 362.8754952119999 87.37609773291368 0.143866147346624 8642.464574898786 16.63664036863414
 </pre></div>
 </div>
-<img alt="_images/f54ff5f5b4b42b49fca020f98aedf4256716df3c824c0f399e905684aa18f0e0.png" src="_images/f54ff5f5b4b42b49fca020f98aedf4256716df3c824c0f399e905684aa18f0e0.png" />
+<img alt="_images/b94118827f1d27cac2c02e04133dc995fa6837c223fa0bc20edfc96eb1b988db.png" src="_images/b94118827f1d27cac2c02e04133dc995fa6837c223fa0bc20edfc96eb1b988db.png" />
 </div>
 </div>
 </section>
@@ -1090,31 +1064,31 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <h2>Plot with other fused silica data<a class="headerlink" href="#plot-with-other-fused-silica-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pressure (GPa)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 Fused Silica Decay: Streak Camera and PDV&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Shot 60&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperature (K)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 Fused Silica Decay: Streak Camera and PDV'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">'+'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'orange'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Shot 60'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60pres</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="c1">#plt.errorbar(shockdat_list[B88fs[&#39;id&#39;]].P,shockdat_list[B88fs[&#39;id&#39;]].T,fmt=&#39;bo&#39;,mfc=&#39;white&#39;,yerr=shockdat_list[B88fs[&#39;id&#39;]].T_std,label=B88fs[&#39;lab&#39;])</span>
-    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;bo&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span><span class="n">yerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T_std</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">&#39;lab&#39;</span><span class="p">])</span>
+    <span class="c1">#plt.errorbar(shockdat_list[B88fs['id']].P,shockdat_list[B88fs['id']].T,fmt='bo',mfc='white',yerr=shockdat_list[B88fs['id']].T_std,label=B88fs['lab'])</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'bo'</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">'lightblue'</span><span class="p">,</span><span class="n">yerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T_std</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">B88RRfs</span><span class="p">[</span><span class="s1">'lab'</span><span class="p">])</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;bv&#39;</span><span class="p">,</span><span class="n">xerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">P_std</span><span class="p">,</span><span class="n">yerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T_std</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">&#39;lab&#39;</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;bx&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">&#39;lab&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'bv'</span><span class="p">,</span><span class="n">xerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P_std</span><span class="p">,</span><span class="n">yerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T_std</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">S80fs</span><span class="p">[</span><span class="s1">'lab'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'bx'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">S81fs</span><span class="p">[</span><span class="s1">'lab'</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">120</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">2500</span><span class="p">,</span><span class="mi">8000</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stsmcsmooth</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">stsmcsmooth</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;m-&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Proposed melt curve&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stsmcsmooth</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">stsmcsmooth</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">'m-'</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Proposed melt curve'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;shot60/shot60-comp-data.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'shot60/shot60-comp-data.png'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/725836b6053ea31036518f78daf7a441564ba36088705944a5a27afb3f60148c.png" src="_images/725836b6053ea31036518f78daf7a441564ba36088705944a5a27afb3f60148c.png" />
+<img alt="_images/0fa3c91316293e3baf5b6a7c5c805565a24ae4693848f5a086359ae3ab0e7174.png" src="_images/0fa3c91316293e3baf5b6a7c5c805565a24ae4693848f5a086359ae3ab0e7174.png" />
 </div>
 </div>
 </section>
@@ -1122,40 +1096,49 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <h2>Compare to Omega Fused Silica decaying shock<a class="headerlink" href="#compare-to-omega-fused-silica-decaying-shock" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.plot(omegafsus,omegafsct*30,&#39;.&#39;,label=&#39;Omega counts scaled&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shockdat</span><span class="p">[</span><span class="n">iMDfs69691</span><span class="o">.</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">us</span><span class="p">,</span><span class="n">shockdat</span><span class="p">[</span><span class="n">iMDfs69691</span><span class="o">.</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Omega counts scaled&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.plot(omegafsus,omegafsct*30,'.',label='Omega counts scaled')</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shockdat</span><span class="p">[</span><span class="n">iMDfs69691</span><span class="o">.</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">us</span><span class="p">,</span><span class="n">shockdat</span><span class="p">[</span><span class="n">iMDfs69691</span><span class="o">.</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span><span class="s1">'.'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Omega counts scaled'</span><span class="p">)</span>
 
 <span class="c1"># set in define_eos.py</span>
 <span class="c1">#fs_usmin = 7.4</span>
 <span class="c1">#fs_usmax = 8.3</span>
-<span class="c1">#plt.plot([fs_usmin,fs_usmin],[0,20000],&#39;k-&#39;)</span>
+<span class="c1">#plt.plot([fs_usmin,fs_usmin],[0,20000],'k-')</span>
 <span class="c1">#plt.plot([7.75,7.75],[0,1000])</span>
-<span class="c1">#plt.plot([fs_usmax,fs_usmax],[0,20000],&#39;k-&#39;)</span>
+<span class="c1">#plt.plot([fs_usmax,fs_usmax],[0,20000],'k-')</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">5.7</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60us</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Shot 60 T(K)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60us</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s60us</span><span class="p">[</span><span class="n">ind60</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">],</span><span class="s1">'+'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'orange'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Shot 60 T(K)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">s60us</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">/</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">-</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span><span class="n">s60temp</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]]</span><span class="o">+</span><span class="n">s60temperr</span><span class="p">[</span><span class="n">ind60</span><span class="p">[</span><span class="n">isort</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 
 <span class="c1">#i60 = np.where(s60temp&gt;0)[0]</span>
-<span class="c1">#plt.plot(s60us[i60]/1.e3,s60temp[i60],label=&#39;Shot 60&#39;)</span>
-<span class="c1">#plt.fill_between(s60us[i60]/1.e3,s60temp[i60]-s60temperr[i60],s60temp[i60]+s60temperr[i60], color=&#39;blue&#39;, alpha = 0.1)</span>
+<span class="c1">#plt.plot(s60us[i60]/1.e3,s60temp[i60],label='Shot 60')</span>
+<span class="c1">#plt.fill_between(s60us[i60]/1.e3,s60temp[i60]-s60temperr[i60],s60temp[i60]+s60temperr[i60], color='blue', alpha = 0.1)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Shock Velocity (km/s)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Omega SOP counts [arb] and Shot 60 T (K)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fused Silica Thermal Emission Inversion&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Shock Velocity (km/s)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Omega SOP counts [arb] and Shot 60 T (K)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Fused Silica Thermal Emission Inversion'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;shot60/omega-shot60.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'shot60/omega-shot60.png'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="c1">#fs_wiggle_P1 = np.interp(fs_usmax,fs_hug_liq.us,fs_hug_liq.P)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Transition pressures: &#39;</span><span class="p">,</span><span class="n">fs_wiggle_P1</span><span class="p">,</span> <span class="n">fs_wiggle_P2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Transition pressures: '</span><span class="p">,</span><span class="n">fs_wiggle_P1</span><span class="p">,</span> <span class="n">fs_wiggle_P2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8966b8578827af49c3c0a35ec078e9cab27979fb34b117b4d90cbac725db3d05.png" src="_images/8966b8578827af49c3c0a35ec078e9cab27979fb34b117b4d90cbac725db3d05.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transition pressures:  65.75888432048565 73.53633751077847
+<img alt="_images/52b58aaa501f72923b3c9bc8ca310c9b16b76876dd688f40be4c8de3ade29f0f.png" src="_images/52b58aaa501f72923b3c9bc8ca310c9b16b76876dd688f40be4c8de3ade29f0f.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">28</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'shot60/omega-shot60.png'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="c1">#fs_wiggle_P1 = np.interp(fs_usmax,fs_hug_liq.us,fs_hug_liq.P)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> 
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Transition pressures: '</span><span class="p">,</span><span class="n">fs_wiggle_P1</span><span class="p">,</span> <span class="n">fs_wiggle_P2</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name 'fs_wiggle_P1' is not defined
 </pre></div>
 </div>
 </div>
@@ -1168,42 +1151,42 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># offset 3769 m/s</span>
 <span class="c1"># n = 1.444</span>
-<span class="n">pdv2datab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch2-breakout-lower.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">pdv2datab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch2-breakout-lower.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv2datab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="mi">3769</span>
 
-<span class="n">pdv2datac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch2-breakout-upper.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">pdv2datac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch2-breakout-upper.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv2datac</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="mi">3769</span>
 
 <span class="c1"># offset 4495 m/s</span>
 <span class="c1"># n = 1.444</span>
-<span class="n">pdv3datab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch3-breakout-lower.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">pdv3datab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch3-breakout-lower.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv3datab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="mi">4495</span>
 
-<span class="n">pdv3datac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;shot60/Shot60-PDV-ch3-breakout-upper.txt&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">pdv3datac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot60/Shot60-PDV-ch3-breakout-upper.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv3datac</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
 <span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="mi">4495</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch2 lower&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch2 upper&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch3 lower&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;-+&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ch3 upper&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch2 lower'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv2datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch2 upper'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3datab</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch3 lower'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pdv3datac</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">'-+'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Ch3 upper'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">],[</span><span class="n">lastup2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">lastup2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.e3</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;2*up&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">],[</span><span class="n">lastup2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.e3</span><span class="p">,</span><span class="n">lastup2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.e3</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">'2*up'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">1.3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">)</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shot 60 PDV Ch2 and Ch3 breakout: 2 vels; steep release&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time after breakout (microsec)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Particle Velocity (m/s)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;shot60/shot60-release-vel.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Shot 60 PDV Ch2 and Ch3 breakout: 2 vels; steep release'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Time after breakout (microsec)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Particle Velocity (m/s)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'shot60/shot60-release-vel.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1229,15 +1212,15 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
 <span class="c1"># obj0, obj1, obj2 are created here...</span>
 <span class="n">isort60</span><span class="o">=</span><span class="n">isort</span>
 <span class="c1"># Saving the objects:</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;shot60/shot60-analysis.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># Python 3: open(..., &#39;wb&#39;)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'shot60/shot60-analysis.pkl'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># Python 3: open(..., 'wb')</span>
     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">s60time</span><span class="p">,</span> <span class="n">s60temp</span><span class="p">,</span> <span class="n">s60temperr</span><span class="p">,</span> <span class="n">s60pres</span><span class="p">,</span> <span class="n">s60us</span><span class="p">,</span> <span class="n">s60us_err</span><span class="p">,</span> <span class="n">s60up</span><span class="p">,</span> <span class="n">ind60</span><span class="p">,</span> <span class="n">isort60</span><span class="p">,</span> <span class="n">s60Tsteady</span><span class="p">,</span><span class="n">s60Tsteady_err</span><span class="p">,</span><span class="n">s60Psteady</span><span class="p">,</span><span class="n">s60Psteady_err</span><span class="p">,</span><span class="n">s60Ussteady</span><span class="p">,</span><span class="n">s60Ussteady_err</span><span class="p">],</span> <span class="n">f</span><span class="p">)</span>
 
 <span class="c1">#print(s60time)</span>
-<span class="c1">#    with open(&#39;shot60/objs-tra.pkl&#39;, &#39;rb&#39;) as f:  # Python 3: open(..., &#39;wb&#39;)</span>
+<span class="c1">#    with open('shot60/objs-tra.pkl', 'rb') as f:  # Python 3: open(..., 'wb')</span>
 <span class="c1">#    s60time, s60temp, s60temperr, s60pres, s60us, s60us_err, s60up, ind60, isort60,s60Tsteady,s60Tsteady_err,s60Psteady,s60Psteady_err,s60Ussteady,s60Ussteady_err=pickle.load(f)</span>
 
 <span class="c1"># Getting back the objects:</span>
-<span class="c1">#with open(&#39;objs.pkl&#39;) as f:  # Python 3: open(..., &#39;rb&#39;)</span>
+<span class="c1">#with open('objs.pkl') as f:  # Python 3: open(..., 'rb')</span>
 <span class="c1">#    obj0, obj1, obj2 = pickle.load(f)</span>
 </pre></div>
 </div>
@@ -1318,7 +1301,7 @@ Shock vel mean, std (km/s) =  8.64246 0.0012633333333333333<br></p>
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-configuration">Target Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mavis-impact-velocity-system">MAVIS Impact Velocity system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-impedance-match">Initial Impedance Match</a></li>
@@ -1379,8 +1362,8 @@ By Amodeo et al.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,88 +9,64 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/base_events.py", line 726, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# convert Us to P using the liquid region fused silica fit
-# latest version in scripts/define_eos.py
-#fsresliq = [-0.01452743,  1.69390958,  1.15979627]
-#fs_hug_liq.us = fsresliq[2]+fsresliq[1]*fs_hug_liq.up+fsresliq[0]*fs_hug_liq.up*fs_hug_liq.up # km/s
-#fs_hug_liq.P = fs_hug_liq.rho_ref*fs_hug_liq.up*fs_hug_liq.us
+#plt.plot(omegafsus,omegafsct*30,'.',label='Omega counts scaled')
+plt.plot(shockdat[iMDfs69691.i].us,shockdat[iMDfs69691.i].T*20,'.',label='Omega counts scaled')
 
-#fitpres2 = np.interp(pdv2data[:,1]/1.e3,fs_hug_tra.us,fs_hug_tra.P)
-#fitup2 = np.interp(pdv2data[:,1]/1.e3,fs_hug_tra.us,fs_hug_tra.up)
+# set in define_eos.py
+#fs_usmin = 7.4
+#fs_usmax = 8.3
+#plt.plot([fs_usmin,fs_usmin],[0,20000],'k-')
+#plt.plot([7.75,7.75],[0,1000])
+#plt.plot([fs_usmax,fs_usmax],[0,20000],'k-')
+plt.ylim(0,15000)
+plt.xlim(5.7,10)
 
-# orig
-fitpres2 = np.interp(pdv2data[:,1]/1.e3,fs_hug_liq.us,fs_hug_liq.P)
-fitup2 = np.interp(pdv2data[:,1]/1.e3,fs_hug_liq.us,fs_hug_liq.up)
+plt.plot(s60us[ind60]/1.e3,s60temp[ind60],'+',color='orange',label='Shot 60 T(K)')
+plt.fill_between(s60us[ind60[isort]]/1.e3,s60temp[ind60[isort]]-s60temperr[ind60[isort]],s60temp[ind60[isort]]+s60temperr[ind60[isort]], color='blue', alpha = 0.1)
 
-# fix the very first point at time zero
-#ind0 = np.where(np.abs(pdv2data[:,0])<1.e-10)[0]
-#print(ind0)
-#pdv2data[ind0,0]=0.0
-#fitpres2[ind0]=fitpres2[ind0+1]
-#print(pdv2data[ind0+1,0]) #.01 microsec
-# zero out earlier time pressures
-ind = np.where(pdv2data[:,0]<0)[0]
-fitpres2[ind]=0
-fitup2[ind]=0
+#i60 = np.where(s60temp>0)[0]
+#plt.plot(s60us[i60]/1.e3,s60temp[i60],label='Shot 60')
+#plt.fill_between(s60us[i60]/1.e3,s60temp[i60]-s60temperr[i60],s60temp[i60]+s60temperr[i60], color='blue', alpha = 0.1)
 
-#print(fitup2)
-# print last particle velocity before breakout
-print(fitup2[-1])
-lastup2 = fitup2[-1]
-
-plt.plot(pdv2data[:,0],fitpres2,'-+')
-plt.plot([0.,0.],[0,100])
-plt.plot([0.6,0.6],[0,100])
-plt.title('Shot 60 PDV Ch2')
-plt.xlabel('Time (microsec)')
-plt.ylabel('Pressure (GPa)')
+plt.xlabel('Shock Velocity (km/s)')
+plt.ylabel('Omega SOP counts [arb] and Shot 60 T (K)')
+plt.title('Fused Silica Thermal Emission Inversion')
+plt.legend()
+plt.savefig('shot60/omega-shot60.png')
 plt.show()
+#fs_wiggle_P1 = np.interp(fs_usmax,fs_hug_liq.us,fs_hug_liq.P)
 
-
-plt.plot(pdv2data[:,0],fitup2,'-+')
-plt.plot([0.,0.],[0,6])
-plt.plot([0.6,0.6],[0,6])
-plt.title('Shot 60 PDV Ch2')
-plt.xlabel('Time (microsec)')
-plt.ylabel('Particle velocity (km/s)')
-plt.show()
+print('Transition pressures: ',fs_wiggle_P1, fs_wiggle_P2)
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 11[39m
-[32m      1[39m [38;5;66;03m# convert Us to P using the liquid region fused silica fit[39;00m
-[32m      2[39m [38;5;66;03m# latest version in scripts/define_eos.py[39;00m
-[32m      3[39m [38;5;66;03m#fsresliq = [-0.01452743,  1.69390958,  1.15979627][39;00m
-[32m   (...)[39m[32m      9[39m 
-[32m     10[39m [38;5;66;03m# orig[39;00m
-[32m---> [39m[32m11[39m fitpres2 = np.interp(pdv2data[:,[32m1[39m]/[32m1.e3[39m,[43mfs_hug_liq[49m.us,fs_hug_liq.P)
-[32m     12[39m fitup2 = np.interp(pdv2data[:,[32m1[39m]/[32m1.e3[39m,fs_hug_liq.us,fs_hug_liq.up)
-[32m     14[39m [38;5;66;03m# fix the very first point at time zero[39;00m
-[32m     15[39m [38;5;66;03m#ind0 = np.where(np.abs(pdv2data[:,0])<1.e-10)[0][39;00m
-[32m     16[39m [38;5;66;03m#print(ind0)[39;00m
-[32m   (...)[39m[32m     19[39m [38;5;66;03m#print(pdv2data[ind0+1,0]) #.01 microsec[39;00m
-[32m     20[39m [38;5;66;03m# zero out earlier time pressures[39;00m
+[36mCell[39m[36m [39m[32mIn[11][39m[32m, line 28[39m
+[32m     24[39m plt.savefig([33m'shot60/omega-shot60.png'[39m)
+[32m     25[39m plt.show()
+[32m     26[39m [38;5;66;03m#fs_wiggle_P1 = np.interp(fs_usmax,fs_hug_liq.us,fs_hug_liq.P)[39;00m
+[32m     27[39m 
+[32m---> [39m[32m28[39m print([33m'Transition pressures: '[39m,fs_wiggle_P1, fs_wiggle_P2)
 
-[31mNameError[39m: name 'fs_hug_liq' is not defined
+[31mNameError[39m: name 'fs_wiggle_P1' is not defined
 

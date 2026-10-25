@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,22 +9,22 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/base_events.py", line 726, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -140,13 +140,30 @@ plt.legend()
 plt.show()
 ------------------
 
+----- stdout -----
+FIT EOS a =  [7.13305443 1.30849515]
+FIT EOS cov =  [[ 1.30432917 -0.09247761]
+ [-0.09247761  0.00676059]]
+------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m fitx = [43mshockdat[49m[iM15stvhug.i].up
-[32m      2[39m fitf= shockdat[iM15stvhug.i].us
-[32m      3[39m fitx_std = shockdat[iM15stvhug.i].up_std
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 89[39m
+[32m     85[39m     stv_fit_liqalt.filename = [33m'stv_fit_liq_linear_up18'[39m
+[32m     86[39m     stv_fit_liqalt.fit()
+[32m     87[39m     print([33m'FIT EOS a = '[39m,stv_fit_liqalt.a)
+[32m     88[39m     print([33m'FIT EOS cov = '[39m,stv_fit_liqalt.cov)
+[32m---> [39m[32m89[39m     stv_fit_liqalt.savejson()
+[32m     90[39m     stv_fit_liqalt.savereadable()
+[32m     91[39m     print([33m'rms = '[39m,stv_fit_liqalt.rms)
+[32m     92[39m 
 
-[31mNameError[39m: name 'shockdat' is not defined
+[36mFile [39m[32m~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:322[39m, in [36mHPeos_Fit.savejson[39m[34m(self)[39m
+[32m    320[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34msavejson[39m([38;5;28mself[39m):
+[32m    321[39m     [38;5;66;03m# write json file that can be read back into the dataclass[39;00m
+[32m--> [39m[32m322[39m     [38;5;28;01mwith[39;00m [30;43mopen[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43moutputfitpath[39;49m[30;43m+[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mfilename[39;49m[30;43m+[39;49m[30;43m'[39;49m[30;43m.txt[39;49m[30;43m'[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m'[39;49m[30;43mw[39;49m[30;43m'[39;49m[30;43m)[39;49m [38;5;28;01mas[39;00m f:
+[32m    323[39m         temp = json.dumps([38;5;28mdict[39m([38;5;28mself[39m),[38;5;28mcls[39m=NumpyEncoder)
+[32m    324[39m         f.write(temp) [38;5;66;03m# writes as one long string[39;00m
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'output-fits/stv_fit_liq_linear_up18.txt'
 

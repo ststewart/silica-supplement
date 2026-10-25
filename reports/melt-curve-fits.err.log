@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,22 +9,22 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/base_events.py", line 726, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -96,13 +96,31 @@ x,y=intersection(gm24mc.P,gm24mc.T,P_var,T_var)
 print('No intersection: ',x,y)
 ------------------
 
+----- stdout -----
+FIT EOS a =  [-6.36271653e+03  3.34234543e+03  2.41679458e-01]
+FIT EOS cov =  [[ 2.33434555e+06 -1.10998015e+06  2.87368374e+01]
+ [-1.10998015e+06  5.29325109e+05 -1.37257325e+01]
+ [ 2.87368374e+01 -1.37257325e+01  3.56260772e-04]]
+------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m plt.errorbar([43meosdat_list[49m[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[[32m5[39m:[32m8[39m],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[[32m5[39m:[32m8[39m],fmt=[33m'[39m[33ms--[39m[33m'[39m,mfc=[33m'[39m[33mwhite[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[[32m5[39m:[32m8[39m],label=G16mcb[[33m'[39m[33mlab[39m[33m'[39m]) [38;5;66;03m# cotunnite structure[39;00m
-[32m      2[39m plt.errorbar(eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[[32m8[39m:[32m11[39m],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[[32m8[39m:[32m11[39m],fmt=[33m'[39m[33mo--[39m[33m'[39m,mfc=[33m'[39m[33mwhite[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[[32m8[39m:[32m11[39m],label=G16mcc[[33m'[39m[33mlab[39m[33m'[39m]) [38;5;66;03m# Fe2P structure[39;00m
-[32m      4[39m plt.errorbar(eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].P[::],eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T[::],fmt=[33m'[39m[33mkx[39m[33m'[39m,yerr=eosdat_list[G16mc[[33m'[39m[33mid[39m[33m'[39m]].T_std[::],label=G16mcb[[33m'[39m[33mlab[39m[33m'[39m]+[33m'[39m[33mall pts[39m[33m'[39m)
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 41[39m
+[32m     37[39m sio2_mc_G16.a0 = np.asarray([[32m2000[39m,[32m300[39m,[32m.2[39m])
+[32m     38[39m sio2_mc_G16.fit()
+[32m     39[39m print([33m'FIT EOS a = '[39m,sio2_mc_G16.a)
+[32m     40[39m print([33m'FIT EOS cov = '[39m,sio2_mc_G16.cov)
+[32m---> [39m[32m41[39m sio2_mc_G16.savejson()
+[32m     42[39m sio2_mc_G16.savereadable()
+[32m     43[39m print([33m'rms = '[39m,sio2_mc_G16.rms)
+[32m     44[39m [38;5;66;03m#plt.errorbar(fitx,fitf,xerr=fitx_std,yerr=fitf_std,fmt='x',label='fitted points')[39;00m
 
-[31mNameError[39m: name 'eosdat_list' is not defined
+[36mFile [39m[32m~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:322[39m, in [36mHPeos_Fit.savejson[39m[34m(self)[39m
+[32m    320[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34msavejson[39m([38;5;28mself[39m):
+[32m    321[39m     [38;5;66;03m# write json file that can be read back into the dataclass[39;00m
+[32m--> [39m[32m322[39m     [38;5;28;01mwith[39;00m [30;43mopen[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43moutputfitpath[39;49m[30;43m+[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mfilename[39;49m[30;43m+[39;49m[30;43m'[39;49m[30;43m.txt[39;49m[30;43m'[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m'[39;49m[30;43mw[39;49m[30;43m'[39;49m[30;43m)[39;49m [38;5;28;01mas[39;00m f:
+[32m    323[39m         temp = json.dumps([38;5;28mdict[39m([38;5;28mself[39m),[38;5;28mcls[39m=NumpyEncoder)
+[32m    324[39m         f.write(temp) [38;5;66;03m# writes as one long string[39;00m
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'output-fits/SiO2_fitG16_simons.txt'
 

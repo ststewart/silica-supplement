@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,52 +9,67 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/base_events.py", line 726, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 
-plt.plot(eosdat_list[G24mclrho['id']].rho_liquid,eosdat_list[G24mclrho['id']].P_liquid,'x--',color='red',label=G24mclrho['lab']+'\n(2phase, Fig. 2A)')
+# find where P-T crosses
+fs_PT_cross = intersection(gm24mc.P,gm24mc.T,fs_hug_liq.P,fs_hug_liq.T)
+qtz_PT_cross = intersection(gm24mc.P,gm24mc.T,qtz_hug_liq.P,qtz_hug_liq.T)
+cst_PT_cross = intersection(gm24mc.P,gm24mc.T,cst_hug_liq.P,cst_hug_liq.T)
 
-plt.plot(eosdat_list[P25mcpbe['id']].rho_l,eosdat_list[P25mcpbe['id']].P,'x--',color='b',label=P25mcpbe['lab'])
-plt.plot(eosdat_list[P25mcscan['id']].rho_l,eosdat_list[P25mcscan['id']].P,'+--',color='g',label=P25mcscan['lab'])
+fs_rho_cross = np.interp(fs_PT_cross[0],fs_hug_liq.P,fs_hug_liq.rho)
+qtz_rho_cross = np.interp(qtz_PT_cross[0],qtz_hug_liq.P,qtz_hug_liq.rho)
+cst_rho_cross = np.interp(cst_PT_cross[0],cst_hug_liq.P,cst_hug_liq.rho)
 
-plt.xlabel('Density (g/cm³)')
-plt.ylabel('Pressure (GPa)')
+# Fig 2 Geng et al. 2024 model densities
+fs_rho_model = np.interp(fs_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
+qtz_rho_model = np.interp(qtz_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
+cst_rho_model = np.interp(cst_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
 
-res = np.polyfit(eosdat_list[G24mclrho['id']].rho_liquid,eosdat_list[G24mclrho['id']].P_liquid,2)
+fs_rho_model = np.interp(fs_PT_cross[0],ypres,xrho)
+qtz_rho_model = np.interp(qtz_PT_cross[0],ypres,xrho)
+cst_rho_model = np.interp(cst_PT_cross[0],ypres,xrho)
 
-xrho = np.arange(3.5,6.75,.01)
-ypres = res[2]+res[1]*xrho+res[0]*xrho*xrho
-plt.plot(xrho,ypres,'k--',label='Quadratic fit')
-plt.title('PBE liquid density on the melt curve')
-plt.legend()
-plt.show()
 
+print(fs_rho_cross-fs_rho_model)
+print(qtz_rho_cross-qtz_rho_model)
+print(cst_rho_cross-cst_rho_model)
+
+diff_arr = np.asarray([fs_rho_cross-fs_rho_model,qtz_rho_cross-qtz_rho_model,cst_rho_cross-cst_rho_model])
+diff_mean = np.mean(diff_arr)
+diff_std = np.std(diff_arr)
+print(diff_mean,diff_std)
+G24_rshift = diff_mean
+G24_rshift_std = diff_std
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m plt.plot([43meosdat_list[49m[G24mclrho[[33m'[39m[33mid[39m[33m'[39m]].rho_liquid,eosdat_list[G24mclrho[[33m'[39m[33mid[39m[33m'[39m]].P_liquid,[33m'[39m[33mx--[39m[33m'[39m,color=[33m'[39m[33mred[39m[33m'[39m,label=G24mclrho[[33m'[39m[33mlab[39m[33m'[39m]+[33m'[39m[38;5;130;01m\n[39;00m[33m(2phase, Fig. 2A)[39m[33m'[39m)
-[32m      3[39m plt.plot(eosdat_list[P25mcpbe[[33m'[39m[33mid[39m[33m'[39m]].rho_l,eosdat_list[P25mcpbe[[33m'[39m[33mid[39m[33m'[39m]].P,[33m'[39m[33mx--[39m[33m'[39m,color=[33m'[39m[33mb[39m[33m'[39m,label=P25mcpbe[[33m'[39m[33mlab[39m[33m'[39m])
-[32m      4[39m plt.plot(eosdat_list[P25mcscan[[33m'[39m[33mid[39m[33m'[39m]].rho_l,eosdat_list[P25mcscan[[33m'[39m[33mid[39m[33m'[39m]].P,[33m'[39m[33m+--[39m[33m'[39m,color=[33m'[39m[33mg[39m[33m'[39m,label=P25mcscan[[33m'[39m[33mlab[39m[33m'[39m])
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 3[39m
+[32m      1[39m [38;5;66;03m# find where P-T crosses[39;00m
+[32m      2[39m fs_PT_cross = intersection(gm24mc.P,gm24mc.T,fs_hug_liq.P,fs_hug_liq.T)
+[32m----> [39m[32m3[39m qtz_PT_cross = intersection(gm24mc.P,gm24mc.T,qtz_hug_liq.P,qtz_hug_liq.T)
+[32m      4[39m cst_PT_cross = intersection(gm24mc.P,gm24mc.T,cst_hug_liq.P,cst_hug_liq.T)
+[32m      5[39m 
+[32m      6[39m fs_rho_cross = np.interp(fs_PT_cross[[32m0[39m],fs_hug_liq.P,fs_hug_liq.rho)
 
-[31mNameError[39m: name 'eosdat_list' is not defined
+[31mNameError[39m: name 'qtz_hug_liq' is not defined
 
