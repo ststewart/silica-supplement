@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 330, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -35,22 +22,139 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-        "Cell execution timed out", timeout, cell
-    )
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['%%capture ', '## This cell loads the modules, data, and EOS parameters', '## capture magic function hides the output; comment out to see diagnostic info during data load', '## Run executable notebook for output', '']
-...
-['%run -i scripts/set_plotstyle.py # customize matplotlib', '%run -i scripts/set_colors.py # custom colors', '', "# this notebook's figure name tag", "tag = 'LEOS-'"]
--------------------
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+plt.figure(figsize=(8, 6))
+plt.rcParams.update({'font.size': 14})
+
+# plot Karki DFT Isentropes
+ind = np.where(karkipvt.rhoarr < 6)[0]
+iii = np.where(karkipvt.stempsarr == 3500)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st3500[ind],':',label='Liquid S='+str(np.int_(np.round(karkipvt.svalsarr[iii])))+' J/K/kg')
+
+
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st3500[ind],kdome.rho_l,kdome.T)
+print(x,y)
+plt.plot(x,y,'ko')
+K12sint = np.interp(y[0],np.flip(kdome.T),np.flip(kdome.ent_l))
+print(K12sint,karkipvt.svalsarr[iii],K12sint-karkipvt.svalsarr[iii][0])
+
+
+
+iii = np.where(karkipvt.stempsarr == 4500)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st4500[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st4500[ind],C16bsrho,C16bstemp)
+print(x,y)
+plt.plot(x,y,'co')
+C16sint = np.interp(y[0],C16hight,C16highs)
+print('C16 cyan',C16sint,karkipvt.svalsarr[iii],C16sint-karkipvt.svalsarr[iii][0])
+
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st4500[ind],kdome.rho_l,kdome.T)
+print(x,y)
+plt.plot(x,y,'ko')
+K12sint = np.interp(y[0],np.flip(kdome.T),np.flip(kdome.ent_l))
+print(K12sint,karkipvt.svalsarr[iii],K12sint-karkipvt.svalsarr[iii][0])
+
+
+iii = np.where(karkipvt.stempsarr == 5000)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st5000[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+iii = np.where(karkipvt.stempsarr == 5500)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st5500[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+iii = np.where(karkipvt.stempsarr == 6000)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st6000[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+
+
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st6000[ind],C16bsrho,C16bstemp)
+print(x,y)
+plt.plot(x,y,'co')
+C16sint = np.interp(y[0],C16hight,C16highs)
+print('C16 cyan',C16sint,karkipvt.svalsarr[iii],C16sint-karkipvt.svalsarr[iii][0])
+
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st6000[ind],kdome.rho_l,kdome.T)
+print(x,y)
+plt.plot(x,y,'ko')
+K12sint = np.interp(y[0],np.flip(kdome.T),np.flip(kdome.ent_l))
+print(K12sint,karkipvt.svalsarr[iii],K12sint-karkipvt.svalsarr[iii][0])
+
+
+iii = np.where(karkipvt.stempsarr == 7000)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st7000[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st7000[ind],C16bsrho,C16bstemp)
+#print(x,y)
+C16sint = np.interp(y[0],C16hight,C16highs)
+#print(C16sint,karkipvt.svalsarr[iii])
+
+iii = np.where(karkipvt.stempsarr == 8000)[0]
+plt.plot(karkipvt.rhoarr[ind],karkipvt.st8000[ind],':',label='S='+str(np.int_(np.round(karkipvt.svalsarr[iii]))))
+x,y=intersection(karkipvt.rhoarr[ind],karkipvt.st8000[ind],C16bsrho,C16bstemp)
+#print(x,y)
+C16sint = np.interp(y[0],C16hight,C16highs)
+#print(C16sint,karkipvt.svalsarr[iii])
+
+# new reference point
+plt.plot(karkipvt.refpt[0],karkipvt.refpt[2],'D',label='Liquid reference pt.')
+
+# PLOT TIE ISENTROPE
+sval=3560
+karkipvt.isenval_liquid(sval)
+plt.plot(karkipvt.rhoarr,karkipvt.isenval_t,'k-',label='S=3560 TIE')
+
+plt.plot(C16bsrho,C16bstemp,'k-',label='C16 HSC-vWRK')
+plt.plot(C16bdrho,C16bdtemp,'k--',label='C16 HSC-CSRK')
+plt.plot(C16rsrho,C16rstemp,'r-',label='C16 SiO(l)-vWRK')
+
+plt.plot(kdome.rho_l,kdome.T,'-',color='grey',label='K12 MANEOS vapor curve')
+plt.plot(kdome.rho_v,kdome.T,'-',color='grey')
+
+# critical points
+plt.plot(1.036,6074,'ko')
+plt.plot(.555,5548,'ko')
+plt.plot(.782,5675,'ro')
+
+# check the function
+#karkipvt.isenval_liquid(3560)
+#plt.plot(karkipvt.rhoarr,karkipvt.isenval_t,'--')
+#karkipvt.isenval_liquid(4352)
+#plt.plot(karkipvt.rhoarr,karkipvt.isenval_t,'--')
+
+plt.xlabel(r'Density (g/cm$^3$)')
+plt.ylabel('Temperature (K)')
+plt.title('Silica liquid entropy tie point')
+
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=10)
+plt.show()
+------------------
+
+----- stdout -----
+[2.1245689] [2618.10367482]
+3257.5949476539645 [3510.52810086] -252.9331532094966
+[2.05428127] [3351.71595978]
+C16 cyan 3658.3418012770985 [3980.] -321.6581987229015
+[1.89724896] [3322.14581629]
+3620.072908144253 [3980.] -359.9270918557472
+[1.86667777] [4422.39929466]
+C16 cyan 4020.5732242501676 [4517.40905298] -496.835828725139
+[1.43627116] [4339.54807135]
+4162.124323523275 [4517.40905298] -355.28472945203157
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[12][39m[32m, line 78[39m
+[32m     74[39m karkipvt.isenval_liquid(sval)
+[32m     75[39m plt.plot(karkipvt.rhoarr,karkipvt.isenval_t,[33m'k-'[39m,label=[33m'S=3560 TIE'[39m)
+[32m     76[39m 
+[32m     77[39m plt.plot(C16bsrho,C16bstemp,[33m'k-'[39m,label=[33m'C16 HSC-vWRK'[39m)
+[32m---> [39m[32m78[39m plt.plot(C16bdrho,C16bdtemp,[33m'k--'[39m,label=[33m'C16 HSC-CSRK'[39m)
+[32m     79[39m plt.plot(C16rsrho,C16rstemp,[33m'r-'[39m,label=[33m'C16 SiO(l)-vWRK'[39m)
+[32m     80[39m 
+[32m     81[39m plt.plot(kdome.rho_l,kdome.T,[33m'-'[39m,color=[33m'grey'[39m,label=[33m'K12 MANEOS vapor curve'[39m)
+
+[31mNameError[39m: name 'C16bdrho' is not defined
 

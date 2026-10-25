@@ -531,52 +531,6 @@ Updated May 13, 2025<br></p>
 <span class="ne">NameError</span>: name 'qtz_hug_liq' is not defined
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
-<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
-
-<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1611,</span> in <span class="ni">interp</span><span class="nt">(x, xp, fp, left, right, period)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1507</span><span class="w"> </span><span class="sd">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1508</span><span class="sd"> One-dimensional linear interpolation for monotonically increasing sample points.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span><span class="sd"> </span>
-<span class="sd">   (...)   1606 </span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span><span class="sd"> """</span>
-<span class="g g-Whitespace">   </span><span class="mi">1609</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1611</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iscomplexobj</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1612</span>     <span class="n">interp_func</span> <span class="o">=</span> <span class="n">compiled_interp_complex</span>
-<span class="g g-Whitespace">   </span><span class="mi">1613</span>     <span class="n">input_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex128</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_type_check_impl.py:270,</span> in <span class="ni">iscomplexobj</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span><span class="w">     </span><span class="sd">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span><span class="sd">     Returns a bool array, where True if input element is real.</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span><span class="sd"> </span>
-<span class="sd">   (...)    265 </span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="sd">     """</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="k">return</span> <span class="n">imag</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="ne">--&gt; </span><span class="mi">270</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_is_type_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">def</span><span class="w"> </span><span class="nf">iscomplexobj</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="w">     </span><span class="sd">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="sd">     Check for a complex type or an array of complex numbers.</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span><span class="sd"> </span>
-<span class="sd">   (...)    302 </span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="sd">     """</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">try</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -676,18 +630,11 @@ PDV fibers and pyro fiber is touching free surface.<p></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load SIHREN2 results - not corrected for offset or index</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">Ch1_offset</span> <span class="o">=</span> <span class="mi">2609</span> <span class="c1"># m/s</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">pdv1data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'shot50/Shot50-PDV-ch1.txt'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pdv1data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-=</span><span class="n">pdv1data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">pdv1data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*=</span><span class="mf">1.e6</span>
-
-<span class="ne">NameError</span>: name 'np' is not defined
+<img alt="_images/590f715962dddfc83d04652cd8fb669edc76d8357e19e481122673472a774d32.png" src="_images/590f715962dddfc83d04652cd8fb669edc76d8357e19e481122673472a774d32.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'Shock Velocity (m/s)')
 </pre></div>
 </div>
+<img alt="_images/c35bc3c8c43cdf2f101a1683e49cd1465f665bdca6bb0a0ff486022851131d37.png" src="_images/c35bc3c8c43cdf2f101a1683e49cd1465f665bdca6bb0a0ff486022851131d37.png" />
 </div>
 </div>
 </section>
@@ -734,7 +681,7 @@ PDV fibers and pyro fiber is touching free surface.<p></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a16f4703fba3d23a15ead1d22174904ef4ddf55a17fc392e5b60f3a9f750c30a.png" src="_images/a16f4703fba3d23a15ead1d22174904ef4ddf55a17fc392e5b60f3a9f750c30a.png" />
+<img alt="_images/de86c823a544209c06335884da29788bd34b426d82f5ba0777b0955fef4c848d.png" src="_images/de86c823a544209c06335884da29788bd34b426d82f5ba0777b0955fef4c848d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -763,7 +710,7 @@ PDV fibers and pyro fiber is touching free surface.<p></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b8aa9d90a93da3177c8ca3f60c89692ba761a1c37da4babeb0604b5f92fc2063.png" src="_images/b8aa9d90a93da3177c8ca3f60c89692ba761a1c37da4babeb0604b5f92fc2063.png" />
+<img alt="_images/87554106eaf5dc37f9272f9e72451f027d478f1dbe9345de6b177d8c0632ebe1.png" src="_images/87554106eaf5dc37f9272f9e72451f027d478f1dbe9345de6b177d8c0632ebe1.png" />
 </div>
 </div>
 <p>The temperature profile shows a steady region, decay region and then nearly steady region again.
@@ -859,7 +806,7 @@ The nearly steady region is a wave interaction with the driver based on pyKO sim
     0.            0.            0.            0.            0.        ]
 </pre></div>
 </div>
-<img alt="_images/6313cf09096955622bfc1ccc55b378686ae12f8d3a9545e87acc55df4bcb775a.png" src="_images/6313cf09096955622bfc1ccc55b378686ae12f8d3a9545e87acc55df4bcb775a.png" />
+<img alt="_images/4fda0cbfe261cd5137fa35786f6aedc872e3fe40d47ba3a39c96118281384750.png" src="_images/4fda0cbfe261cd5137fa35786f6aedc872e3fe40d47ba3a39c96118281384750.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -916,11 +863,11 @@ The nearly steady region is a wave interaction with the driver based on pyKO sim
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.8703381912385595
 </pre></div>
 </div>
-<img alt="_images/f847f0cb8408d17e5169071dc312deeb0b808c0b4ede981b5fffa096f1169583.png" src="_images/f847f0cb8408d17e5169071dc312deeb0b808c0b4ede981b5fffa096f1169583.png" />
+<img alt="_images/807c203d7550fc18e5de9b0c93b7f01f71c9b1b094312952222fae1f96406359.png" src="_images/807c203d7550fc18e5de9b0c93b7f01f71c9b1b094312952222fae1f96406359.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pressure at the kink around (GPa) 36.50488380280096
 </pre></div>
 </div>
-<img alt="_images/bb9b7c49acfed6cc894de98fd1f1861547164c7ccdbd743563cc945e3d89b119.png" src="_images/bb9b7c49acfed6cc894de98fd1f1861547164c7ccdbd743563cc945e3d89b119.png" />
+<img alt="_images/76efda7fc9a8518b70ad0f792baf4130a7ca20a297af861014b68b3a31ff00a8.png" src="_images/76efda7fc9a8518b70ad0f792baf4130a7ca20a297af861014b68b3a31ff00a8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1028,9 +975,9 @@ Actual target thickness in center = 5.297+-0.0015 mm
 292.00997504453255
 </pre></div>
 </div>
-<img alt="_images/ece29b66fe219a715bd58a2ac7b83c1fb403112c644700ebbe283917c70b3ecb.png" src="_images/ece29b66fe219a715bd58a2ac7b83c1fb403112c644700ebbe283917c70b3ecb.png" />
-<img alt="_images/0fd4e7b0060c63c4bf74f689813a6d51521d75b5d1a502e2e2c0703f04116a44.png" src="_images/0fd4e7b0060c63c4bf74f689813a6d51521d75b5d1a502e2e2c0703f04116a44.png" />
-<img alt="_images/0804552abd29f6e8540e8bca43de2c343cf2562814e10164963c75d6b22dd5aa.png" src="_images/0804552abd29f6e8540e8bca43de2c343cf2562814e10164963c75d6b22dd5aa.png" />
+<img alt="_images/2cf02fdc709bd4920a59efe3917813e052e42498c05bec53db8b911bc5adbfc3.png" src="_images/2cf02fdc709bd4920a59efe3917813e052e42498c05bec53db8b911bc5adbfc3.png" />
+<img alt="_images/2f4c31dee3cd637b809b8b0735de6a17420711bd5334b161b791281f2471f17b.png" src="_images/2f4c31dee3cd637b809b8b0735de6a17420711bd5334b161b791281f2471f17b.png" />
+<img alt="_images/fab6280670b4bf1bf1a3163572544b3e77142380741c70f83465027b73f404a5.png" src="_images/fab6280670b4bf1bf1a3163572544b3e77142380741c70f83465027b73f404a5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1045,9 +992,22 @@ Actual target thickness in center = 5.297+-0.0015 mm
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.8703381912385595 3350.4121176880917
-5170.920498064298 292.00997504453255
-68.05999999999999
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># estimate expected temperature before breakout</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">lasttemp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">lastup2</span><span class="p">,</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">up</span><span class="p">,</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">lastup2</span><span class="p">,</span><span class="n">lasttemp</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">Tsteady</span><span class="p">,</span><span class="n">Tsteady_err</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">Psteady</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1642,</span> in <span class="ni">interp</span><span class="nt">(x, xp, fp, left, right, period)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1639</span>     <span class="n">xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">xp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">period</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">xp</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">period</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1640</span>     <span class="n">fp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">fp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:],</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fp</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
+<span class="ne">-&gt; </span><span class="mi">1642</span> <span class="k">return</span> <span class="n">interp_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: fp and xp are not of the same length.
 </pre></div>
 </div>
 </div>

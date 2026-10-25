@@ -583,33 +583,6 @@
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
-<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
-
-<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1501,</span> in <span class="ni">_interp_dispatcher</span><span class="nt">(x, xp, fp, left, right, period)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1496</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">1498</span>     <span class="k">return</span> <span class="n">a</span>
-<span class="ne">-&gt; </span><span class="mi">1501</span> <span class="k">def</span><span class="w"> </span><span class="nf">_interp_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1502</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">hugoniot</span><span class="o">-</span><span class="n">entropy</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">P_start</span><span class="p">,</span><span class="n">S_start</span><span class="p">,</span><span class="n">rho_start</span><span class="p">)</span>
@@ -633,8 +606,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2986.05347088 2986.99105496 2987.92844306 ... 8758.32036547 8758.4403657
- 8758.56035711]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -670,7 +642,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/85715b05286f97901ee0ea5ae94df7e7f32afb59f8cb3df860a914de050fcc91.png" src="_images/85715b05286f97901ee0ea5ae94df7e7f32afb59f8cb3df860a914de050fcc91.png" />
+<img alt="_images/a7ede8804a2f775e3fb9dcef7a3d83ba640d6782250251258f30a78adafbcd50.png" src="_images/a7ede8804a2f775e3fb9dcef7a3d83ba640d6782250251258f30a78adafbcd50.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-isotherms">
@@ -696,10 +668,10 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x33593ee90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb8fd064550&gt;
 </pre></div>
 </div>
-<img alt="_images/a5889a173b0f7feeca9861bcfbde133923894869a7309de62f722dfa2a256964.png" src="_images/a5889a173b0f7feeca9861bcfbde133923894869a7309de62f722dfa2a256964.png" />
+<img alt="_images/75cf65d09f1d8ec1e51c503a0389091b181be39819b7e23dcee093272718606f.png" src="_images/75cf65d09f1d8ec1e51c503a0389091b181be39819b7e23dcee093272718606f.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-gamma">
@@ -728,7 +700,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/6d3d49ef150e6cbbc2df8925b059f044c276bfbc8a2eb96a14ee12e337840afa.png" src="_images/6d3d49ef150e6cbbc2df8925b059f044c276bfbc8a2eb96a14ee12e337840afa.png" />
+<img alt="_images/1eef6c18e56e7b7c8437f4e11ed8a1a70637f531dcf350797dbdca5a48905962.png" src="_images/1eef6c18e56e7b7c8437f4e11ed8a1a70637f531dcf350797dbdca5a48905962.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-cv">
@@ -807,7 +779,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b50d29c76e74c492049c72afcace95f92bf484485705ecc2f178671035d23a7b.png" src="_images/b50d29c76e74c492049c72afcace95f92bf484485705ecc2f178671035d23a7b.png" />
+<img alt="_images/dd3073db920b8437fa2902ef826985a0983eeb6eb295704a2fbc0cc09b0b8a02.png" src="_images/dd3073db920b8437fa2902ef826985a0983eeb6eb295704a2fbc0cc09b0b8a02.png" />
 </div>
 </div>
 <figure class="align-default" id="liquid-gamma-model">
@@ -857,7 +829,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/5eff3031590115efd67e51822f8fe8ce03044e02272bb86eff0f82a3564d8dd0.png" src="_images/5eff3031590115efd67e51822f8fe8ce03044e02272bb86eff0f82a3564d8dd0.png" />
+<img alt="_images/0dc1cd71fd226f5d5e4c0f5b43f788b05cd225fc6b0aaba7c12cee5d44121544.png" src="_images/0dc1cd71fd226f5d5e4c0f5b43f788b05cd225fc6b0aaba7c12cee5d44121544.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-isentropes">
@@ -899,7 +871,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/86b19aa39ec03c7c6f44561be487968d0154edb1331f8d8ee7f1193bcca0c2ef.png" src="_images/86b19aa39ec03c7c6f44561be487968d0154edb1331f8d8ee7f1193bcca0c2ef.png" />
+<img alt="_images/cd6d5ff515ba8c13228951ab5561fc2a50e6440fdff92d09cb5cf6c3c3ff21a6.png" src="_images/cd6d5ff515ba8c13228951ab5561fc2a50e6440fdff92d09cb5cf6c3c3ff21a6.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-isentropes2">
@@ -1064,7 +1036,22 @@ C16 cyan 4020.5732242501676 [4517.40905298] -496.835828725139
 4162.124323523275 [4517.40905298] -355.28472945203157
 </pre></div>
 </div>
-<img alt="_images/dbab5a5fad36661bd9a30b05c4be737ae2056bc6701e5918aa5a2654f832968e.png" src="_images/dbab5a5fad36661bd9a30b05c4be737ae2056bc6701e5918aa5a2654f832968e.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">78</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="n">karkipvt</span><span class="o">.</span><span class="n">isenval_liquid</span><span class="p">(</span><span class="n">sval</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">karkipvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">,</span><span class="n">karkipvt</span><span class="o">.</span><span class="n">isenval_t</span><span class="p">,</span><span class="s1">'k-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'S=3560 TIE'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> 
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">C16bsrho</span><span class="p">,</span><span class="n">C16bstemp</span><span class="p">,</span><span class="s1">'k-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'C16 HSC-vWRK'</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">78</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">C16bdrho</span><span class="p">,</span><span class="n">C16bdtemp</span><span class="p">,</span><span class="s1">'k--'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'C16 HSC-CSRK'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">C16rsrho</span><span class="p">,</span><span class="n">C16rstemp</span><span class="p">,</span><span class="s1">'r-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'C16 SiO(l)-vWRK'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span> 
+<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kdome</span><span class="o">.</span><span class="n">rho_l</span><span class="p">,</span><span class="n">kdome</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">'-'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'K12 MANEOS vapor curve'</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name 'C16bdrho' is not defined
+</pre></div>
+</div>
+<img alt="_images/fa1bd92394ff0ca952b8b2d9fac0ef1d437b4afda28a50270ad8da40999f65bc.png" src="_images/fa1bd92394ff0ca952b8b2d9fac0ef1d437b4afda28a50270ad8da40999f65bc.png" />
 </div>
 </div>
 <figure class="align-default" id="entropy-tie-point">

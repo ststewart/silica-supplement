@@ -600,37 +600,6 @@
 <span class="ne">FileNotFoundError</span>: ../data_silica_db/Connolly-Fig4b-black-dashed-T-rho.csv not found.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
-<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
-
-<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1609,</span> in <span class="ni">interp</span><span class="nt">(x, xp, fp, left, right, period)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1507</span><span class="w">     </span><span class="sd">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1508</span><span class="sd">     One-dimensional linear interpolation for monotonically increasing sample points.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span><span class="sd"> </span>
-<span class="sd">   (...)   1606 </span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span><span class="sd">     """</span>
-<span class="ne">-&gt; </span><span class="mi">1609</span>     <span class="n">fp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1611</span>     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iscomplexobj</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1612</span>         <span class="n">interp_func</span> <span class="o">=</span> <span class="n">compiled_interp_complex</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -700,7 +669,9 @@
 22 P26 sft-pyrite SCAN &lt;ErrorbarContainer object of 3 artists&gt;
 20
 figsize= [6.4, 4.8]
-Saved figure: A23-paper-fig1a.pdf
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved figure: A23-paper-fig1a.pdf
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
@@ -712,7 +683,7 @@ Saved figure: A23-paper-fig1a.pdf
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/a504aa0ec5a738056a918475d77355c7f560c4464f3796168c60d21a4dcf5b55.png" src="_images/a504aa0ec5a738056a918475d77355c7f560c4464f3796168c60d21a4dcf5b55.png" />
+<img alt="_images/9b364bc962e5f5df04e99c1b2d9f108e734e269638b3983dd0d8b7f00da85070.png" src="_images/9b364bc962e5f5df04e99c1b2d9f108e734e269638b3983dd0d8b7f00da85070.png" />
 </div>
 </div>
 </section>
@@ -729,12 +700,20 @@ Saved figure: A23-paper-fig1a.pdf
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-number of legend items =  15
-['Model liquidus', 'Model solidus', 'T=300K', 'Fused silica Hugoniot', 'Quartz Hugoniot', 'U10 liquid LDA shift', 'U10 solid LDA shift', 'G24 solid PBE shift', 'G24 liquid PBE shift', 'G24 liquidus PBE shift', 'P26 liquidus PBEsol', 'P26 solidus PBEsol', 'P26 liquidus SCAN', '# Si-O CN U10', '# Si-O CN G24']
-Saved figure: B1-SiO2-P-rho-phase-diagram-Fig1b.pdf
 </pre></div>
 </div>
-<img alt="_images/63eac78351972d8f6e5f8598a8d007e9099cb698f8648d6757fe206ef883edfb.png" src="_images/63eac78351972d8f6e5f8598a8d007e9099cb698f8648d6757fe206ef883edfb.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">PVphasediagram</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">409</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">P</span> <span class="o">&gt;</span> <span class="mi">34</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">P</span> <span class="o">&lt;</span> <span class="n">fs_wiggle_P1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">ax_inset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">rho</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="s1">'b-'</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#,label='New Hugoniot: Solid region')</span>
+<span class="ne">--&gt; </span><span class="mi">409</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">fs_wiggle_P2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">rho</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="s1">'b-'</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Fused silica Hugoniot'</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">P</span> <span class="o">&gt;</span> <span class="mi">34</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fs_hug_stv</span><span class="o">.</span><span class="n">P</span> <span class="o">&lt;</span> <span class="n">fs_wiggle_P1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name 'fs_wiggle_P2' is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -751,64 +730,95 @@ Saved figure: B1-SiO2-P-rho-phase-diagram-Fig1b.pdf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 75.9  85.9  92.5  99.3 107.8 109.7 116.5 126.6 137. ]
-[ 92.64844931 107.25686863 117.77935509 126.98567629 138.87270554
-  75.9         85.9         99.3        109.7       ]
-[5430. 5900. 4910. 5320. 5760. 4440. 4850. 5630. 6100.]
-[1, 1, 1, 1, 1, 1, 1, 1, 1]
-0 Model melt curve Line2D(Model melt curve)
-1 L83-M15 melt curve Line2D(L83-M15 melt curve)
-2 Omega (decaying) &lt;matplotlib.collections.FillBetweenPolyCollection object at 0x702dcaa210&gt;
-3   Line2D( )
-4   Line2D( )
-5 A23 qtz &lt;ErrorbarContainer object of 3 artists&gt;
-6 L83R+B88R &lt;ErrorbarContainer object of 3 artists&gt;
-7 B88 (no IM) &lt;ErrorbarContainer object of 3 artists&gt;
-8 L83R+B88R (pz) &lt;ErrorbarContainer object of 3 artists&gt;
-9 B88 (pz, no IM) &lt;ErrorbarContainer object of 3 artists&gt;
-10 L04 (x) &lt;ErrorbarContainer object of 3 artists&gt;
-11 S81 (-, no IM) &lt;ErrorbarContainer object of 3 artists&gt;
-12 H06 (decaying) &lt;ErrorbarContainer object of 3 artists&gt;
-13 This work (vis) &lt;ErrorbarContainer object of 3 artists&gt;
-14 This work (2-wave) &lt;ErrorbarContainer object of 3 artists&gt;
-15 This work (IR) &lt;ErrorbarContainer object of 3 artists&gt;
-13
-figsize= [6.4, 4.8]
-Saved figure: A24-paper-fig2b.pdf
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">PTphasediagram</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">735</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">M70820</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">zzz</span><span class="p">],</span><span class="n">M70820</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">zzz</span><span class="p">],</span><span class="s1">'.'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">col9</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="n">mss</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">aaa</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="n">qtz_us_fitmax</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="ne">--&gt; </span><span class="mi">735</span> <span class="n">us_fitstart</span><span class="o">=</span><span class="n">qtz_wiggle_us2</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span> <span class="n">us_fitstart</span><span class="o">=</span><span class="mf">8.5</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="n">ind11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">M70811</span><span class="o">.</span><span class="n">us</span> <span class="o">&gt;</span> <span class="n">us_fitstart</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">M70811</span><span class="o">.</span><span class="n">us</span> <span class="o">&lt;</span> <span class="n">qtz_us_fitmax</span><span class="p">)</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name 'qtz_wiggle_us2' is not defined
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">PTphasediagram</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">916</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>         <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S82fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">S82fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T_b</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'b^'</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'S82 810nm'</span><span class="p">)</span><span class="c1">#S82fs['lab']+'-810nm')</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="c1"># Hicks decaying shock</span>
+<span class="g g-Whitespace">    </span><span class="mi">915</span>     <span class="c1">#plt.plot(shockdat_list[H06fs['id']].P,shockdat_list[H06fs['id']].T,'b+:',label='H06 FS')</span>
+<span class="ne">--&gt; </span><span class="mi">916</span>     <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">H06fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">H06fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'b+-'</span><span class="p">,</span>\
+<span class="g g-Whitespace">    </span><span class="mi">917</span>              <span class="n">yerr</span><span class="o">=</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">H06fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T_std</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'H06 (decaying)'</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">918</span> <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">fig25</span> <span class="ow">or</span> <span class="n">fig27</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">P</span><span class="p">,</span><span class="n">fs_hug_liq</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">'b-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'FS Hug Liq NEW'</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/_api/deprecation.py:453,</span> in <span class="ni">make_keyword_only.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">name_idx</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>     <span class="n">warn_deprecated</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="n">since</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">"Passing the </span><span class="si">%(name)s</span><span class="s2"> </span><span class="si">%(obj_type)s</span><span class="s2"> "</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>         <span class="s2">"positionally is deprecated since Matplotlib </span><span class="si">%(since)s</span><span class="s2">; the "</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>         <span class="s2">"parameter will become keyword-only in </span><span class="si">%(removal)s</span><span class="s2">."</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">obj_type</span><span class="o">=</span><span class="sa">f</span><span class="s2">"parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()"</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">453</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/pyplot.py:3282,</span> in <span class="ni">errorbar</span><span class="nt">(x, y, yerr, xerr, fmt, ecolor, elinewidth, capsize, barsabove, lolims, uplims, xlolims, xuplims, errorevery, capthick, data, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3261</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">errorbar</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3262</span> <span class="k">def</span><span class="w"> </span><span class="nf">errorbar</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3263</span>     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ArrayLike</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">3280</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3281</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ErrorbarContainer</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3282</span>     <span class="k">return</span> <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3283</span>         <span class="n">x</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3284</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3285</span>         <span class="n">yerr</span><span class="o">=</span><span class="n">yerr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3286</span>         <span class="n">xerr</span><span class="o">=</span><span class="n">xerr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3287</span>         <span class="n">fmt</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3288</span>         <span class="n">ecolor</span><span class="o">=</span><span class="n">ecolor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3289</span>         <span class="n">elinewidth</span><span class="o">=</span><span class="n">elinewidth</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3290</span>         <span class="n">capsize</span><span class="o">=</span><span class="n">capsize</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3291</span>         <span class="n">barsabove</span><span class="o">=</span><span class="n">barsabove</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3292</span>         <span class="n">lolims</span><span class="o">=</span><span class="n">lolims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3293</span>         <span class="n">uplims</span><span class="o">=</span><span class="n">uplims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3294</span>         <span class="n">xlolims</span><span class="o">=</span><span class="n">xlolims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3295</span>         <span class="n">xuplims</span><span class="o">=</span><span class="n">xuplims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3296</span>         <span class="n">errorevery</span><span class="o">=</span><span class="n">errorevery</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3297</span>         <span class="n">capthick</span><span class="o">=</span><span class="n">capthick</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3298</span>         <span class="o">**</span><span class="p">({</span><span class="s2">"data"</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">   </span><span class="mi">3299</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3300</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/_api/deprecation.py:453,</span> in <span class="ni">make_keyword_only.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">name_idx</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>     <span class="n">warn_deprecated</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="n">since</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">"Passing the </span><span class="si">%(name)s</span><span class="s2"> </span><span class="si">%(obj_type)s</span><span class="s2"> "</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>         <span class="s2">"positionally is deprecated since Matplotlib </span><span class="si">%(since)s</span><span class="s2">; the "</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>         <span class="s2">"parameter will become keyword-only in </span><span class="si">%(removal)s</span><span class="s2">."</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">obj_type</span><span class="o">=</span><span class="sa">f</span><span class="s2">"parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()"</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">453</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/__init__.py:1521,</span> in <span class="ni">_preprocess_data.&lt;locals&gt;.inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1518</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1519</span> <span class="k">def</span><span class="w"> </span><span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1520</span>     <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1521</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span>             <span class="n">ax</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>             <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">cbook</span><span class="o">.</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span>
+<span class="nn">   1524             **{k: cbook.sanitize_sequence(v) for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">()})</span>
+<span class="g g-Whitespace">   </span><span class="mi">1526</span>     <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1527</span>     <span class="n">auto_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1528</span>                   <span class="ow">or</span> <span class="n">bound</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">))</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/axes/_axes.py:3709,</span> in <span class="ni">Axes.errorbar</span><span class="nt">(self, x, y, yerr, xerr, fmt, ecolor, elinewidth, capsize, barsabove, lolims, uplims, xlolims, xuplims, errorevery, capthick, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3707</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># Make sure all the args are iterable.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3708</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">3709</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'x' and 'y' must have the same size"</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3711</span> <span class="n">everymask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_errorevery_to_mask</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">errorevery</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3713</span> <span class="n">label</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"label"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: 'x' and 'y' must have the same size
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
-</pre></div>
-</div>
-<img alt="_images/fc04150d93089ae60c7c0fbc117b8805d97a6b89e8234ce498468523a022f80e.png" src="_images/fc04150d93089ae60c7c0fbc117b8805d97a6b89e8234ce498468523a022f80e.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Model melt curve Line2D(Model melt curve)
-1 L83-M15 melt curve Line2D(L83-M15 melt curve)
-2   Line2D( )
-3   Line2D( )
-4 L83R+B88R &lt;ErrorbarContainer object of 3 artists&gt;
-5 B88 (no IM) &lt;ErrorbarContainer object of 3 artists&gt;
-6 S80 &lt;ErrorbarContainer object of 3 artists&gt;
-7 S81 (no IM) &lt;ErrorbarContainer object of 3 artists&gt;
-8 S82 620nm &lt;ErrorbarContainer object of 3 artists&gt;
-9 S82 810nm &lt;ErrorbarContainer object of 3 artists&gt;
-10 H06 (decaying) &lt;ErrorbarContainer object of 3 artists&gt;
-11 This work (vis) &lt;ErrorbarContainer object of 3 artists&gt;
-12 This Work (IR) &lt;ErrorbarContainer object of 3 artists&gt;
-11
-figsize= [6.4, 4.8]
-Saved figure: A25-paper-fig2a.pdf
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
-</pre></div>
-</div>
-<img alt="_images/bfbb36609ed6d29ee51923e69701afcb16fa3ac286e044fe61fb5aa3e7c82a64.png" src="_images/bfbb36609ed6d29ee51923e69701afcb16fa3ac286e044fe61fb5aa3e7c82a64.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -829,17 +839,15 @@ Saved figure: A25-paper-fig2a.pdf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>113.5797721161682 73.53695488293766
-P, shot [ 94.18660988 101.74287646  99.09285427  82.90944976  84.17608215
-  83.03434421  56.52890169  54.32443427  87.37011891  68.06379204]
-P, shot [5027.3122   6703.340637 4573.230527 4200.1755   4483.578691 4611.0908
- -999.       4670.915    5239.       5170.      ]
-[0 1 2 3 4 5 7]
-P, shot [ 87.43147985 124.32252836  65.10390401  68.21054892 120.45097265
-  65.00989408 110.05003371 102.45349706  82.99306753]
-P, shot [4661.       5329.4      3412.766828 4142.510301 4729.72652  3480.
- 5837.       5384.       4136.765735]
-[0 1 2 3 4 5 7]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">qtz_wiggle_P2</span><span class="p">,</span><span class="n">fs_wiggle_P2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'P, shot'</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">A23fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">P</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'P, shot'</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">A23fs</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">irind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible</span>
+
+<span class="ne">NameError</span>: name 'qtz_wiggle_P2' is not defined
 </pre></div>
 </div>
 </div>

@@ -585,33 +585,6 @@ Systematic uncertainties related to PBE DFT and static DAC measurements may be g
 <span class="ne">FileNotFoundError</span>: ../data_silica_db/Connolly-Fig4b-black-dashed-T-rho.csv not found.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
-<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
-
-<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1501,</span> in <span class="ni">_interp_dispatcher</span><span class="nt">(x, xp, fp, left, right, period)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1496</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">1498</span>     <span class="k">return</span> <span class="n">a</span>
-<span class="ne">-&gt; </span><span class="mi">1501</span> <span class="k">def</span><span class="w"> </span><span class="nf">_interp_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1502</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
 </div>
 </div>
 <section id="gonzales-et-al-2016-no-tweak">
@@ -690,16 +663,16 @@ Systematic uncertainties related to PBE DFT and static DAC measurements may be g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [-6.36275124e+03  3.34236196e+03  2.41679030e-01]
-FIT EOS cov =  [[ 2.33434318e+06 -1.10998143e+06  2.87367104e+01]
- [-1.10998143e+06  5.29326870e+05 -1.37257017e+01]
- [ 2.87367104e+01 -1.37257017e+01  3.56257994e-04]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [-6.36271653e+03  3.34234543e+03  2.41679458e-01]
+FIT EOS cov =  [[ 2.33434555e+06 -1.10998015e+06  2.87368374e+01]
+ [-1.10998015e+06  5.29325109e+05 -1.37257325e+01]
+ [ 2.87368374e+01 -1.37257325e+01  3.56260772e-04]]
 Saved EOS fit in SiO2_fitG16_simons.txt
 Saved EOS fit in readable file SiO2_fitG16_simons-readable.txt
-rms =  223.5249848435821
+rms =  223.5254658791782
 </pre></div>
 </div>
-<img alt="_images/e63a5c98ce09dfe416c0620cb38c028c9dafa2773a13de918db12345472c7b68.png" src="_images/e63a5c98ce09dfe416c0620cb38c028c9dafa2773a13de918db12345472c7b68.png" />
+<img alt="_images/4d6b0851e07d400e34327be137350acd742e868bf3633fddb2679e1ece1de3cc.png" src="_images/4d6b0851e07d400e34327be137350acd742e868bf3633fddb2679e1ece1de3cc.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No intersection:  [] []
 </pre></div>
 </div>
@@ -784,17 +757,17 @@ rms =  223.5249848435821
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original temperature =  8702.972
 Modified temperature =  8835.963323826292
-FIT EOS a =  [-5.89112815e+03  3.22036386e+03  2.43745258e-01]
-FIT EOS cov =  [[ 2.24243236e+06 -1.05537438e+06  2.84290722e+01]
- [-1.05537438e+06  4.98144932e+05 -1.34400139e+01]
- [ 2.84290722e+01 -1.34400139e+01  3.62961481e-04]]
+FIT EOS a =  [-5.89115354e+03  3.22037586e+03  2.43744935e-01]
+FIT EOS cov =  [[ 2.24246586e+06 -1.05539146e+06  2.84294101e+01]
+ [-1.05539146e+06  4.98153601e+05 -1.34401897e+01]
+ [ 2.84294101e+01 -1.34401897e+01  3.62964657e-04]]
 Saved EOS fit in SiO2_fitG16mod_simons.txt
 Saved EOS fit in readable file SiO2_fitG16mod_simons-readable.txt
-rms =  207.65082999888475
+rms =  207.65052530854672
 </pre></div>
 </div>
-<img alt="_images/e3922487db54ee47ee7b8577e25c64017a8cf11991e1b46056a18712f0e2eb3d.png" src="_images/e3922487db54ee47ee7b8577e25c64017a8cf11991e1b46056a18712f0e2eb3d.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intersection:  [512.83694338] [8847.2443504]
+<img alt="_images/96e5d4e549f2ef628c87713370ff1013edb17ab9e842cbf3363a246659327675.png" src="_images/96e5d4e549f2ef628c87713370ff1013edb17ab9e842cbf3363a246659327675.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intersection:  [512.8373207] [8847.24674359]
 </pre></div>
 </div>
 </div>
@@ -826,10 +799,10 @@ rms =  207.65082999888475
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intersection point (P,T)= 512.8369433815569 8847.244350397474
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intersection point (P,T)= 512.8373206970086 8847.24674359435
 </pre></div>
 </div>
-<img alt="_images/29e4c45b51b1de822f5045c60b666091d990b10eaa4cb136460edf9a4c6f4fcd.png" src="_images/29e4c45b51b1de822f5045c60b666091d990b10eaa4cb136460edf9a4c6f4fcd.png" />
+<img alt="_images/c9fda01408a83a42312a4ba59ec585dbfc500b793f5e747089b40d5a0f9c2511.png" src="_images/c9fda01408a83a42312a4ba59ec585dbfc500b793f5e747089b40d5a0f9c2511.png" />
 </div>
 </div>
 </section>
@@ -972,17 +945,17 @@ rms =  207.65082999888475
  114.  117. ] [3073. 3400. 3450. 3900. 4100. 3950. 4100. 4250. 2816. 3877. 3836. 4401.
  4751. 4713. 4558. 4866. 4942. 4866. 4866. 5018. 5093. 5018. 5605. 5533.
  5957. 6163.]
-FIT EOS a =  [-1.47702719e+04  1.51139468e+04  6.65902384e-02]
-FIT EOS cov =  [[ 1.61765257e+09 -1.58009812e+09  5.62103657e+03]
- [-1.58009812e+09  1.54344277e+09 -5.49104599e+03]
- [ 5.62103657e+03 -5.49104599e+03  1.95417422e-02]]
+FIT EOS a =  [-1.47703500e+04  1.51140229e+04  6.65899733e-02]
+FIT EOS cov =  [[ 1.61772354e+09 -1.58016763e+09  5.62123583e+03]
+ [-1.58016763e+09  1.54351083e+09 -5.49124122e+03]
+ [ 5.62123583e+03 -5.49124122e+03  1.95422699e-02]]
 Saved EOS fit in SiO2_fitstvstatic_simons.txt
 Saved EOS fit in readable file SiO2_fitstvstatic_simons-readable.txt
-rms =  200.81903009677654
-Intersection (P,T) =  84.52891117754788 5539.152918577882
+rms =  200.81900607285715
+Intersection (P,T) =  84.52885768920385 5539.1523891319775
 </pre></div>
 </div>
-<img alt="_images/7205cbe5665c04a0474b2ca985dc4c6698138c026f8953abcb1a2715caede21a.png" src="_images/7205cbe5665c04a0474b2ca985dc4c6698138c026f8953abcb1a2715caede21a.png" />
+<img alt="_images/e5b997620eafb25c1dad763a6b3be9846f50c2cec8c2b277e7b687932492cea1.png" src="_images/e5b997620eafb25c1dad763a6b3be9846f50c2cec8c2b277e7b687932492cea1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1050,14 +1023,14 @@ Intersection (P,T) =  84.52891117754788 5539.152918577882
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [ 2.05755695e+03  2.09541967e+02 -1.76612883e+01  5.10819398e-01]
-FIT EOS cov =  [[ 3.27387105e+04 -1.02783758e+04  1.03715928e+03 -3.38633633e+01]
- [-1.02783758e+04  3.28489604e+03 -3.36183825e+02  1.11041058e+01]
- [ 1.03715928e+03 -3.36183825e+02  3.48100577e+01 -1.16120171e+00]
- [-3.38633633e+01  1.11041058e+01 -1.16120171e+00  3.90711413e-02]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [ 2.05755654e+03  2.09542087e+02 -1.76612995e+01  5.10819740e-01]
+FIT EOS cov =  [[ 3.27393877e+04 -1.02785976e+04  1.03718220e+03 -3.38641166e+01]
+ [-1.02785976e+04  3.28496871e+03 -3.36191343e+02  1.11043530e+01]
+ [ 1.03718220e+03 -3.36191343e+02  3.48108358e+01 -1.16122731e+00]
+ [-3.38641166e+01  1.11043530e+01 -1.16122731e+00  3.90719834e-02]]
 Saved EOS fit in SiO2_fitcoesitestatic_simons.txt
 Saved EOS fit in readable file SiO2_fitcoesitestatic_simons-readable.txt
-rms =  3.140574969864312
+rms =  3.1405836066652757
 [ 0.5  0.6  0.7  0.8  0.9  1.   1.1  1.2  1.3  1.4  1.5  1.6  1.7  1.8
   1.9  2.   2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9  3.   3.1  3.2
   3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.   4.1  4.2  4.3  4.4  4.5  4.6
@@ -1068,37 +1041,38 @@ rms =  3.140574969864312
  10.3 10.4 10.5 10.6 10.7 10.8 10.9 11.  11.1 11.2 11.3 11.4 11.5 11.6
  11.7 11.8 11.9 12.  12.1 12.2 12.3 12.4 12.5 12.6 12.7 12.8 12.9 13.
  13.1 13.2 13.3 13.4 13.5 13.6 13.7 13.8 13.9 14.  14.1 14.2 14.3 14.4
- 14.5 14.6 14.7 14.8 14.9] [2157.97646403 2177.03440357 2195.75750685 2214.14883877 2232.21146426
- 2249.94844824 2267.36285561 2284.45775129 2301.23620021 2317.70126728
- 2333.8560174  2349.70351551 2365.24682652 2380.48901534 2395.43314689
- 2410.08228608 2424.43949784 2438.50784707 2452.2903987  2465.79021764
- 2479.01036881 2491.95391713 2504.6239275  2517.02346486 2529.1555941
- 2541.02338016 2552.62988794 2563.97818236 2575.07132834 2585.9123908
- 2596.50443465 2606.85052481 2616.95372619 2626.81710371 2636.44372229
- 2645.83664685 2654.99894229 2663.93367354 2672.64390552 2681.13270313
- 2689.4031313  2697.45825494 2705.30113897 2712.9348483  2720.36244786
- 2727.58700255 2734.61157729 2741.43923701 2748.07304661 2754.51607102
- 2760.77137514 2766.84202391 2772.73108222 2778.441615   2783.97668717
- 2789.33936364 2794.53270932 2799.55978915 2804.42366802 2809.12741086
- 2813.67408258 2818.0667481  2822.30847234 2826.40232021 2830.35135662
- 2834.15864651 2837.82725477 2841.36024634 2844.76068612 2848.03163902
- 2851.17616998 2854.1973439  2857.0982257  2859.8818803  2862.55137261
- 2865.10976754 2867.56013003 2869.90552497 2872.1490173  2874.29367191
- 2876.34255374 2878.2987277  2880.1652587  2881.94521166 2883.6416515
- 2885.25764313 2886.79625147 2888.26054144 2889.65357795 2890.97842591
- 2892.23815025 2893.43581589 2894.57448773 2895.65723069 2896.6871097
- 2897.66718966 2898.60053549 2899.49021212 2900.33928445 2901.1508174
- 2901.9278759  2902.67352484 2903.39082916 2904.08285377 2904.75266358
- 2905.40332351 2906.03789848 2906.6594534  2907.2710532  2907.87576278
- 2908.47664706 2909.07677096 2909.67919939 2910.28699728 2910.90322954
- 2911.53096108 2912.17325682 2912.83318168 2913.51380057 2914.21817842
- 2914.94938013 2915.71047062 2916.50451481 2917.33457762 2918.20372396
- 2919.11501874 2920.0715269  2921.07631333 2922.13244296 2923.24298071
- 2924.41099149 2925.63954021 2926.9316918  2928.29051116 2929.71906322
- 2931.2204129  2932.7976251  2934.45376475 2936.19189676 2938.01508605
- 2939.92639753 2941.92889612 2944.02564674 2946.2197143  2948.51416372]
+ 14.5 14.6 14.7 14.8 14.9] [2157.97611161 2177.03406193 2195.75717577 2214.14851805 2232.21115369
+ 2249.9481476  2267.3625647  2284.45746992 2301.23592817 2317.70100436
+ 2333.85576342 2349.70327027 2365.24658982 2380.488787   2395.43292671
+ 2410.08207389 2424.43929344 2438.50765029 2452.29020936 2465.79003555
+ 2479.0101938  2491.95374902 2504.62376613 2517.02331004 2529.15544568
+ 2541.02323797 2552.62975181 2563.97805214 2575.07120387 2585.91227191
+ 2596.50432119 2606.85041662 2616.95362313 2626.81700563 2636.44362904
+ 2645.83655827 2654.99885826 2663.93359391 2672.64383014 2681.13263187
+ 2689.40306403 2697.45819152 2705.30107927 2712.9347922  2720.36239522
+ 2727.58695325 2734.61153122 2741.43919403 2748.07300662 2754.51603388
+ 2760.77134076 2766.84199216 2772.73105299 2778.44158819 2783.97666267
+ 2789.33934135 2794.53268914 2799.55977096 2804.42365174 2809.12739638
+ 2813.67406982 2818.06673697 2822.30846274 2826.40231205 2830.35134983
+ 2834.15864099 2837.82725045 2841.36024313 2844.76068394 2848.03163781
+ 2851.17616966 2854.1973444  2857.09822694 2859.88188222 2862.55137514
+ 2865.10977063 2867.5601336  2869.90552898 2872.14902168 2874.29367662
+ 2876.34255871 2878.29873288 2880.16526405 2881.94521713 2883.64165704
+ 2885.25764871 2886.79625704 2888.26054696 2889.65358338 2890.97843123
+ 2892.23815542 2893.43582087 2894.57449251 2895.65723523 2896.68711398
+ 2897.66719366 2898.60053919 2899.4902155  2900.3392875  2901.1508201
+ 2901.92787823 2902.67352681 2903.39083075 2904.08285497 2904.75266439
+ 2905.40332393 2906.03789851 2906.65945305 2907.27105246 2907.87576166
+ 2908.47664558 2909.07676912 2909.67919721 2910.28699477 2910.90322672
+ 2911.53095796 2912.17325343 2912.83317804 2913.51379671 2914.21817436
+ 2914.9493759  2915.71046626 2916.50451035 2917.33457309 2918.2037194
+ 2919.1150142  2920.0715224  2921.07630893 2922.1324387  2923.24297664
+ 2924.41098765 2925.63953666 2926.93168859 2928.29050836 2929.71906088
+ 2931.22041107 2932.79762385 2934.45376415 2936.19189687 2938.01508693
+ 2939.92639926 2941.92889878 2944.02565039 2946.21971903 2948.5141696 ]
 </pre></div>
 </div>
+<img alt="_images/becd3179138f065a4f5f3088ce5418edea8b3e0dc9f2f86fdc7a010f5fc05f37.png" src="_images/becd3179138f065a4f5f3088ce5418edea8b3e0dc9f2f86fdc7a010f5fc05f37.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1205,19 +1179,20 @@ rms =  3.140574969864312
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [1703.66939841  487.37114581  -76.0100246     3.56196866]
-FIT EOS cov =  [[ 516408.13927788 -651974.06309871  246888.15622932  -29079.86437538]
- [-651974.06309871  858569.77287966 -333564.86098776   39981.59065826]
- [ 246888.15622932 -333564.86098776  131961.89736997  -16032.55736319]
- [ -29079.86437538   39981.59065826  -16032.55736319    1968.59643139]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [1703.66802549  487.37302608  -76.01077651    3.56206079]
+FIT EOS cov =  [[ 516428.61507175 -652008.07154507  246903.3314545   -29081.86178622]
+ [-652008.07154507  858624.60792641 -333588.9671105    39984.73513284]
+ [ 246903.3314545  -333588.9671105   131972.41335734  -16033.92268599]
+ [ -29081.86178622   39984.73513284  -16033.92268599    1968.77319356]]
 Saved EOS fit in SiO2_fithighqtzstatic_simons.txt
 Saved EOS fit in readable file SiO2_fithighqtzstatic_simons-readable.txt
-rms =  1.6690834261585263
-P at 1999K = 0.6750534282549683  start of beta-qtz
-Intersection (P,T) =  4.3794737788828995 2679.3902737616863
-Intersection (P,T) =  10.477441985176059 2901.752586925874
+rms =  1.6690320860236114
+P at 1999K = 0.6750544941883053  start of beta-qtz
+Intersection (P,T) =  4.379478229766827 2679.3905794856205
+Intersection (P,T) =  10.477442676513515 2901.7525947133745
 </pre></div>
 </div>
+<img alt="_images/ad57151557bf9ad78d14ee205abc2d4c8f2c54579e7102810e8921721ea61cf4.png" src="_images/ad57151557bf9ad78d14ee205abc2d4c8f2c54579e7102810e8921721ea61cf4.png" />
 </div>
 </div>
 </section>
@@ -1281,8 +1256,8 @@ Intersection (P,T) =  10.477441985176059 2901.752586925874
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5317e13e7ca69ebfb9ce4deb2f36a93d5c69d6bcd058cfb77629b3411a339f6d.png" src="_images/5317e13e7ca69ebfb9ce4deb2f36a93d5c69d6bcd058cfb77629b3411a339f6d.png" />
-<img alt="_images/6c1f9d1716cd9a8b485bba36acc67285537ae1b843cb182dfcf8739c07a83f02.png" src="_images/6c1f9d1716cd9a8b485bba36acc67285537ae1b843cb182dfcf8739c07a83f02.png" />
+<img alt="_images/d9110e18499043892b2992d973e11507b12e2c7619912d573df6f4ce1a7d8003.png" src="_images/d9110e18499043892b2992d973e11507b12e2c7619912d573df6f4ce1a7d8003.png" />
+<img alt="_images/c168198c4f30508de823d2ebaed0f4c34cd8094014d1e41b11222f0c9f586f32.png" src="_images/c168198c4f30508de823d2ebaed0f4c34cd8094014d1e41b11222f0c9f586f32.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1302,7 +1277,7 @@ Intersection (P,T) =  10.477441985176059 2901.752586925874
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b6636f537038a06aafcc5f924499922fcca5b4d107cf80b201612a8f49a36a65.png" src="_images/b6636f537038a06aafcc5f924499922fcca5b4d107cf80b201612a8f49a36a65.png" />
+<img alt="_images/d5d627ea522f59039e6d905da4c4e34679e48c2cb86c17550fbba714a10e28f6.png" src="_images/d5d627ea522f59039e6d905da4c4e34679e48c2cb86c17550fbba714a10e28f6.png" />
 </div>
 </div>
 </section>
@@ -1388,15 +1363,15 @@ FIT EOS cov =  [[0. 0. 0.]
  [0. 0. 0.]]
 Saved EOS fit in rho_l_fit_quadratic.txt
 Saved EOS fit in readable file rho_l_fit_quadratic-readable.txt
-rms =  13.536838173636669
+rms =  13.536838173636651
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sts/anaconda3/envs/silicapaper/lib/python3.13/site-packages/scipy/odr/_odrpack.py:394: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/scipy/odr/_odrpack.py:394: RuntimeWarning: divide by zero encountered in divide
   return 1./np.power(sd, 2)
 </pre></div>
 </div>
-<img alt="_images/0bfb760d117ccef773b3c6809875aad09e327b0658f670fd66eb6a653cbef70b.png" src="_images/0bfb760d117ccef773b3c6809875aad09e327b0658f670fd66eb6a653cbef70b.png" />
-<img alt="_images/6a7d25c0fd5d56588845c38fa8c7313c419b833c43527b1b508c955f74f0c118.png" src="_images/6a7d25c0fd5d56588845c38fa8c7313c419b833c43527b1b508c955f74f0c118.png" />
+<img alt="_images/73a57e73c3b9d7afe4b820101f84dd1ba8a15e7b0e4430149faaf33fdde30f53.png" src="_images/73a57e73c3b9d7afe4b820101f84dd1ba8a15e7b0e4430149faaf33fdde30f53.png" />
+<img alt="_images/c43a6a74275f0f5e4fe3590a32f8ba5c054de5912e8258bf100be5c574d50ccb.png" src="_images/c43a6a74275f0f5e4fe3590a32f8ba5c054de5912e8258bf100be5c574d50ccb.png" />
 </div>
 </div>
 </section>
@@ -1421,7 +1396,7 @@ rms =  13.536838173636669
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60a2c9400858e2e257089b04476b60bb35bf1f2ae2c4de8a85f01d0661e5e1d9.png" src="_images/60a2c9400858e2e257089b04476b60bb35bf1f2ae2c4de8a85f01d0661e5e1d9.png" />
+<img alt="_images/930d1643ad2d5a0ab53f959487ff94fa91933225a8d603f042e22074852271c0.png" src="_images/930d1643ad2d5a0ab53f959487ff94fa91933225a8d603f042e22074852271c0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1442,6 +1417,7 @@ rms =  13.536838173636669
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'Fractional uncertainty in density')
 </pre></div>
 </div>
+<img alt="_images/21a96cfdc3efeb6f3c898ea41084fa4fdef66ae724db06f8cfcf96436911ed77.png" src="_images/21a96cfdc3efeb6f3c898ea41084fa4fdef66ae724db06f8cfcf96436911ed77.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1467,7 +1443,7 @@ rms =  13.536838173636669
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1a55b271b2a8aefc74548964649f798a8e10554995c74db32123c230a90106f0.png" src="_images/1a55b271b2a8aefc74548964649f798a8e10554995c74db32123c230a90106f0.png" />
+<img alt="_images/499e41f9535478c1771b4e0922e31d0caab7ba489119bc93517de7667cd4e211.png" src="_images/499e41f9535478c1771b4e0922e31d0caab7ba489119bc93517de7667cd4e211.png" />
 </div>
 </div>
 </section>
@@ -1501,7 +1477,7 @@ rms =  13.536838173636669
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4fd94476294b2035ae10347a5bd8ac707b42e19455b1e105a9ad8a5311016383.png" src="_images/4fd94476294b2035ae10347a5bd8ac707b42e19455b1e105a9ad8a5311016383.png" />
+<img alt="_images/dd9bd4be90ac9d00f22fc4d1d8f35cb37919aeda7e2cc81fd360ae7a4d985f58.png" src="_images/dd9bd4be90ac9d00f22fc4d1d8f35cb37919aeda7e2cc81fd360ae7a4d985f58.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>287.74323814600064
 </pre></div>
 </div>
@@ -1557,9 +1533,9 @@ rms =  13.536838173636669
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>644.1089825741059
 </pre></div>
 </div>
-<img alt="_images/65b8fb0cb05f282808b89107ee65b80c4cc8ece6cbab01ceebc1f0367a9000b9.png" src="_images/65b8fb0cb05f282808b89107ee65b80c4cc8ece6cbab01ceebc1f0367a9000b9.png" />
-<img alt="_images/64f9e32484af923ccea5172605066b36dda88094b6a2a919aacb2ac6089c18a5.png" src="_images/64f9e32484af923ccea5172605066b36dda88094b6a2a919aacb2ac6089c18a5.png" />
-<img alt="_images/d60dfb51d23f252375befb5e2ca8366a33bbf5e5914096f4cfff52b0843a63c2.png" src="_images/d60dfb51d23f252375befb5e2ca8366a33bbf5e5914096f4cfff52b0843a63c2.png" />
+<img alt="_images/2efa1a5b4396da465d4b0025e38a70ae68448d169080c30ea606c142a23f359c.png" src="_images/2efa1a5b4396da465d4b0025e38a70ae68448d169080c30ea606c142a23f359c.png" />
+<img alt="_images/d88aeec9d74f7e01e4ae683235c9dd1538a16d9195b917fd3739e9192d302f48.png" src="_images/d88aeec9d74f7e01e4ae683235c9dd1538a16d9195b917fd3739e9192d302f48.png" />
+<img alt="_images/130898baff4f9ae55fe11e6238a8a840995f2a36d85bcff5f3a6774bcfa87a69.png" src="_images/130898baff4f9ae55fe11e6238a8a840995f2a36d85bcff5f3a6774bcfa87a69.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1598,7 +1574,7 @@ rms =  13.536838173636669
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/015cd87ca364fc6a7b7da867100b4a201b6d7e51774388a9d156b8cdcc31ffb3.png" src="_images/015cd87ca364fc6a7b7da867100b4a201b6d7e51774388a9d156b8cdcc31ffb3.png" />
+<img alt="_images/487515334aa0ebc59b9218c10b4c300b134d5fa24442e4a5ab57d405839cb696.png" src="_images/487515334aa0ebc59b9218c10b4c300b134d5fa24442e4a5ab57d405839cb696.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1634,7 +1610,7 @@ rms =  13.536838173636669
 [0.00943121 0.02405459 0.02480704 ... 0.51629745 0.51633308 0.51636871]
 </pre></div>
 </div>
-<img alt="_images/0b1a8d16b6b5b66364cf7b2022a2388f8cd5be6dcaf13b2cf3959aaafaaa74f3.png" src="_images/0b1a8d16b6b5b66364cf7b2022a2388f8cd5be6dcaf13b2cf3959aaafaaa74f3.png" />
+<img alt="_images/39137bc9c5e75427af3f79a82fc1ade786567eadad6a3749c47643b117b4f62d.png" src="_images/39137bc9c5e75427af3f79a82fc1ade786567eadad6a3749c47643b117b4f62d.png" />
 </div>
 </div>
 </section>
@@ -1696,7 +1672,7 @@ Compare to define_eos values =  62.827
 Triple point
 [88.91220821] [5582.37923764]
 # Stv-CaCl2 TP:
-Pt2 =  88.91220821388308  # GPa
+Pt2 =  88.91220821388305  # GPa
 Tt2 =  5582.379237642232  # K
 Compare to define_eos values =  88.91220821388308 5582.379237642232
 </pre></div>
@@ -1737,8 +1713,8 @@ Compare to define_eos values =  113.4110155408729
 Triple point
 [141.47365402] [6077.91018034]
 # CaCl2-sft TP:
-Pt3 =  141.47365401777512  # GPa
-Tt3 =  6077.910180343331  # K
+Pt3 =  141.4736540177754  # GPa
+Tt3 =  6077.910180343333  # K
 Compare to define_eos values =  141.47365401777512 6077.910180343331
 </pre></div>
 </div>
@@ -1794,7 +1770,18 @@ Compare to define_eos values =  50 4841.313561513845
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[90.51739] [5598.12759231]
 fs_startliq_P =  90.51739000382202  # GPa
-Compare to define_eos values =  90.5101601196313
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'fs_startliq_P = '</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">' # GPa'</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Compare to define_eos values = '</span><span class="p">,</span><span class="n">fs_startliq_P</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name 'fs_startliq_P' is not defined
 </pre></div>
 </div>
 </div>
