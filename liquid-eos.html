@@ -583,6 +583,33 @@
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
+<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
+
+<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1501,</span> in <span class="ni">_interp_dispatcher</span><span class="nt">(x, xp, fp, left, right, period)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1496</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1498</span>     <span class="k">return</span> <span class="n">a</span>
+<span class="ne">-&gt; </span><span class="mi">1501</span> <span class="k">def</span><span class="w"> </span><span class="nf">_interp_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1502</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">hugoniot</span><span class="o">-</span><span class="n">entropy</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">P_start</span><span class="p">,</span><span class="n">S_start</span><span class="p">,</span><span class="n">rho_start</span><span class="p">)</span>
@@ -606,7 +633,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2986.05347088 2986.99105496 2987.92844306 ... 8758.32036547 8758.4403657
+ 8758.56035711]
 </pre></div>
 </div>
 </div>
@@ -642,79 +670,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Density (g/cm$^3$)'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Pressure (GPa)'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Karki et al. 2007 Isotherms (original)'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">outputfigpath</span><span class="o">+</span><span class="s1">'K1-karki-dft-and-fits.pdf'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/pyplot.py:1251,</span> in <span class="ni">savefig</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1248</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span> <span class="c1"># savefig default implementation has no return, so mypy is unhappy</span>
-<span class="g g-Whitespace">   </span><span class="mi">1250</span> <span class="c1"># presumably this is here because subclasses can return?</span>
-<span class="ne">-&gt; </span><span class="mi">1251</span> <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[func-returns-value]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1252</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>  <span class="c1"># Need this if 'transparent=True', to reset colors.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1253</span> <span class="k">return</span> <span class="n">res</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/figure.py:3490,</span> in <span class="ni">Figure.savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3488</span>     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3489</span>         <span class="n">_recursively_make_axes_transparent</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3490</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/backend_bases.py:2184,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2180</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2181</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
-<span class="g g-Whitespace">   </span><span class="mi">2182</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2183</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2184</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2185</span>             <span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2186</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2187</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2188</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2189</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2190</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2191</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2192</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/backend_bases.py:2040,</span> in <span class="ni">FigureCanvasBase._switch_canvas_and_return_print_method.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2036</span>     <span class="n">optional_kws</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># Passed by print_figure for other renderers.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2037</span>         <span class="s2">"dpi"</span><span class="p">,</span> <span class="s2">"facecolor"</span><span class="p">,</span> <span class="s2">"edgecolor"</span><span class="p">,</span> <span class="s2">"orientation"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2038</span>         <span class="s2">"bbox_inches_restore"</span><span class="p">}</span>
-<span class="g g-Whitespace">   </span><span class="mi">2039</span>     <span class="n">skip</span> <span class="o">=</span> <span class="n">optional_kws</span> <span class="o">-</span> <span class="p">{</span><span class="o">*</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">meth</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">}</span>
-<span class="ne">-&gt; </span><span class="mi">2040</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">meth</span><span class="p">)(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">meth</span><span class="p">(</span>
-<span class="nn">   2041         *args, **{k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">() if k not in skip}))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2042</span> <span class="k">else</span><span class="p">:</span>  <span class="c1"># Let third-parties do as they see fit.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2043</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">meth</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/backends/backend_pdf.py:2779,</span> in <span class="ni">FigureCanvasPdf.print_pdf</span><span class="nt">(self, filename, bbox_inches_restore, metadata)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2777</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">_ensure_file</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2778</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2779</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">PdfFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2780</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2781</span>     <span class="n">file</span><span class="o">.</span><span class="n">newPage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/backends/backend_pdf.py:687,</span> in <span class="ni">PdfFile.__init__</span><span class="nt">(self, filename, metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_file_like</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span> <span class="bp">self</span><span class="o">.</span><span class="n">tell_base</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">--&gt; </span><span class="mi">687</span> <span class="n">fh</span><span class="p">,</span> <span class="n">opened</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">to_filehandle</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">,</span> <span class="n">return_opened</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">688</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">opened</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">689</span>     <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/matplotlib/cbook.py:546,</span> in <span class="ni">to_filehandle</span><span class="nt">(fname, flag, return_opened, encoding)</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="n">fh</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">546</span>         <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">547</span>     <span class="n">opened</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span> <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'seek'</span><span class="p">):</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: 'output-figs/K1-karki-dft-and-fits.pdf'
-</pre></div>
-</div>
-<img alt="_images/a7ede8804a2f775e3fb9dcef7a3d83ba640d6782250251258f30a78adafbcd50.png" src="_images/a7ede8804a2f775e3fb9dcef7a3d83ba640d6782250251258f30a78adafbcd50.png" />
+<img alt="_images/85715b05286f97901ee0ea5ae94df7e7f32afb59f8cb3df860a914de050fcc91.png" src="_images/85715b05286f97901ee0ea5ae94df7e7f32afb59f8cb3df860a914de050fcc91.png" />
 </div>
 </div>
 <figure class="align-default" id="karki-isotherms">

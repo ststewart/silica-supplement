@@ -1,4 +1,17 @@
 Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 330, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -22,54 +35,22 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-
-# find where P-T crosses
-fs_PT_cross = intersection(gm24mc.P,gm24mc.T,fs_hug_liq.P,fs_hug_liq.T)
-qtz_PT_cross = intersection(gm24mc.P,gm24mc.T,qtz_hug_liq.P,qtz_hug_liq.T)
-cst_PT_cross = intersection(gm24mc.P,gm24mc.T,cst_hug_liq.P,cst_hug_liq.T)
-
-fs_rho_cross = np.interp(fs_PT_cross[0],fs_hug_liq.P,fs_hug_liq.rho)
-qtz_rho_cross = np.interp(qtz_PT_cross[0],qtz_hug_liq.P,qtz_hug_liq.rho)
-cst_rho_cross = np.interp(cst_PT_cross[0],cst_hug_liq.P,cst_hug_liq.rho)
-
-# Fig 2 Geng et al. 2024 model densities
-fs_rho_model = np.interp(fs_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
-qtz_rho_model = np.interp(qtz_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
-cst_rho_model = np.interp(cst_PT_cross[0],eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)
-
-fs_rho_model = np.interp(fs_PT_cross[0],ypres,xrho)
-qtz_rho_model = np.interp(qtz_PT_cross[0],ypres,xrho)
-cst_rho_model = np.interp(cst_PT_cross[0],ypres,xrho)
-
-
-print(fs_rho_cross-fs_rho_model)
-print(qtz_rho_cross-qtz_rho_model)
-print(cst_rho_cross-cst_rho_model)
-
-diff_arr = np.asarray([fs_rho_cross-fs_rho_model,qtz_rho_cross-qtz_rho_model,cst_rho_cross-cst_rho_model])
-diff_mean = np.mean(diff_arr)
-diff_std = np.std(diff_arr)
-print(diff_mean,diff_std)
-G24_rshift = diff_mean
-G24_rshift_std = diff_std
-------------------
-
-
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 3[39m
-[32m      1[39m [38;5;66;03m# find where P-T crosses[39;00m
-[32m      2[39m fs_PT_cross = intersection(gm24mc.P,gm24mc.T,fs_hug_liq.P,fs_hug_liq.T)
-[32m----> [39m[32m3[39m qtz_PT_cross = intersection(gm24mc.P,gm24mc.T,qtz_hug_liq.P,qtz_hug_liq.T)
-[32m      4[39m cst_PT_cross = intersection(gm24mc.P,gm24mc.T,cst_hug_liq.P,cst_hug_liq.T)
-[32m      5[39m 
-[32m      6[39m fs_rho_cross = np.interp(fs_PT_cross[[32m0[39m],fs_hug_liq.P,fs_hug_liq.rho)
-
-[31mNameError[39m: name 'qtz_hug_liq' is not defined
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+        "Cell execution timed out", timeout, cell
+    )
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['%%capture ', '## This cell loads the modules, data, and EOS parameters', '## capture magic function hides the output; comment out to see diagnostic info during data load', '## Run executable notebook for output', '']
+...
+['', "# this notebook's figure name tag", "tag = 'DFT-'", '', '# gm24mc set in load_silica_data.py']
+-------------------
 

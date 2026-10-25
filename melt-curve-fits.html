@@ -585,6 +585,33 @@ Systematic uncertainties related to PBE DFT and static DAC measurements may be g
 <span class="ne">FileNotFoundError</span>: ../data_silica_db/Connolly-Fig4b-black-dashed-T-rho.csv not found.
 </pre></div>
 </div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
+<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
+
+<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1501,</span> in <span class="ni">_interp_dispatcher</span><span class="nt">(x, xp, fp, left, right, period)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1496</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1498</span>     <span class="k">return</span> <span class="n">a</span>
+<span class="ne">-&gt; </span><span class="mi">1501</span> <span class="k">def</span><span class="w"> </span><span class="nf">_interp_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1502</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <section id="gonzales-et-al-2016-no-tweak">
@@ -663,35 +690,19 @@ Systematic uncertainties related to PBE DFT and static DAC measurements may be g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [-6.36271653e+03  3.34234543e+03  2.41679458e-01]
-FIT EOS cov =  [[ 2.33434555e+06 -1.10998015e+06  2.87368374e+01]
- [-1.10998015e+06  5.29325109e+05 -1.37257325e+01]
- [ 2.87368374e+01 -1.37257325e+01  3.56260772e-04]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIT EOS a =  [-6.36275124e+03  3.34236196e+03  2.41679030e-01]
+FIT EOS cov =  [[ 2.33434318e+06 -1.10998143e+06  2.87367104e+01]
+ [-1.10998143e+06  5.29326870e+05 -1.37257017e+01]
+ [ 2.87367104e+01 -1.37257017e+01  3.56257994e-04]]
+Saved EOS fit in SiO2_fitG16_simons.txt
+Saved EOS fit in readable file SiO2_fitG16_simons-readable.txt
+rms =  223.5249848435821
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">41</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">a0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mf">.2</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'FIT EOS a = '</span><span class="p">,</span><span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'FIT EOS cov = '</span><span class="p">,</span><span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">cov</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">41</span> <span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">savejson</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">savereadable</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'rms = '</span><span class="p">,</span><span class="n">sio2_mc_G16</span><span class="o">.</span><span class="n">rms</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="c1">#plt.errorbar(fitx,fitf,xerr=fitx_std,yerr=fitf_std,fmt='x',label='fitted points')</span>
-
-<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:322,</span> in <span class="ni">HPeos_Fit.savejson</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="k">def</span><span class="w"> </span><span class="nf">savejson</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="c1"># write json file that can be read back into the dataclass</span>
-<span class="ne">--&gt; </span><span class="mi">322</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputfitpath</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="o">+</span><span class="s1">'.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="n">temp</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span><span class="bp">cls</span><span class="o">=</span><span class="n">NumpyEncoder</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># writes as one long string</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: 'output-fits/SiO2_fitG16_simons.txt'
+<img alt="_images/e63a5c98ce09dfe416c0620cb38c028c9dafa2773a13de918db12345472c7b68.png" src="_images/e63a5c98ce09dfe416c0620cb38c028c9dafa2773a13de918db12345472c7b68.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No intersection:  [] []
 </pre></div>
 </div>
-<img alt="_images/ab664fa09e54c5d1e0335cb4073357f18db24b61288b146066356670a8941b94.png" src="_images/ab664fa09e54c5d1e0335cb4073357f18db24b61288b146066356670a8941b94.png" />
 </div>
 </div>
 </section>

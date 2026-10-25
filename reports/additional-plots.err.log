@@ -1,4 +1,17 @@
 Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 330, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -22,34 +35,22 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-print(qtz_wiggle_P2,fs_wiggle_P2)
-print('P, shot',shockdat_list[A23fs['id']].P)
-print('P, shot',shockdat_list[A23fs['id']].T)
-irind = np.asarray([4,4,4,4,2,4,0,4,1,1]) # 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible
-itmp = np.where(irind >=2)[0]
-print(itmp)
-
-print('P, shot',shockdat_list[A23qtz['id']].P)
-print('P, shot',shockdat_list[A23qtz['id']].T)
-irind = np.asarray([4,4,4,4,2,4,0,4,1,1]) # 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible
-itmp = np.where(irind >=2)[0]
-print(itmp)
-------------------
-
-
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m print(qtz_wiggle_P2,fs_wiggle_P2)
-[32m      2[39m print([33m'P, shot'[39m,shockdat_list[A23fs[[33m'id'[39m]].P)
-[32m      3[39m print([33m'P, shot'[39m,shockdat_list[A23fs[[33m'id'[39m]].T)
-[32m      4[39m irind = np.asarray([[32m4[39m,[32m4[39m,[32m4[39m,[32m4[39m,[32m2[39m,[32m4[39m,[32m0[39m,[32m4[39m,[32m1[39m,[32m1[39m]) [38;5;66;03m# 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible[39;00m
-
-[31mNameError[39m: name 'qtz_wiggle_P2' is not defined
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+        "Cell execution timed out", timeout, cell
+    )
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['%%capture ', '## This cell loads the modules, data, and EOS parameters', '## capture magic function hides the output; comment out to see diagnostic info during data load', '## Run executable notebook for output', '']
+...
+['#%run -i scripts/set_plotstyle.py # customize matplotlib', '#%run -i scripts/set_colors.py # custom colors', '', "# this notebook's figure name tag", "tag = 'AP-'"]
+-------------------
 

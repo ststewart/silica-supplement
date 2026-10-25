@@ -567,6 +567,33 @@
 <span class="ne">FileNotFoundError</span>: ../data_silica_db/Connolly-Fig4b-black-dashed-T-rho.csv not found.
 </pre></div>
 </div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">supplement</span><span class="o">/</span><span class="n">silica</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">load_solid_models</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">541</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># CACL2 IS PHASE B</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># interpolate the stv-cacl2 isotherms for density on the boundary</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">for</span> <span class="n">iii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="c1"># have P and T, calculate isotherm</span>
+<span class="ne">--&gt; </span><span class="mi">541</span>     <span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_sft</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">rho_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">rhoarr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">p23bnd</span><span class="o">.</span><span class="n">S_b</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">p23bnd</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">,</span><span class="n">sftpvt</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">)</span>
+
+<span class="nn">File ~/work/silica-supplement/silica-supplement/silica-book/scripts/hpeos_module.py:1257,</span> in <span class="ni">HPeos_Model.isotherm_sft</span><span class="nt">(self, tval)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6000</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="n">pfitarr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sp6500</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">1257</span> <span class="bp">self</span><span class="o">.</span><span class="n">isotherm_s</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotherm_p</span><span class="p">[</span><span class="n">iii</span><span class="p">],</span><span class="n">pfitarr</span><span class="p">,</span><span class="n">sfitarr</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_function_base_impl.py:1501,</span> in <span class="ni">_interp_dispatcher</span><span class="nt">(x, xp, fp, left, right, period)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1496</span>         <span class="n">a</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slice1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">slice2</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1498</span>     <span class="k">return</span> <span class="n">a</span>
+<span class="ne">-&gt; </span><span class="mi">1501</span> <span class="k">def</span><span class="w"> </span><span class="nf">_interp_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1502</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1505</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_interp_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">def</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -624,22 +651,14 @@ number of up points =  500  number of steps =  500
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_prop_cycle</span><span class="p">(</span><span class="n">custom_cycler</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">MDfs69691</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">us</span><span class="p">,</span><span class="n">shockdat_list</span><span class="p">[</span><span class="n">MDfs69691</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="s1">'.'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'69691'</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># fs_wiggle_us1 and fs_wiggle_us2 are set in define_eos.py</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">fs_wiggle_us1</span><span class="p">,</span><span class="n">fs_wiggle_us1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="s1">'k--'</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">fs_wiggle_us2</span><span class="p">,</span><span class="n">fs_wiggle_us2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="s1">'k--'</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Shock Velocity (km/s)'</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name 'fs_wiggle_us1' is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/c64d18c1e8702f4f9191ea71d6da1e66313cd9eda39bbb10086caea3c2725865.png" src="_images/c64d18c1e8702f4f9191ea71d6da1e66313cd9eda39bbb10086caea3c2725865.png" />
+<img alt="_images/f14248eac9c74ce5545e74edd67acc24711624f4341be72a8776b4bcdac2174a.png" src="_images/f14248eac9c74ce5545e74edd67acc24711624f4341be72a8776b4bcdac2174a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transition shock velocities:  7.5 8.0
+Transition pressures:  65.75879401343992 73.53695488293766
+</pre></div>
+</div>
 </div>
 </div>
 <section id="us-up-fits">
