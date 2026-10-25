@@ -27,8 +27,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Create output folders
-        run: |
-          mkdir -p silica-book/output-figs silica-book/output-fits
+        run: mkdir -p silica-book/output-figs silica-book/output-fits
 	 
       - name: Build the book
         run: |
