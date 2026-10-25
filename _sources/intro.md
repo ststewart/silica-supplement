@@ -1,4 +1,4 @@
-# Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve
+# Transient Melt in the Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve
 ## Supplementary Materials and Replication Data
 
 K. M. Amodeo<br>
@@ -8,6 +8,7 @@ M. Millot<br>
 S. T. Stewart<br>
 
 March 16, 2026<br>
+Revised October, 2026<br>
 sstewa56@asu.edu<br>
 https://github.com/ststewart/silica-supplement)<p>
 
