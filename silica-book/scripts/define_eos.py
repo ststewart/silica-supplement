@@ -284,6 +284,7 @@ fs_wiggle_rho2 = np.interp(fs_wiggle_us2,fs_hug_liq.us,fs_hug_liq.rho)
 # in melt-curve-fits.ipynb
 fs_startliq_P =  90.5101601196313  # GPa
 fs_startliq_us = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.us)
+fs_startliq_up = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.up)
 fs_startliq_T = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.T)
 fs_startliq_rho = np.interp(fs_startliq_P,fs_hug_liq.P,fs_hug_liq.rho)
 # amorphous to stv transition

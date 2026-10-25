@@ -26,8 +26,8 @@ xrange: [8.66547753 9.88137306]
 npts: 5
 rms: 2.2771351063525387
 phase_fit: CaCl2
-actions: [['Sarah T. Stewart', 'create', '2025-10-21T22:40:58+00:00', 'new fit']]
-remlist: ['Fit to model of solid region temperatures on the coesite Hugoniot.', 'Fit with scipy ODR version 1.15.2']
+actions: [['Sarah T. Stewart', 'create', '2026-10-25T00:34:51+00:00', 'new fit']]
+remlist: ['Fit to model of solid region temperatures on the coesite Hugoniot.', 'Points are model temperatures, not measurements: intersections of the coesite solid-region Us-up fit (cst_fit_cacl2_linear; refids 304, 305) with stishovite Mie-Grueneisen isotherms at 4000, 4500, 5000, 5500, 5900 K (Driver et al. 2010 4000 K isotherm; refid -1).', 'Model points carry zero uncertainty, so the fit covariance is zero (Eq. I10).', 'Fit with scipy ODR version 1.15.2']
 hpeos_version: 0.3
 scipy_version: 1.15.2
 
@@ -42,3 +42,6 @@ TABLE
 
 REFERENCES
 288: Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.
+304: Luo, S.-N., Mosenfelder, J. L., Asimow, P. D., & Ahrens, T. J. (2002). Direct shock wave loading of Stishovite to 235 GPa: Implications for perovskite stability relative to an oxide assemblage at lower mantle conditions. Geophysical Research Letters, 29(14), 36-1-36–4. https://doi.org/10.1029/2002GL015627
+305: M. A. Podurets, G. V. Simakov, G. S. Telegin, R. F. Trunin, Polymorphism of silica in shock waves and equation of state of coesite and stishovite, Izv. Akad. Nauk SSSR. Fiz. Zemli 1, 16-25 (1981) [in Russian]
+-1: Driver, K. P., Cohen, R. E., Wu, Z., Militzer, B., Rios, P. L., Towler, M. D., Needs, R. J., & Wilkins, J. W. (2010). Quantum Monte Carlo computations of phase stability, equations of state, and elasticity of high-pressure silica. PNAS, 107(21), 9519-9524. https://doi.org/10.1073/pnas.0912130107

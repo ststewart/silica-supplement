@@ -92,6 +92,7 @@ if 1:
     fig28=False
     fig29=False
     fig30=False
+    figtest=False
     if pind == 1:
         fig1=True # ab initio and static phase boundary data
     if pind == 2:
@@ -151,7 +152,14 @@ if 1:
         fig3=True
         fig16=True
         fig24=True
+    if pind == 124: # quartz paper fig2 -qtz
+        fig3=True
+        fig16=True
+        fig24=True
     if pind == 25: # quartz paper fig 2-fs
+        fig8=True
+        fig25=True
+    if pind == 125: # quartz paper fig 2-fs
         fig8=True
         fig25=True
     if pind == 26: # quartz transition front
@@ -175,7 +183,17 @@ if 1:
         fig29=True
     if pind == 30:
         fig30=True
-        
+    if pind == 2425:
+        fig3=True
+        fig16=True
+        fig24=True       
+        fig8=True
+        fig25=True
+        figtest=True
+    if pind == 2627:
+        fig26=True
+        fig8=True #
+        fig27=True        
     #########################################
     # default figure shape
     plt.rcParams.update(plt.rcParamsDefault)
@@ -197,12 +215,21 @@ if 1:
     if fig23 or fig24 or fig25 or fig26 or fig27 or fig28 or fig29:
         fig = plt.figure(figsize=(10, 6))
         plt.rcParams.update({'font.size': 16})
+    if fig23:
+        fig = plt.figure(figsize=(10, 6))
+        plt.rcParams.update({'font.size': 14})
     #if fig29:
     #    fig = plt.figure(figsize=(10, 6))
     #    plt.rcParams.update({'font.size': 26})
     if fig30:
         fig = plt.figure(figsize=(8, 6))
-        plt.rcParams.update({'font.size': 14})        
+        plt.rcParams.update({'font.size': 14})  
+    if pind==124:
+        fig = plt.figure(figsize=(6, 6))
+        plt.rcParams.update({'font.size': 14})  
+    if pind==125:
+        fig = plt.figure(figsize=(6, 6))
+        plt.rcParams.update({'font.size': 14})  
     #########################################    
     # colors for solid-solid phase boundaries
     pbw=4
@@ -220,7 +247,7 @@ if 1:
         plt.plot(eosdat_list[G14hqcs['id']].P,eosdat_list[G14hqcs['id']].T,color="black")
 
     # plot background solid-solid phase boundaries GGA on most plots
-    if not(fig23 or fig1):
+    if 0:
         # plot GGA boundaries
         # stv-CaCl2 T04
         plt.plot(eosdat_list[T04pba['id']].P,eosdat_list[T04pba['id']].T,'-',color=pbcol,linewidth=pbw)
@@ -238,6 +265,30 @@ if 1:
         print('RES a=',res)
         print('4000 K pressure = ',np.interp(4000,np.flip(eosdat_list[T04pba['id']].T[zzz]),np.flip(eosdat_list[T04pba['id']].P[zzz])))
         #plt.plot(np.arange(60,100),res[1]+res[0]*np.arange(60,100),'k-')
+        
+        # alpha-PbO2->pyrite LDA from O05
+ #       ind = np.where(eosdat_list[P25pbscan['id']].T<7250)[0]
+        #plt.errorbar(eosdat_list[P25pbscan['id']].P[ind],eosdat_list[P25pbscan['id']].T[ind],fmt='-',color=pbcol,linewidth=pbw)
+        ind = np.where(eosdat_list[P25pb['id']].T<6250)[0]
+        plt.errorbar(eosdat_list[P25pb['id']].P[ind],eosdat_list[P25pb['id']].T[ind],fmt='-',color=pbcol,linewidth=pbw)
+        #plt.errorbar(eosdat_list[O05pbc['id']].P,eosdat_list[O05pbc['id']].T,fmt=':',color=pbcol,linewidth=pbw)
+    if not(fig23 or fig1):
+        # plot Deng et al. 2026 D26
+        colO05='teal'
+        # add Deng et al. 2026 PBEsol boundaries
+        # stv-CaCl2
+        ptmp = np.arange(109-85)+85
+        ttmp = 91.45*ptmp -3999
+        #plt.plot(ptmp,ttmp,'--',color=colO05,label='D26 stv-CaCl₂ PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='stishovite/post-stishovite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'-',color=pbcol,linewidth=pbw)
+        
+        # CaCl2-siefertite
+        ptmp = np.arange(129-111)+110
+        ttmp = 132.98*ptmp -11011
+        #plt.plot(ptmp,ttmp,'-.',color=colO05,label='D26 CaCl₂-pyrite PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='post-stishovite/seifertite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'-',color=pbcol,linewidth=pbw)
         
         # alpha-PbO2->pyrite LDA from O05
  #       ind = np.where(eosdat_list[P25pbscan['id']].T<7250)[0]
@@ -277,10 +328,10 @@ if 1:
         plt.plot([40,85],[4800,5200],'D',color='orange',mfc='white',label='A22 2nd order triple pt.')
         # Plot Andrault et al. 2022 triple points
         #plt.plot([Pt1],[Tt1],'mD',label='Est. 1st order triple pt.')
-        plt.plot([165],[6370],'s',color='orange',mec='k',label='P25 triple pt.') # estimate from extrapolated T04 GGA boundary; same value as Belonoshko et al. 1995 calculated point
-        plt.plot([Pt3],[Tt3],'mD',mec='k',label='Est. triple pt.') # estimate from extrapolated T04 GGA boundary; same value as Belonoshko et al. 1995 calculated point
+       # estimate from extrapolated T04 GGA boundary; same value as Belonoshko et al. 1995 calculated point
+#        plt.plot([Pt3],[Tt3],'mD',mec='k',label='Est. triple pt.') # estimate from extrapolated T04 GGA boundary; same value as Belonoshko et al. 1995 calculated point
         # Plot Andrault et al. 2022 triple points
-        plt.plot([Pt2],[Tt2],'mD',mfc='white',label='Est. 2nd order triple pt.')
+#        plt.plot([Pt2],[Tt2],'mD',mfc='white',label='Est. 2nd order triple pt.')
         #plt.plot([Ptm],[Ttm],'mD',mfc='white',label='Est. 2nd order triple pt.')
         #plt.plot([Pt3],[Tt3],'mD')#,mfc='white') # estimate from extrapolated T04 GGA boundary; same value as Belonoshko et al. 1995 calculated point
         #plt.plot([141],[6072],'mD',mfc='white') 
@@ -292,6 +343,23 @@ if 1:
         # Plot Andrault et al. 2022 triple points 2nd order
         #plt.plot([Pt2, Ptm],[Tt2,Ttm],'mD',mfc='white')
 
+        # plot Deng et al. 2026 D26
+        colO05='teal'
+        # add Deng et al. 2026 PBEsol boundaries
+        # stv-CaCl2
+        tmpind = np.where(eosdat_list[D26pb['id']].phase_solid =='stishovite/post-stishovite boundary (Eq.5)')
+        ind = np.max(tmpind)
+        print(ind)
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'mD',mfc='white',label='D26 2nd order triple pt.')
+        
+        # CaCl2-siefertite
+        tmpind = np.where(eosdat_list[D26pb['id']].phase_solid =='post-stishovite/seifertite boundary (Eq.5)')
+        ind = np.max(tmpind)
+        print(ind)
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'mD',label='D26 triple pt.')
+        # sft-pyr Park et al. 2025
+        plt.plot([165],[6370],'s',color='orange',mec='k',label='P26 triple pt.') #
+    
     if 0:
         #plot Dong MC
         dong_dat = np.loadtxt('../data_silica_db/dong-mc.csv',skiprows=0,delimiter=',')
@@ -394,7 +462,10 @@ if 1:
         # melt curve data
         plt.errorbar(eosdat_list[B95mc['id']].P,eosdat_list[B95mc['id']].T,fmt='X--',mfc='white',mec='sienna',color='sienna',yerr=eosdat_list[B95mc['id']].T_std,label=B95mc['lab'])
         plt.errorbar(eosdat_list[G16mc['id']].P[0:4],eosdat_list[G16mc['id']].T[0:4],fmt='d--',mfc='white',mec='sienna',color='sienna',yerr=eosdat_list[G16mc['id']].T_std[0:4],label=G16mc['lab']) # pyrite structure
-        
+
+
+        plt.plot(eosdat_list[D26mc['id']].P,eosdat_list[D26mc['id']].T,'kD',mfc='white',markersize=4,label=D26mc['lab']) # Deng et al. 2026
+
         #plt.errorbar(eosdat_list[G24mcl['id']].P,eosdat_list[G24mcl['id']].T,fmt='cd--',mfc='white',label=G24mcl['lab'])
         
         if fig10:
@@ -437,9 +508,9 @@ if 1:
             #plt.plot(pg24arr,tg24arr,'-',color='darkorange',label='G24 Z method GGA')
 
             ind = np.asarray([1,2,3,9,10,11,12,13])
-            plt.plot(eosdat_list[P25mcpbe['id']].P[ind],eosdat_list[P25mcpbe['id']].T[ind],':',color='m',label='P25 2-phase PBEsol')
+            plt.plot(eosdat_list[P25mcpbe['id']].P[ind],eosdat_list[P25mcpbe['id']].T[ind],':',color='m',label='P26 2-phase PBEsol')
             ind = np.asarray([0,1,2,3,4,10,11,12])
-            plt.plot(eosdat_list[P25mcscan['id']].P[ind],eosdat_list[P25mcscan['id']].T[ind],'-.',color='m',label='P25 2-phase SCAN')
+            plt.plot(eosdat_list[P25mcscan['id']].P[ind],eosdat_list[P25mcscan['id']].T[ind],'-.',color='m',label='P26 2-phase SCAN')
             plt.plot(eosdat_list[B15mcpt['id']].P,eosdat_list[B15mcpt['id']].T,'--',color='dimgrey',label='B15 Gibbs model')
 
     if fig12 or fig24 or fig25:# or fig28:
@@ -777,7 +848,7 @@ if 1:
         ind = np.where(qtz_hug_liq.P > qtz_startliq_P)[0]
         plt.plot(qtz_hug_liq.P[ind],qtz_hug_liq.T[ind],'-',color=col,linewidth=4)
         plt.text(118,3800,'opaque\nfront',rotation=30,size=12)
-        plt.text(75,2600,'transparent\nfront',rotation=30,size=12)
+        plt.text(80,2700,'transparent\nfront',rotation=30,size=12)
         ind = np.where((stsmcsmooth.P > 110) & (stsmcsmooth.P <= qtz_startliq_P))[0]
         plt.plot(stsmcsmooth.P[ind],stsmcsmooth.T[ind],'-',color='springgreen',linewidth=3,label='Behind transition front')
     
@@ -802,8 +873,8 @@ if 1:
         #plt.plot(fs_hug_mix1.P,fs_hug_mix1.T,'b--',linewidth=2,label='FS Hug Mix NEW')
         ind = np.where(fs_hug_stv.P < fs_startsol_P)
         plt.plot(fs_hug_stv.P[ind],fs_hug_stv.T[ind],'k-',linewidth=3)#label='FS Hug Stv NEW')
-        plt.text(80,3600,'opaque\nfront',rotation=44,size=12)
-        plt.text(50,2200,'transparent\nfront',rotation=44,size=12)
+        plt.text(78,3900,'opaque\nfront',rotation=44,size=12)
+        plt.text(50,2300,'transparent\nfront',rotation=44,size=12)
         ind = np.where((stsmcsmooth.P > 70) & (stsmcsmooth.P <= fs_startliq_P))[0]
         plt.plot(stsmcsmooth.P[ind],stsmcsmooth.T[ind],'-',color='deepskyblue',linewidth=3,label='Behind transition front')
 
@@ -862,6 +933,10 @@ if 1:
         
         if not(fig7 or fig8 or fig5):
             plt.errorbar(shockdat_list[A23fs['id']].P,shockdat_list[A23fs['id']].T,fmt='bD',mfc='white',xerr=shockdat_list[A23fs['id']].P_std,yerr=shockdat_list[A23fs['id']].T_std,label=A23fs['lab'])
+            #[5027.3122   6703.340637 4573.230527 4200.1755   4483.578691 4611.0908 -999.       4670.915    5239.       5170.      
+            #irind = np.asarray([4,4,4,4,2,4,0,4,1,1]) # 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible
+            #itmp = np.where(irind >=2)[0]
+            #plt.errorbar(shockdat_list[A23fs['id']].P[itmp],shockdat_list[A23fs['id']].T[itmp],fmt='bD',mfc='pink',xerr=shockdat_list[A23fs['id']].P_std[itmp],yerr=shockdat_list[A23fs['id']].T_std[itmp],label='This Work (IR)')
         
     if fig2:
         plt.plot(eosdat_list[G24mcl['id']].P_liquid,eosdat_list[G24mcl['id']].T_liquid,'r+',label=G24mcl['lab'])
@@ -921,7 +996,7 @@ if 1:
         plt.errorbar(shockdat_list[L04qtz['id']].P,shockdat_list[L04qtz['id']].T,fmt='gv',mfc='orange',\
                      xerr=shockdat_list[L04qtz['id']].P_std,yerr=shockdat_list[L04qtz['id']].T_std,label='L04 (x)')#L04qtz['lab']+' (x)')
         
-        plt.errorbar(shockdat_list[S81qtz['id']].P,shockdat_list[S81qtz['id']].T,fmt='gx',label='S81 (-, no cal)')#S81qtz['lab']+' (-, no cal)')
+        plt.errorbar(shockdat_list[S81qtz['id']].P,shockdat_list[S81qtz['id']].T,fmt='gx',label='S81 (-, no IM)')#S81qtz['lab']+' (-, no cal)')
         # Luo et al. 2003 quartz Hugoniot model shock and release
         if fig11:
             plt.errorbar(shockdat_list[L03qtz['id']].P,shockdat_list[L03qtz['id']].T,fmt='r>',label=L03qtz['lab'])
@@ -958,9 +1033,11 @@ if 1:
         plt.errorbar(shockdat_list[H06qtz['id']].P[ind],shockdat_list[H06qtz['id']].T[ind],fmt='g+-',\
                          yerr = shockdat_list[H06qtz['id']].T_std[ind],label='H06 (decaying)')
         ind = np.where(shockdat_list[A23qtz['id']].P > qtz_singleshock_P)[0]
-        plt.errorbar(shockdat_list[A23qtz['id']].P[ind],shockdat_list[A23qtz['id']].T[ind],fmt='gD',mfc='yellow',markersize=7,xerr=shockdat_list[A23qtz['id']].P_std[ind],yerr=shockdat_list[A23qtz['id']].T_std[ind],label='This work')
+        plt.errorbar(shockdat_list[A23qtz['id']].P[ind],shockdat_list[A23qtz['id']].T[ind],fmt='gD',mfc='yellow',markersize=7,xerr=shockdat_list[A23qtz['id']].P_std[ind],yerr=shockdat_list[A23qtz['id']].T_std[ind],label='This work (vis)')
         ind = np.where(shockdat_list[A23qtz['id']].P < qtz_singleshock_P)[0]
-        plt.errorbar(shockdat_list[A23qtz['id']].P[ind],shockdat_list[A23qtz['id']].T[ind],fmt='gD',mfc='white',markersize=7,xerr=shockdat_list[A23qtz['id']].P_std[ind],yerr=shockdat_list[A23qtz['id']].T_std[ind],label='This work 2-wave')
+        plt.errorbar(shockdat_list[A23qtz['id']].P[ind],shockdat_list[A23qtz['id']].T[ind],fmt='gD',mfc='white',markersize=7,xerr=shockdat_list[A23qtz['id']].P_std[ind],yerr=shockdat_list[A23qtz['id']].T_std[ind],label='This work (2-wave)')
+
+    
     if fig26:
         #plt.errorbar(shockdat_list[B88qtz['id']].P,shockdat_list[B88qtz['id']].T,fmt='go',mfc='white',yerr=shockdat_list[B88qtz['id']].T_std,label=B88qtz['lab']+'(no IM)')
         indtmp = np.where((shockdat_list[B88RRqtz['id']].orientation == 'z') & (shockdat_list[B88RRqtz['id']].T > 0))[0]
@@ -992,17 +1069,22 @@ if 1:
 
     if fig8 and not(fig27):
         #plt.errorbar(shockdat_list[A23fs['id']].P,shockdat_list[A23fs['id']].T,fmt='bD',mfc='white',xerr=shockdat_list[A23fs['id']].P_std,yerr=shockdat_list[A23fs['id']].T_std,label=A23fs['lab'])
-        plt.errorbar(shockdat_list[A23fs['id']].P,shockdat_list[A23fs['id']].T,fmt='bD',mfc='lightblue',markersize=7,xerr=shockdat_list[A23fs['id']].P_std,yerr=shockdat_list[A23fs['id']].T_std,label='This work')
-
+        plt.errorbar(shockdat_list[A23fs['id']].P,shockdat_list[A23fs['id']].T,fmt='bD',mfc='lightblue',markersize=7,xerr=shockdat_list[A23fs['id']].P_std,yerr=shockdat_list[A23fs['id']].T_std,label='This work (vis)')
+        #[5027.3122   6703.340637 4573.230527 4200.1755   4483.578691 4611.0908 -999.       4670.915    5239.       5170.      
+        irind = np.asarray([4,4,4,4,2,4,0,4,1,1]) # 4 is 4.8 microns, 2 is 2.3 microns, 1 is visible
+        itmp = np.where(irind >=2)[0]
+        plt.errorbar(shockdat_list[A23fs['id']].P[itmp],shockdat_list[A23fs['id']].T[itmp],fmt='bD',mfc='plum',xerr=shockdat_list[A23fs['id']].P_std[itmp],yerr=shockdat_list[A23fs['id']].T_std[itmp],label='This Work (IR)')
+        
 #    if fig26 or fig27:
     if 0:
         plt.plot([qtz_wiggle_P1,qtz_wiggle_P1],[0,10000])
         plt.plot([qtz_wiggle_P2,qtz_wiggle_P2],[0,10000])
- 
-    if fig27:
-#        coldecay='deepskyblue'
-        coldecayt='darkgoldenrod'
+
+    #        coldecay='deepskyblue'
 #        col48 = 'cornflowerblue'
+
+    if fig27:
+        coldecayt='darkgoldenrod'
         with open('shot50/objs.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
             s50time, s50temp, s50temperr, s50pres, s50us, s50up, ind50, isort50,s50tempbackout,Tsteady,Tsteady_err,Psteady=pickle.load(f)
         with open('shot60/objs.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
@@ -1046,12 +1128,42 @@ if 1:
             ind = np.where(qtz_hug_liq.P > qtz_startliq_P)[0]
             plt.plot(qtz_hug_liq.P[ind],qtz_hug_liq.T[ind],'g-',label='Qtz Hug Liq NEW')
 
-
+    if 0: #fig30:
+        colO05='teal'
+        # add Deng et al. 2026 PBEsol boundaries
+        # stv-CaCl2
+        ptmp = np.arange(109-85)+85
+        ttmp = 91.45*ptmp -3999
+        #plt.plot(ptmp,ttmp,'--',color=colO05,label='D26 stv-CaCl₂ PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='stishovite/post-stishovite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'--',color=colO05,label='D26 stv-CaCl₂ PBEsol')
+        
+        # CaCl2-siefertite
+        ptmp = np.arange(129-111)+110
+        ttmp = 132.98*ptmp -11011
+        #plt.plot(ptmp,ttmp,'-.',color=colO05,label='D26 CaCl₂-pyrite PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='post-stishovite/seifertite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'-.',color=colO05,label='D26 CaCl₂-sft PBEsol')
     # plot solid-solid phase boundaries original calculations
     if fig1 or fig23:
-        #
         colT04='turquoise'
         colO05='teal'
+        # add Deng et al. 2026 PBEsol boundaries
+        # stv-CaCl2
+        ptmp = np.arange(109-85)+85
+        ttmp = 91.45*ptmp -3999
+        #plt.plot(ptmp,ttmp,'--',color=colO05,label='D26 stv-CaCl₂ PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='stishovite/post-stishovite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'--',color=colO05,label='D26 stv-CaCl₂ PBEsol')
+        
+        # CaCl2-siefertite
+        ptmp = np.arange(129-111)+110
+        ttmp = 132.98*ptmp -11011
+        #plt.plot(ptmp,ttmp,'-.',color=colO05,label='D26 CaCl₂-pyrite PBEsol')
+        ind = np.where(eosdat_list[D26pb['id']].phase_solid =='post-stishovite/seifertite boundary (Eq.5)')
+        plt.plot(eosdat_list[D26pb['id']].P[ind],eosdat_list[D26pb['id']].T[ind],'-.',color=colO05,label='D26 CaCl₂-sft PBEsol')
+                
+        #
         # stv-CaCl2
         #if not(fig23):
             # Fischer et al. 2018 lab
@@ -1059,17 +1171,17 @@ if 1:
         # Tsuchiya et al. 2004
         plt.errorbar(eosdat_list[T04pba['id']].P,eosdat_list[T04pba['id']].T,fmt='3-',label=T04pba['lab'],color=colT04)
         # Oganov et al. 2005
-        plt.errorbar(eosdat_list[O05pba['id']].P,eosdat_list[O05pba['id']].T,fmt='3-',label=O05pba['lab'],color=colO05)     
+        #plt.errorbar(eosdat_list[O05pba['id']].P,eosdat_list[O05pba['id']].T,fmt='3-',label=O05pba['lab'],color=colO05)     
         #
         # CaCl2 -> alpha-PbO2
         plt.errorbar(eosdat_list[T04pbb['id']].P,eosdat_list[T04pbb['id']].T,fmt='2--',label=T04pbb['lab'],color=colT04)
-        plt.errorbar(eosdat_list[O05pbb['id']].P,eosdat_list[O05pbb['id']].T,fmt='2--',label=O05pbb['lab'],color=colO05)
+        #plt.errorbar(eosdat_list[O05pbb['id']].P,eosdat_list[O05pbb['id']].T,fmt='2--',label=O05pbb['lab'],color=colO05)
         #
         # alpha-PbO2 -> pyrite
-        plt.errorbar(eosdat_list[P25pb['id']].P,eosdat_list[P25pb['id']].T,fmt=':',color=colT04,label=P25pb['lab'])
-        plt.errorbar(eosdat_list[O05pbc['id']].P,eosdat_list[O05pbc['id']].T,fmt='4:',label=O05pbc['lab'],color=colO05)
+        plt.errorbar(eosdat_list[P25pb['id']].P,eosdat_list[P25pb['id']].T,fmt=':',color=colO05,label=P25pb['lab'])
+        #plt.errorbar(eosdat_list[O05pbc['id']].P,eosdat_list[O05pbc['id']].T,fmt='4:',label=O05pbc['lab'],color=colO05)
         ind = np.where(eosdat_list[P25pbscan['id']].T<7250)[0]
-        plt.errorbar(eosdat_list[P25pbscan['id']].P[ind],eosdat_list[P25pbscan['id']].T[ind],fmt='-.',color='paleturquoise',label='P25 sft-pyrite SCAN')
+        plt.errorbar(eosdat_list[P25pbscan['id']].P[ind],eosdat_list[P25pbscan['id']].T[ind],fmt='-.',color='paleturquoise',label='P26 sft-pyrite SCAN')
 
         # Fischer et al. 2018 lab
         #plt.errorbar(eosdat_list[F18pb['id']].P,eosdat_list[F18pb['id']].T,fmt='3-',label=F18pb['lab'],color='tan')
@@ -1229,7 +1341,10 @@ if 1:
     #plt.plot([p_start,p_end],[4900,6150],'m-.',label='Metastable stv-mc liquidus')
     #plt.plot([Pt2,p_start,p_end],[4900,4900,6150],'-.',color=colsolidus,label='Metastable stv-mc solidus')
 
-
+    if fig24:
+        plt.errorbar(120.5,5580,yerr=100,xerr=0.3,fmt='gD',mfc='tomato',markersize=7,label='This work (IR)')
+   # if fig25:
+   #     plt.plot(63,4800,'kD') # McQueen & Fritz FS 'phase change'
 
     ######## PLOT ISENTROPES ##############
     if fig6:
@@ -1364,9 +1479,15 @@ if 1:
     if fig30:
         plt.title('')
         figname = 'A30-paper-fig9' 
+    if pind == 2425:
+        plt.title('')
+        figname = 'Fig2-testcombo' 
+    if pind == 2627:
+        plt.title('')
+        figname = 'Fig7-testcombo' 
     ################## EXTRA ANNOTATIONS ###########################
     
-    if not(fig12 or fig21 or fig28):
+    if not(fig12 or fig21 or fig28) and (pind != 124) and (pind !=125):
         ts = 14
         if fig22 or fig23 or fig24 or fig25 or fig26 or fig27 or fig29:
             ts=14
@@ -1376,12 +1497,12 @@ if 1:
         if fig23:
             plt.text(70,945,'CaCl₂-\ntype',fontsize=ts)
         else:
-            plt.text(70,950,'CaCl₂-type',fontsize=ts)
+            plt.text(70,950,'CaCl₂-\ntype',fontsize=ts)
             
         #plt.text(70,950,'type',fontsize=ts)
         #plt.text(130,950,'seifertite',fontsize=ts)
         plt.text(130,950,'seifertite\nα-PbO₂-type',fontsize=ts)
-        if not(fig8 or fig9):
+        if not(fig8 or fig9) and not(pind==124) and not(pind==125):
             plt.text(205,990,'pyrite-\ntype',fontsize=ts)
         if fig27:
             plt.text(205,950,'pyrite-type',fontsize=ts)
@@ -1405,7 +1526,7 @@ if 1:
     ## add annotations
     #if fig24:
     #    plt.text(5,9500,'B. α-quartz',fontsize=14)
-    if fig25 and not(fig27):
+    if fig25 and not(fig27) and not(pind==125):
         #plt.text(5,9500,'A. Fused silica',fontsize=14)
         plt.text(205,950,'pyrite-type',fontsize=ts)
     #if fig26:
@@ -1434,6 +1555,9 @@ if 1:
     if fig24 or fig25 or fig26 or fig27:
         plt.xlim(0,250)
         plt.ylim(0,10000)
+    if (pind==124) or (pind==125):
+        plt.xlim(0,250)
+        plt.ylim(1000,9000)
     if fig28:
         plt.xlim(0,800)
         plt.ylim(0,13000)
@@ -1473,9 +1597,11 @@ if 1:
         #order = [7,10,0,8,11,1,2,12,3,4,5,6,9,13,14,15,16,17]
         #order = [0,9,12,1,10,2,3,13,14,4,5,6,7,8,11,15,16,17,18,19,20,21]
         #order = [0,10,13,1,11,2,3,14,9,15,4,5,6,7,8,12,16,17,18,19,20,21,22]
-        order = [0,12,13,1,2,14,8,15,3,4,5,6,7,16,17,18,19,20,21,22]
+        #order = [0,12,13,1,2,14,8,15,3,4,5,6,7,16,17,18,19,20,21,22] # before revision
+        order = [0,15,16,17,2,3,9,18,4,5,6,7,8,1,19,20,21,22,10,11]
+#                 12,13,1,2,14,8,15,3,4,5,6,7,16,17,18,19,20,21,22] # after revision
         print(len(order))
-        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10) 
+        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='center left', bbox_to_anchor=(1, 0.5),fontsize=12) 
 
     if fig24:
         for i in range(len(labels)):
@@ -1489,10 +1615,12 @@ if 1:
         #order = [ 7 , 9 , 5 , 6, 0,1, 2 , 8 , 3 , 4 ,14 ,11 ,12 ,10, 13, 15]
         #order = [ 3, 12, 2, 0, 4, 1, 10,7, 8, 6, 9,11]
         #order = [ 3, 12, 13, 2, 0, 4, 1, 10,7, 8, 6, 9,11]
-        order = [13, 14, 2, 0, 1, 11,6,7, 8, 9,10,12]
+        order = [13, 15, 14, 2, 0, 1, 11,6,7, 8, 9,10,12]
         print(len(order))
         plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='lower right', fontsize=10,framealpha=1,title='B. α-quartz')
 
+    if pind==124:
+        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='lower right', fontsize=10,framealpha=1,title='B. α-quartz')
     if fig25:
         for i in range(len(labels)):
             print(i,labels[i],handles[i])
@@ -1503,11 +1631,16 @@ if 1:
         # added triple points
         #order = [ 6, 15,  5, 0,1, 2,  7,  3,  4, 10, 11, 12, 13,  8,  9, 14]
         #order = [ 2, 11, 0, 3, 1, 6, 7, 8, 9, 4, 5]
-        order = [11, 0, 1, 6, 7, 8, 9, 4, 5,10]
+        #order = [11, 0, 1, 6, 7, 8, 9, 4, 5,10] # before revision
+        order = [11, 12, 0, 1, 6, 7, 8, 9, 4, 5,10] # before revision
+        #order = [9, 10, 0, 1, 6, 7, 4, 5, 8]
+#                 7, 8, 9, 4, 5,10] # after revision
         print(len(order))  
         plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='center right', fontsize=10,framealpha=1, title='A. Fused silica') 
         #plt.plot([80,80],[0,10000])
         #plt.plot([84,84],[0,10000])
+    if pind==125:
+        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='lower right', fontsize=10,framealpha=1, title='A. Fused silica') 
 
     if fig26:
         for i in range(len(labels)):
@@ -1542,7 +1675,7 @@ if 1:
         #order = [0,6,8,7,1,2,3,4,5]
         order = [0,5,6,7,3,4,8,1,2]
         print(len(order))
-        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='lower right', fontsize=10,framealpha=1,title='C. Coesite & Stishovite') 
+        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='lower right', fontsize=10,framealpha=1,title='Coesite & Stishovite') 
 
     if fig29:
         plt.legend( fontsize=10,framealpha=1)
@@ -1555,7 +1688,12 @@ if 1:
     if fig30:
         plt.text(10,4500,'LDM')
         plt.text(50,5500,'HDM')
-        plt.legend(fontsize=10)        
+        plt.legend(fontsize=10)     
+
+    if pind == 2425:
+        plt.legend('', frameon=False)
+    if pind == 2627:
+        plt.legend('', frameon=False)
     ################### END LEGEND ###################################
 
     print('figsize=',plt.rcParams['figure.figsize'])

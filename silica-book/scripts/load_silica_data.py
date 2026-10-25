@@ -832,9 +832,9 @@ print('New refid # = ',newrefid)
 
 newref = hp.HPeos_Reference()
 newref.refid = [newrefid]
-newref.reference = ['Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.']
+newref.reference = ['Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., & Stewart, S. T. (n.d.). Transient Melt in the Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve. Journal of Geophysical Research: Solid Earth, in prep.']
 bibstr = "@article{Amodeo2025, \
-    title={Transitional Melt in Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve},\
+    title={Transient Melt in the Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve},\
     journal={Journal of Geophysical Research: Solid Earth}, \
     author={Amodeo, Kaitlyn M. and Davies, Erik J. and Spaulding, Dylan K. and Millot, Marius and Stewart, Sarah T.}, \
     pages={in prep.} \
@@ -1122,22 +1122,23 @@ shockdat_list.append(hug)
 
 # Wackerle1962 single wave data only
 # Fused Quartz
+nmr = 7
 hug_file   = silicadatadir+'Wackerle-1962-hug.txt'
 hug          = hp.HPeos_Shock()
 hug.matid    = [143]
 hug.material = ['Quartz amorphous']
 hug.formula  = ['SiO2']
 hug.rho_ref = [2.204] # g/cm3
-hug.us      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[0],max_rows=6) 
+hug.us      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[0],max_rows=nmr) 
 hug.us_units = ['km/s']
 hug.us_std = 0.005*hug.us # estimated 0.5% error on 1st wave arrival velocity
-hug.up      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[1],max_rows=6) 
+hug.up      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[1],max_rows=nmr) 
 hug.up_units = ['km/s']
 hug.up_std  = 0.01*hug.up # assumed 1% error on IM solution
-hug.P      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[2],max_rows=6)*0.1 # kbar->GPa
+hug.P      = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[2],max_rows=nmr)*0.1 # kbar->GPa
 hug.P_units = ['GPa']
 hug.P_std  = np.sqrt(hug.P*hug.P*(.01**2+.005**2))
-v = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[3],max_rows=6) # V/V0
+v = np.loadtxt(hug_file,delimiter=',',skiprows=14,usecols=[3],max_rows=nmr) # V/V0
 hug.rho      = hug.rho_ref[0]/v
 hug.rho_units = ['g/cm3']
 hug.rho_std  = np.sqrt(hug.rho*hug.rho*(.01**2+.005**2)) # estimated 0.5% error on 1st wave velocity; assume 1% on IM up
@@ -1394,11 +1395,11 @@ hug.phase_id        = np.loadtxt(hug_file,delimiter=',',skiprows=5,usecols=[6],d
 # calculate Us and Up
 hug.up = np.sqrt(hug.P*((1/hug.rho_ref[0]) - (1/hug.rho)))
 A = hug.P*((1/hug.rho_ref[0]) - (1/hug.rho))
-hug.up_std = np.sqrt( hug.P_std*hug.P_std * np.pow(((1/hug.rho_ref[0]) - (1/hug.rho))/(2*np.sqrt(A)),2) + \
-                      hug.rho_std*hug.rho_std * np.pow( (hug.P/(2*hug.rho*hug.rho*np.sqrt(A))), 2) )
+hug.up_std = np.sqrt( hug.P_std*hug.P_std * np.power(((1/hug.rho_ref[0]) - (1/hug.rho))/(2*np.sqrt(A)),2) + \
+                      hug.rho_std*hug.rho_std * np.power( (hug.P/(2*hug.rho*hug.rho*np.sqrt(A))), 2) )
 hug.us = (1/hug.rho_ref[0])*np.sqrt(hug.P/((1/hug.rho_ref[0]) - (1/hug.rho)))
-hug.us_std = np.sqrt( hug.P_std*hug.P_std*np.pow((1/(2.*np.sqrt(hug.P/((1/hug.rho_ref[0]) - (1/hug.rho))))),2) + \
-                      hug.rho_std*hug.rho_std*np.pow( (1/hug.rho_ref[0])/(2.*hug.rho*hug.rho*np.sqrt(hug.P/((1/hug.rho_ref[0]) - (1/hug.rho)))),2) )
+hug.us_std = np.sqrt( hug.P_std*hug.P_std*np.power((1/(2.*np.sqrt(hug.P/((1/hug.rho_ref[0]) - (1/hug.rho))))),2) + \
+                      hug.rho_std*hug.rho_std*np.power( (1/hug.rho_ref[0])/(2.*hug.rho*hug.rho*np.sqrt(hug.P/((1/hug.rho_ref[0]) - (1/hug.rho)))),2) )
 print(hug.P)
 print(hug.rho)
 print(hug.phase_id)
@@ -5497,6 +5498,7 @@ eosdat_list.append(dat)
 
 #-------------- SiO2 melt curve --------------------
 # solidus - based on Stixrude and Lithgow-, liquidus - SiO2 model based on Karki et al. 2007
+
 dat_file   = silicadatadir+'Boukare-2015-Fig1-liquidus-density.csv'
 dat         = hp.HPeos_MeltCurve()
 dat.matid    = [174]
@@ -5550,6 +5552,92 @@ dat.quality = [0]
 dat.groups = ['solid compounds and minerals']
 
 eosdat_list.append(dat)
+
+
+
+#-------------- SiO2 melt curve --------------------
+# PBEsol calculations for 3 phases from Deng et al. GRL 2026
+
+
+# add reference to reference list
+maxrefid=0
+for item in ref_list:
+    if int(item.refid[0]) > maxrefid:
+        maxrefid = int(item.refid[0])
+        
+print('Previous max refid # = ',maxrefid)
+newrefid = maxrefid+1
+print('New refid # = ',newrefid)
+
+newref = hp.HPeos_Reference()
+newref.refid = [newrefid]
+newref.reference = ['Deng, X., Deng, J., Walter, M. J., Fei, Y., Yang, J., & Cohen, R. E. (2026). Phase Relations and Melting of SiO2 Under Mantle Conditions Determined From Machine Learning Potentials. Geophysical Research Letters, 53(9), e2025GL119400. https://doi.org/10.1029/2025GL119400']
+newref.doi = ['10.1029/2025GL119400']
+bibstr = " @article{Deng2026, title={Phase Relations and Melting of SiO2 Under Mantle Conditions Determined From Machine Learning Potentials}, volume={53}, ISSN={1944-8007}, DOI={10.1029/2025GL119400}, abstractNote={SiO2 is a fundamental component of planetary interiors, yet its high-pressure melting and phase relations remain uncertain. We develop a machine learning potential with first-principles accuracy and perform large-scale two-phase coexistence simulations to determine the melting curves of stishovite, post-stishovite, and seifertite up to 160 GPa with ∼10 K uncertainty. This unprecedented precision allows us to locate a tricritical point at 110 GPa/6060 K (stishovite/post-stishovite/liquid) and a triple point at 130 GPa/6220 K (post-stishovite/seifertite/liquid), which anchor the phase boundaries of silica’s high-pressure polymorphs. In subducting slabs, the stishovite to post-stishovite transition occurs at ∼1,510–1,640 km depth (∼65 GPa and 1930 K), consistent with previous estimates, whereas the post-stishovite to seifertite transition occurs much shallower than previously inferred, at ∼600 km above the core-mantle boundary (∼101 GPa and 2410 K). These results imply that seifertite is the thermodynamically stable silica polymorph throughout most of the deep lower mantle.}, number={9}, journal={Geophysical Research Letters}, author={Deng, Xin and Deng, Jie and Walter, Michael J. and Fei, Yingwei and Yang, Jing and Cohen, R. E.}, year={2026}, pages={e2025GL119400}, language={en} }"
+newref.bibtex = [bibstr]
+newref.bibkey = ['Deng2026']
+DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+newref.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'new entry']]
+
+ref_list.append(newref)
+#pprint(list(newref))
+print(newref.reference[0])
+
+
+dat_file   = silicadatadir+'deng2026_tableS1.csv'
+dat         = hp.HPeos_MeltCurve()
+dat.matid    = [174]
+dat.material = ['Quartz']
+dat.formula  = ['SiO2']
+dat.rho_ref = [2.650] # g/cm3
+dat.phase_solid      = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[0],dtype=str) 
+dat.P      = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[1]) # GPa
+dat.P_units = ['GPa']
+dat.T      = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[2]) # K
+dat.T_units = ['K']
+print(dat.P)
+print(dat.T)
+
+dat.collection = ['Silica']
+dat.ref = [1]
+dat.reflist = ['',newref.reference]
+dat.refidlist = [0,newref.refid[0]]
+DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+dat.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'Melt curve PT from Deng et al. 2026']]
+dat.platform = ['ab initio','PBEsol']
+dat.quality = [0]
+dat.groups = ['solid compounds and minerals']
+
+eosdat_list.append(dat)
+
+
+
+dat_file   = silicadatadir+'deng2026_figS8_post_stishovite_bounds.csv'
+dat         = hp.HPeos_MeltCurve()
+dat.matid    = [174]
+dat.material = ['Quartz']
+dat.formula  = ['SiO2']
+dat.rho_ref = [2.650] # g/cm3
+dat.phase_solid  = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[0],dtype=str) 
+dat.P      = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[1]) # GPa
+dat.P_units = ['GPa']
+dat.T      = np.loadtxt(dat_file,delimiter=',',skiprows=1,usecols=[2]) 
+dat.T_units = ['K']
+print(dat.P)
+print(dat.T)
+
+dat.collection = ['Silica']
+dat.ref = [1]
+dat.reflist = ['',newref.reference]
+dat.refidlist = [0,newref.refid[0]]
+DateTime_in_ISOFormat = datetime.datetime.now(zoneinfo.ZoneInfo('UTC')).isoformat('T', 'seconds') #
+dat.actions = [['Sarah T. Stewart','create',DateTime_in_ISOFormat,'Melt curve PT from Deng et al. 2026']]
+dat.platform = ['ab initio','PBEsol']
+dat.quality = [0]
+dat.groups = ['solid compounds and minerals']
+
+eosdat_list.append(dat)
+
 
 
 
@@ -5828,7 +5916,7 @@ A22mcp = {'lab' : 'A22 melt exp plot', 'id' : 1} # laser-heated DAC+XRD
 G16mc = {'lab' : 'G16 melt pyrite PBE', 'id' : 2} # PBE DFT
 G16mcb = {'lab' : 'G16 melt cotunnite PBE', 'id' : 2} # PBE DFT
 G16mcc = {'lab' : 'G16 melt Fe₂P PBE', 'id' : 2} # PBE DFT
-B95mc = {'lab' : 'B95 melt stv TTAM', 'id' : 3} # TTAM-IP MD sims 
+B95mc = {'lab' : 'B95 melt stv MD', 'id' : 3} # TTAM-IP MD sims 
 F18pb = {'lab' : 'F18 stv-CaCl₂ LDAC-XRD', 'id' : 4} # laser-heated DAC+XRD
 T04pba = {'lab' : 'T04 stv-CaCl₂ PBE', 'id' : 5} # GGA-PBE DFT
 T04pbb = {'lab' : 'T04 CaCl₂-sft PBE', 'id' : 6} # GGA-PBE DFT
@@ -5856,13 +5944,15 @@ G24mclrho = {'lab' : 'G24 liquidus PBE', 'id' : 22} # GGA-PBE DFT # new entry
 G24mclcn = {'lab' : 'G24 CN PBE', 'id' : 23} # GGA-PBE DFT # new entry
 A20mc = {'lab' : 'A20 melt LDAC-XRD', 'id' : 24} # laser-heated DAC+XRD
 G16mcpyr = {'lab' : 'G16 melt pyrite PBE', 'id' : 25} # PBE DFT z method additional points
-P25pb = {'lab' : 'P25 sft-pyrite PBEsol', 'id' : 26} # PBEsol sft-pyr phase boundary
-P25mcpbe = {'lab' : 'P25 melt PBEsol', 'id' : 27} # PBEsol 
-P25mcscan = {'lab' : 'P25 melt SCAN', 'id' : 28} # PBEsol 
-P25pbscan = {'lab' : 'P25 sft-pyrite SCAN', 'id' : 29} # PBEsol sft-pyr phase boundary
+P25pb = {'lab' : 'P26 sft-pyrite PBEsol', 'id' : 26} # PBEsol sft-pyr phase boundary
+P25mcpbe = {'lab' : 'P26 melt PBEsol', 'id' : 27} # PBEsol 
+P25mcscan = {'lab' : 'P26 melt SCAN', 'id' : 28} # PBEsol 
+P25pbscan = {'lab' : 'P26 sft-pyrite SCAN', 'id' : 29} # PBEsol sft-pyr phase boundary
 B15mcpt = {'lab' : 'B15 melt curve', 'id' : 30} # P-T melt curve
 B15mcliq = {'lab' : 'B15 liquidus', 'id' : 31} # P-T melt curve liquidus
 B15mcsol = {'lab' : 'B15 solidus', 'id' : 32} # P-T melt curve solidus
+D26mc = {'lab' : 'D26 melt PBEsol', 'id' : 33} # P-T melt curve
+D26pb = {'lab' : 'D26', 'id' : 34} # P-T phase boundaries
 
 # alternatively
 # hp.HPeos_ID data class to hold these shortcuts
@@ -5872,7 +5962,7 @@ iA22mcp = hp.HPeos_ID( 'A22 melt exp plot', 1) # laser-heated DAC+XRD
 iG16mc = hp.HPeos_ID( 'G16 melt pyrite PBE', 2) # PBE DFT
 iG16mcb = hp.HPeos_ID( 'G16 melt cotunnite PBE', 2) # PBE DFT
 iG16mcc = hp.HPeos_ID( 'G16 melt Fe₂P PBE', 2) # PBE DFT
-iB95mc = hp.HPeos_ID( 'B95 melt stv TTAM', 3) # TTAM-IP MD sims 
+iB95mc = hp.HPeos_ID( 'B95 melt stv MD', 3) # TTAM-IP MD sims 
 iF18pb = hp.HPeos_ID( 'F18 stv-CaCl₂ LDAC-XRD', 4) # laser-heated DAC+XRD
 iT04pba = hp.HPeos_ID( 'T04 stv-CaCl₂ PBE', 5) # GGA-PBE DFT
 iT04pbb = hp.HPeos_ID( 'T04 CaCl₂-sft PBE', 6) # GGA-PBE DFT
@@ -5897,14 +5987,16 @@ iG24mclrho = hp.HPeos_ID( 'G24 liquidus PBE', 22) # GGA DFT PBE
 iG24mclcn = hp.HPeos_ID( 'G24 CN PBE', 23) # GGA DFT PBE
 iA20mc = hp.HPeos_ID( 'A20 melt LDAC-XRD', 24) # laser-heated DAC+XRD
 iG16mcpyr = hp.HPeos_ID( 'G16 melt pyrite PBE', 25) # additional pyrite z method melt curve points not in file loaded above
-iP25pb = hp.HPeos_ID( 'P25 PBEsol', 26) # PBEsol sft-pyr phase boundary
-iP25mcpbe = hp.HPeos_ID( 'P25 mc PBEsol', 27) # PBEsol sft-pyr phase boundary
-iP25mcscan = hp.HPeos_ID( 'P25 mc SCAN', 28) # PBEsol sft-pyr phase boundary
-iP25pbscan = hp.HPeos_ID( 'P25 SCAN', 29) # PBEsol sft-pyr phase boundary
+iP25pb = hp.HPeos_ID( 'P26 PBEsol', 26) # PBEsol sft-pyr phase boundary
+iP25mcpbe = hp.HPeos_ID( 'P26 mc PBEsol', 27) # PBEsol sft-pyr phase boundary
+iP25mcscan = hp.HPeos_ID( 'P26 mc SCAN', 28) # PBEsol sft-pyr phase boundary
+iP25pbscan = hp.HPeos_ID( 'P26 SCAN', 29) # PBEsol sft-pyr phase boundary
 iB15mcpt = hp.HPeos_ID('B15 melt curve',30) # P-T melt curve
 iB15mcliq = hp.HPeos_ID('B15 melt curve',31) # P-T melt curve liquidus
 iB15mcsol = hp.HPeos_ID('B15 melt curve',32) # P-T melt curve solidus
-                        
+iD26mc = hp.HPeos_ID('D26 melt curve',33) # P-T melt
+iD26pb = hp.HPeos_ID('D26',34) # P-T phase boundaries
+                         
 #for iii in range(0,len(ref_list)):
 #    print(iii,ref_list[iii].bibkey,ref_list[iii].doi)#ref_list[iii].reference,)
 

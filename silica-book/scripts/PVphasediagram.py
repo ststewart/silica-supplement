@@ -90,8 +90,25 @@ if 1:
         fig14=True
     if pind == 15: ## attempt to shift P instead of rho for DFT offset - does not work
         fig15=True        
-    plt.figure(figsize=(10, 6))
+
+    if pind == 910:
+        fig9=True
+        fig10=True
+
+    
+    fig = plt.figure(figsize=(10, 6))
     plt.rcParams.update({'font.size': 16})
+    if pind == 910:
+        #7.93" x 5.52"
+        plt.figure(figsize=(7.93, 5.7))
+        plt.rcParams.update({'font.size': 20})
+    insetflag=False
+    if pind == 1:
+        if insetflag:
+            plt.rcParams.update({'font.size': 14})    
+            ax = fig.add_subplot(111)
+            # Add inset axes: [left, bottom, width, height] in axes-fraction coordinates
+            ax_inset = ax.inset_axes([0.1, 0.6, 0.38, 0.33]) 
     #fig = plt.figure(figsize=(8, 6.5))
     #plt.rcParams.update({'font.size': 12})
     # ------------------------------------------------------------------------
@@ -101,6 +118,8 @@ if 1:
     # plot liquidus
     ind = np.where(stsmcsmooth.rho < 10)[0]
     plt.plot(stsmcsmooth.rho[ind],stsmcsmooth.P[ind],'m-',linewidth=widthsol,label='Model liquidus')
+    if fig1 and insetflag:
+        ax_inset.plot(stsmcsmooth.rho[ind],stsmcsmooth.P[ind],'m-',linewidth=widthsol)
     if fig15:
         plt.plot(stsmcsmooth.rho[ind]-lda_liquid_density_shift,stsmcsmooth.P[ind],'m--',linewidth=widthsol,label='LDA orig')
         plt.plot(stsmcsmooth.rho[ind]-lda_liquid_density_shift,stsmcsmooth.P[ind]+10,'c--',linewidth=widthsol,label='LDA orig + 10 GPa')
@@ -124,6 +143,11 @@ if 1:
     # plot solidus
     ind = np.where((stsmcsmooth.rho_s < 10) & (stsmcsmooth.rho_s > 0))[0]
     plt.plot(stsmcsmooth.rho_s[ind],stsmcsmooth.P[ind],'-',color=sol_col,linewidth=widthsol,label='Model solidus')
+
+    if fig1 and insetflag:
+        ind = np.where((stsmcsmooth.rho_s < 10) & (stsmcsmooth.rho_s > 0))[0]
+        ax_inset.plot(stsmcsmooth.rho_s[ind],stsmcsmooth.P[ind],'-',color=sol_col,linewidth=widthsol)
+        
     #plt.plot(np.interp(ppp,stsmcsmooth.P,stsmcsmooth.rho_s),ppp,'D',color=sol_col)
     plt.plot(max(p23bnd.rho_b),max(p23bnd.P),'D',color=sol_col)
     plt.plot(max(p23bnd.rho_a),max(p23bnd.P),'D',color=sol_col)
@@ -195,6 +219,9 @@ if 1:
     #plt.plot(min(rhoarr[ind]),min(parr[ind]),'kD')
     #plt.plot(max(rhoarr[ind]),max(parr[ind]),'kD')
 
+    if fig1 and insetflag:
+        ax_inset.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)
+    
     # Vinet
     par = cacl2
     rho0 = amu*1.6605391/par[0]
@@ -206,6 +233,9 @@ if 1:
     plt.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)
     #print(np.max(rhoarr[ind]),np.max(parr[ind]))
     #plt.plot(max(rhoarr[ind]),max(parr[ind]),'kD')
+
+    if fig1 and insetflag:
+        ax_inset.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)
 
     par = pbo2
     rho0 = amu*1.6605391/par[0]
@@ -220,6 +250,9 @@ if 1:
     #print(np.min(rhoarr[ind]),np.min(parr[ind]))
     #print('PbO2 0k rho = ',rhoarr[ind[0]])
 
+    if fig1 and insetflag:
+        ax_inset.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)
+
     # add pyrite from Das et al.
     par = pyrite
     rho0 = sio2mol/12.97 # g/cm3
@@ -228,6 +261,10 @@ if 1:
     parr = 3.*par[1]*((1-eta)/eta/eta)*np.exp(3./2.*(par[2]-1)*(1-eta))
     ind = np.where((parr >= Pt4_0k) & (rhoarr <= 10))[0]
     plt.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)    
+
+    if fig1 and insetflag:
+        ax_inset.plot(rhoarr[ind],parr[ind],color=colvinet,linewidth=widthsol)    
+    
 # ------------------------------------------------------------------------
     if 0:
         plt.plot([4,6],[63,63])
@@ -259,12 +296,14 @@ if 1:
         plt.errorbar(shockdat_list[B88RRfs['id']].rho,shockdat_list[B88RRfs['id']].P,fmt='bo',mfc='lightblue',yerr=shockdat_list[B88RRfs['id']].P_std,\
                      xerr=shockdat_list[B88RRfs['id']].rho_std,label='L83R+B88R')#'+B88RRfs['lab'])
 
-        #plt.errorbar(shockdat_list[T18fs['id']].rho,shockdat_list[T18fs['id']].P,fmt='b<',mfc='white',\
-        #             xerr = shockdat_list[T18fs['id']].rho_std, yerr=shockdat_list[T18fs['id']].P_std, label=T18fs['lab'])
+        if pind != 910:      
+            plt.errorbar(shockdat_list[T18fs['id']].rho,shockdat_list[T18fs['id']].P,fmt='b<',mfc='white',\
+                     xerr = shockdat_list[T18fs['id']].rho_std, yerr=shockdat_list[T18fs['id']].P_std, label=T18fs['lab'])
         #plt.errorbar(shockdat_list[S80fs['id']].rho,shockdat_list[S80fs['id']].P,fmt='bv',xerr=shockdat_list[S80fs['id']].rho_std,yerr=shockdat_list[S80fs['id']].P_std,label=S80fs['lab'])
-        plt.errorbar(shockdat_list[T18fs['id']].rho,shockdat_list[T18fs['id']].P,fmt='<',color='blue',mfc='white',label='T18',\
-                     #T18fs['lab'],\
-                     xerr=shockdat_list[T18fs['id']].rho_std,yerr=shockdat_list[T18fs['id']].P_std)
+        # no Tracy & Duffy because not bulk density
+#        plt.errorbar(shockdat_list[T18fs['id']].rho,shockdat_list[T18fs['id']].P,fmt='<',color='blue',mfc='white',label='T18',\
+#                     #T18fs['lab'],\
+#                     xerr=shockdat_list[T18fs['id']].rho_std,yerr=shockdat_list[T18fs['id']].P_std)
         plt.errorbar(shockdat_list[R19fs['id']].rho,shockdat_list[R19fs['id']].P,fmt='bd',\
                  yerr=shockdat_list[R19fs['id']].P_std,xerr=shockdat_list[R19fs['id']].rho_std,label='R19')#R19fs['lab'])
         plt.errorbar(shockdat_list[O25fs['id']].rho,shockdat_list[O25fs['id']].P,fmt='b^',\
@@ -355,6 +394,22 @@ if 1:
         plt.plot(fs_hug_liq.rho[ind],fs_hug_liq.P[ind],'b--',label='New Hugoniot: Liquid region')
         ind = np.where((fs_hug_stv.P > 34) & (fs_hug_stv.P < fs_wiggle_P1))[0]
         plt.plot(fs_hug_stv.rho[ind],fs_hug_stv.P[ind],'b-',label='New Hugoniot: Solid region')
+    
+    if fig1: # FS
+        #ind = np.where(fs_hug_liq.P > fs_wiggle_P2)[0]
+        #plt.plot(fs_hug_liq.rho[ind]+10,fs_hug_liq.P[ind],'b-',linewidth=2,label='Fused silica Hugoniot')     
+        if insetflag:
+            #ax_inset.plot(x, np.cos(x), color='orange')
+            #ax_inset.set_title('Inset (Cosine)', fontsize=10)
+            ind = np.where(fs_hug_liq.P > fs_wiggle_P2)[0]
+            ax_inset.plot(fs_hug_liq.rho[ind],fs_hug_liq.P[ind],'b-',linewidth=2)#,label='Fused silica Hugoniot')
+            ind = np.where((fs_hug_stv.P > 34) & (fs_hug_stv.P < fs_wiggle_P1))[0]
+            ax_inset.plot(fs_hug_stv.rho[ind],fs_hug_stv.P[ind],'b-',linewidth=2)#,label='New Hugoniot: Solid region')
+
+        ind = np.where(fs_hug_liq.P > fs_wiggle_P2)[0]
+        plt.plot(fs_hug_liq.rho[ind],fs_hug_liq.P[ind],'b-',linewidth=2,alpha=0.7,label='Fused silica Hugoniot')
+        ind = np.where((fs_hug_stv.P > 34) & (fs_hug_stv.P < fs_wiggle_P1))[0]
+        plt.plot(fs_hug_stv.rho[ind],fs_hug_stv.P[ind],'b-',linewidth=2,alpha=0.7)#,label='New Hugoniot: Solid region')
 
     #if fig13:
     #    plt.plot(cst_hug_F24.rho,cst_hug_F24.P,'-',color='salmon',linewidth=4,label='F24 Cst Hug: solid region')
@@ -368,6 +423,25 @@ if 1:
         #plt.plot(qtz_hug_stv.rho[ind],qtz_hug_stv.P[ind],'g-',label='New Qtz Hug: Stv region')
         ind = np.where((qtz_hug_solid.P > 60) & (qtz_hug_solid.P < qtz_wiggle_P1))[0]
         plt.plot(qtz_hug_solid.rho[ind],qtz_hug_solid.P[ind],'g-',label='New Hugoniot: Solid region')
+
+    if fig1: # Qtz
+        #ind = np.where(qtz_hug_liq.P > qtz_wiggle_P2)[0]
+        #plt.plot(qtz_hug_liq.rho[ind]+10,qtz_hug_liq.P[ind],'g-',linewidth=2,label='α-Quartz Hugoniot')
+        if insetflag:
+            ind = np.where(qtz_hug_liq.P > qtz_wiggle_P2)[0]
+            ax_inset.plot(qtz_hug_liq.rho[ind],qtz_hug_liq.P[ind],'g-',linewidth=2)#,label='Quartz Hugoniot')
+            ind = np.where((qtz_hug_cacl2.P > fs_wiggle_P1) & (qtz_hug_cacl2.P < qtz_wiggle_P1))[0]
+            #plt.plot(qtz_hug_cacl2.rho[ind],qtz_hug_cacl2.P[ind],'g:',label='New Qtz Hug: CaCl$_2$ mc region')
+            #ind = np.where((qtz_hug_stv.P > 34) & (qtz_hug_stv.P < fs_wiggle_P1))[0]
+            #plt.plot(qtz_hug_stv.rho[ind],qtz_hug_stv.P[ind],'g-',label='New Qtz Hug: Stv region')
+            ind = np.where((qtz_hug_solid.P > 60) & (qtz_hug_solid.P < qtz_wiggle_P1))[0]
+            ax_inset.plot(qtz_hug_solid.rho[ind],qtz_hug_solid.P[ind],'g-',linewidth=3)#,label='New Hugoniot: Solid region')
+
+        ind = np.where(qtz_hug_liq.P > qtz_wiggle_P2)[0]
+        plt.plot(qtz_hug_liq.rho[ind],qtz_hug_liq.P[ind],'g-',linewidth=2,alpha=0.7,label='Quartz Hugoniot')
+        ind = np.where((qtz_hug_solid.P > 60) & (qtz_hug_solid.P < qtz_wiggle_P1))[0]
+        plt.plot(qtz_hug_solid.rho[ind],qtz_hug_solid.P[ind],'g-',linewidth=2,alpha=0.7)#,label='New Hugoniot: Solid region')
+
     if fig13:
         uptrans1 = 4.089998285871261 # km/s # max solid
         uptrans2 = 4.950818032171942 # km/s # start opaque
@@ -535,23 +609,29 @@ if 1:
 
         # Park & Deng 2025 PBEsol and SCAN
         ind = np.asarray([0,1,2,3,9,10,11,12]) #PBEsol
-        plt.plot(eosdat_list[P25mcpbe['id']].rho_l[ind],eosdat_list[P25mcpbe['id']].P[ind],':',color='m',label='P25 liquidus PBEsol')#P25mcpbe['lab'])
+        plt.plot(eosdat_list[P25mcpbe['id']].rho_l[ind],eosdat_list[P25mcpbe['id']].P[ind],':',color='m',label='P26 liquidus PBEsol')#P25mcpbe['lab'])
         ind = np.asarray([0,1,2,3])#PBEsol
-        plt.plot(eosdat_list[P25mcpbe['id']].rho_s[ind],eosdat_list[P25mcpbe['id']].P[ind],':',color=sol_col,label='P25 solidus PBEsol')#P25mcpbe['lab'])
+        plt.plot(eosdat_list[P25mcpbe['id']].rho_s[ind],eosdat_list[P25mcpbe['id']].P[ind],':',color=sol_col,label='P26 solidus PBEsol')#P25mcpbe['lab'])
         ind = np.asarray([9,10,11,12])#PBEsol
         plt.plot(eosdat_list[P25mcpbe['id']].rho_s[ind],eosdat_list[P25mcpbe['id']].P[ind],':',color=sol_col)#P25mcpbe['lab'])
         ind = np.asarray([1,2,3,4,5,10,11,12,13])#SCAN
 
-        plt.plot(eosdat_list[P25mcscan['id']].rho_l[ind],eosdat_list[P25mcscan['id']].P[ind],'-.',color='m',label='P25 liquidus SCAN')#P25mcscan['lab'])
-#        plt.plot(eosdat_list[P25mcscan['id']].rho_l[ind],eosdat_list[P25mcscan['id']].P[ind],'--',color='plum',label='P25 liquidus SCAN')#P25mcscan['lab'])
+        plt.plot(eosdat_list[P25mcscan['id']].rho_l[ind],eosdat_list[P25mcscan['id']].P[ind],'-.',color='m',label='P26 liquidus SCAN')#P25mcscan['lab'])
+#        plt.plot(eosdat_list[P25mcscan['id']].rho_l[ind],eosdat_list[P25mcscan['id']].P[ind],'--',color='plum',label='P26 liquidus SCAN')#P25mcscan['lab'])
 
         
         for icn in range(len(eosdat_list[G24mclcn['id']].CN_liquid)):
             cn = str(eosdat_list[G24mclcn['id']].CN_liquid[icn])[0:3]
             pp = eosdat_list[G24mclcn['id']].P_liquid[icn]
             irho = np.interp(pp,eosdat_list[G24mclrho['id']].P_liquid,eosdat_list[G24mclrho['id']].rho_liquid)#+0.13)
-            if pp < 250:
+            # orig
+            #if pp < 250:
+            #    plt.text(irho-.06,pp,cn,color='red',fontsize=12,horizontalalignment='center', verticalalignment='center')
+            # with hugoniots
+            if pp < 110:
                 plt.text(irho-.06,pp,cn,color='red',fontsize=12,horizontalalignment='center', verticalalignment='center')
+            if (pp > 110) and (pp < 250):
+                plt.text(irho-.16,pp,cn,color='red',fontsize=12,horizontalalignment='center', verticalalignment='center')
 
     # ------------------------------------------------------------------------
     # arrows and labels
@@ -638,28 +718,40 @@ if 1:
 
     if fig1:
         tss = 11
-        plt.text(4.,150,'liquid',fontsize=14)
+#        plt.text(4.,150,'liquid',fontsize=14)
+        plt.text(3.4,70,'liquid',fontsize=14)
         #plt.text(3.69,45,'LDM',fontsize=tss)
         #plt.text(3.875,53,'HDM',fontsize=tss)
         plt.text(4.58,44,'stv',fontsize=tss)
         plt.text(4.95,90,'CaCl₂',fontsize=tss)
         plt.text(5.45,135,'sft',fontsize=tss)
         plt.text(6.1,215,'pyr',fontsize=tss)
-        plt.plot([],[],' ',label='# Si-O coord. number   ')
+        plt.plot([],[],' ',label='# Si-O CN U10')
+        plt.plot([],[],' ',label='# Si-O CN G24')
+        #plt.plot([],[],' ',label='# Si-O coord. number   ')
     if fig9 or fig10:
-
-        tss = 12
-        if fig10:
+        if pind != 910:
+            tss = 12
+            if fig10:
+                plt.text(5.45,135,'sft',fontsize=tss)
+                plt.text(5,150,'liquid',fontsize=14)
+                plt.plot(qtz_startliq_rho,qtz_startliq_P,'kx',label='PT liquidus intersection')
+    
+            if fig9:
+                plt.text(5.36,120,'sft',fontsize=tss)
+                plt.text(4.7,150,'liquid',fontsize=14)
+                plt.plot(fs_startliq_rho,fs_startliq_P,'kx',label='PT liquidus intersection')
+            plt.text(4.65,41,'stv',fontsize=tss)
+            plt.text(4.93,71,'CaCl₂',fontsize=tss)
+        else:
+            plt.text(5.5,10,'A',fontsize=20)
+            tss = 16
             plt.text(5.45,135,'sft',fontsize=tss)
-            plt.text(5,150,'liquid',fontsize=14)
-            plt.plot(qtz_startliq_rho,qtz_startliq_P,'kx',label='PT liquidus intersection')
-
-        if fig9:
-            plt.text(5.36,120,'sft',fontsize=tss)
-            plt.text(4.7,150,'liquid',fontsize=14)
-            plt.plot(fs_startliq_rho,fs_startliq_P,'kx',label='PT liquidus intersection')
-        plt.text(4.65,41,'stv',fontsize=tss)
-        plt.text(4.93,71,'CaCl₂',fontsize=tss)
+            #plt.plot(qtz_startliq_rho,qtz_startliq_P,'kx',label='PT liquidus intersection')
+    
+            plt.text(4.4,150,'liquid',fontsize=14)
+            plt.text(4.65,41,'stv',fontsize=tss)
+            plt.text(4.93,78,'CaCl₂',fontsize=tss)           
         #plt.plot([],[],' ',label='# Si-O coord. number')
     if fig13:
         tss = 12
@@ -959,6 +1051,13 @@ if 1:
 
     #if fig9 or fig10:
     #    plt.plot(eosdat_list[G24mclrho['id']].rho_liquid,eosdat_list[G24mclrho['id']].P_liquid,'-',color='red',label=G24mclrho['lab']+' (two-phase)')
+
+    if pind==910:
+        stveos = np.loadtxt(silicadatadir+'qtz-stv-model-hugoniot.csv',delimiter=',',skiprows=4)
+        plt.plot(stveos[:,1],stveos[:,0],'g:')
+        fsstveos = np.loadtxt(silicadatadir+'fs-stv-model-hugoniot.csv',delimiter=',',skiprows=4)
+        plt.plot(fsstveos[:,1],fsstveos[:,0],'b:')
+        
     # ------------------------------------------------------------------------
     plt.xlabel(r'Density (g/cm$^3$)')
     plt.ylabel('Pressure (GPa)')
@@ -967,6 +1066,8 @@ if 1:
     #specify order of items in legend
     order = range(len(handles))
 
+    print('number of legend items = ',len(labels))
+    
     plt.xlim(3.5,6.)
     plt.ylim(0,225)
     figname = 'B0-SiO2-P-rho-phase-diagram'
@@ -974,12 +1075,18 @@ if 1:
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10)
     if fig1:
         # plt.title(r'SiO$_2$ Phase Diagram')
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=9)
+        print(labels)
+        labelcolarr = ['black']*len(labels)
+        labelcolarr[len(labels)-1] = 'red'
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=12,labelcolor=labelcolarr)
         figname = 'B1-SiO2-P-rho-phase-diagram-Fig1b'
         plt.text(3.1,230,'B',fontsize=16)
         plt.xlim(3.,6.3)
         plt.ylim(0,250)
         plt.ylabel('\nPressure (GPa)')
+        if insetflag:
+            ax_inset.set_xlim(4.,6.)
+            ax_inset.set_ylim(0,250)
     if fig2:
         plt.title(r'SiO$_2$ Phase Diagram with Fused Silica and Quartz Hugoniots')
         figname = 'B2-SiO2-P-rho-phase-diagram-both-omega'
@@ -1069,7 +1176,7 @@ if 1:
         #order = range(len(handles))
         print(len(order))
         order = [0,1,2,3,5,4,6,10,11,12,7,8,9]
-        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='upper left',fontsize=10,title='C. Coesite',ncol=2)
+        plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc='upper left',fontsize=10,title='Coesite',ncol=2)
     if fig14:
         plt.title(r'SiO$_2$ Phase Diagram')
         figname = 'B14-SiO2-P-rho-phase-diagram-isotherms'
@@ -1077,7 +1184,13 @@ if 1:
     if fig15:
         plt.title(r'SiO$_2$ Phase Diagram')
         figname = 'B15-SiO2-P-rho-phase-diagram-offset'
-        plt.xlim(3.1,5.6)        
+        plt.xlim(3.1,5.6)   
+
+    if pind == 910:
+        plt.xlim(4.,5.6)
+        plt.ylim(0,225)
+        plt.legend('', frameon=False)
+        figname = 'Fig8A-newcombo'
     if 0:
         # check 0 K, 300 K transitions
         plt.plot([0,10],[Pt2_0k,Pt2_0k])
