@@ -26,6 +26,9 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Create output folders
+          run: mkdir -p silica-book/output-figs silica-book/output-fits
+	 
       - name: Build the book
         run: |
           # We point the build command specifically to your subfolder
