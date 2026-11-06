@@ -1,0 +1,78 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Data and code for: Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
+type: dataset # change to "software" if the repo is mainly code
+authors:
+  - family-names: Amodeo
+    given-names: Kaitlyn M.
+    affiliation: "Sandia National Laboratories, Albuquerque, NM, USA"
+    email: kmamode@sandia.gov
+    orcid: "https://orcid.org/0000-0002-5869-1137"
+  - family-names: Davies
+    given-names: Erik J.
+    affiliation: "University of California, Davis, CA, USA"
+    orcid: "https://orcid.org/0000-0002-2140-3605"
+  - family-names: Spaulding
+    given-names: Dylan K.
+    affiliation: "University of California, Davis, CA, USA"
+    orcid: "https://orcid.org/0000-0002-1493-9612"
+  - family-names: Millot
+    given-names: Marius
+    affiliation: "Lawrence Livermore National Laboratory, Livermore, CA, USA"
+    orcid: "https://orcid.org/0000-0003-4414-3532"
+  - family-names: Stewart
+    given-names: Sarah T.
+    affiliation: "Arizona State University, Tempe, AZ, USA"
+    orcid: "https://orcid.org/0000-0001-9606-1593"
+abstract: >-
+  SiO2 is one of the most extensively studied materials at high pressure, and
+  yet experimental investigations of the melt curve have yielded contradictory
+  results. Using a two-stage light gas gun, we measured shock temperatures in
+  the visible to mid-infrared on α-quartz and fused silica across the proposed
+  range for the melt curve. In this region, the shock Hugoniots of both
+  materials exhibit a well-known temperature inversion, a sawtooth feature in
+  temperature-pressure space, that has been interpreted as superheating above
+  the melt curve. We collected thermal emission at visible to mid-infrared
+  wavelengths and find a change in the optical attenuation length at the
+  temperature inversion. Based on a compendium of data including decaying
+  shock experiments at OMEGA, we explain the anomalous inversion by the
+  formation of a cool metastable melt layer in the shock front above 114 and
+  74 GPa on the α-quartz and fused silica Hugoniots, respectively. We
+  constructed a model melt curve and find that the temperature inversion
+  occurs near the solidus density, and the α-quartz and fused silica
+  Hugoniots enter the liquid field at about 146 and 91 GPa, respectively. We
+  demonstrate that the shock front is semi-transparent below the inversion.
+  SiO2 is an end-member composition for planetary materials, and its equation
+  of state is important for planet formation, evolution, and impact
+  processes. Our reinterpretation of the shock temperatures supports a higher
+  temperature melt curve than proposed in previous shock studies.
+keywords:
+  - SiO2
+  - quartz
+  - fused silica
+  - shock temperature
+  - melt curve
+  - equation of state
+version: "1.0.0"
+date-released: "2026-11-06" # update to the release date
+license: CC-BY-4.0
+repository-code: "https://github.com/ststewart/silica-supplement"
+# doi: "10.5281/zenodo.0000000" # fill in after the first Zenodo release
+preferred-citation:
+  type: article
+  title: "Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
+  authors:
+    - family-names: Amodeo
+      given-names: Kaitlyn M.
+    - family-names: Davies
+      given-names: Erik J.
+    - family-names: Spaulding
+      given-names: Dylan K.
+    - family-names: Millot
+      given-names: Marius
+    - family-names: Stewart
+      given-names: Sarah T.
+  journal: "Journal of Geophysical Research: Solid Earth"
+  status: submitted
+  year: 2026
+  # doi: "10.1029/XXXXXXXX" # add when published
