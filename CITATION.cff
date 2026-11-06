@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it using the metadata below."
-title: "Data and code for: Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
+title: "Supplementary Materials for: Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
 type: dataset # change to "software" if the repo is mainly code
 authors:
   - family-names: Amodeo
@@ -60,7 +60,7 @@ repository-code: "https://github.com/ststewart/silica-supplement"
 # doi: "10.5281/zenodo.0000000" # fill in after the first Zenodo release
 preferred-citation:
   type: article
-  title: "Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
+  title: "Supplementary Materials for: Transient Melt in the Shock Front: Reinterpreting SiO2 Shock Temperatures and the Melt Curve"
   authors:
     - family-names: Amodeo
       given-names: Kaitlyn M.
