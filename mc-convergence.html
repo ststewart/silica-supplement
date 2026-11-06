@@ -531,7 +531,7 @@
 <span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">C16bdtemp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">silicadatadir</span><span class="o">+</span><span class="s1">'Connolly-Fig4b-black-dashed-T-rho.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">C16sils</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">silicadatadir</span><span class="o">+</span><span class="s1">'Connolly-SiL-VWRK.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1395,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.18/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1395,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1392</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1393</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'latin1'</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">1395</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
@@ -540,14 +540,14 @@
 <span class="g g-Whitespace">   </span><span class="mi">1398</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1400</span> <span class="k">return</span> <span class="n">arr</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1022,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.18/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1022,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1020</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1021</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'rt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">encoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">'encoding'</span><span class="p">,</span> <span class="s1">'latin1'</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:192,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.18/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:192,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">155</span><span class="w"> </span><span class="sd">"""</span>
 <span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
 <span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> </span>
@@ -556,7 +556,7 @@
 <span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">192</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:529,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.18/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:529,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">527</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">else</span><span class="p">:</span>
@@ -790,19 +790,19 @@ Using rho0 std = 0.02 g/cm3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fused silia PTV Hugoniot Monte-Carlo uncertainties
 number of up points =  500
-Time:  10 0.1309520919999727
+Time:  10 0.07786363599996093
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  100 0.8486483430000362
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  100 0.4575292819999959
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  500 3.9842500540000287
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  500 2.147427915000037
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  1000 7.916156672999989
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  1000 4.23469839400002
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  2000 15.77180999999996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  2000 8.36271604000001
 </pre></div>
 </div>
 </div>
@@ -885,7 +885,7 @@ Time:  10 0.1309520919999727
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/3fe12698999d9098390208a6ebb3ff24b7d9d64a99091e02239a8ce2e6a2f9b7.png" src="_images/3fe12698999d9098390208a6ebb3ff24b7d9d64a99091e02239a8ce2e6a2f9b7.png" />
+<img alt="_images/62185ec4048a6494f884cfa54d498c1cca1f074c9debd31cbe715a5423ee5964.png" src="_images/62185ec4048a6494f884cfa54d498c1cca1f074c9debd31cbe715a5423ee5964.png" />
 </div>
 </div>
 <div class="cell docutils container">
