@@ -3,7 +3,7 @@
 
 This GitHub repository contains supplemental material and replication data for:<br>
 
-Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., Stewart, S. T., Transient Melt in the Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve, <i>J. Geophysical Research: Solid Earth</i>, 2026 (revised). (Zenodo DOI tbd)<p>
+Amodeo, K. M., Davies, E. J., Spaulding, D. K., Millot, M., Stewart, S. T., Transient Melt in the Shock Front: Reinterpreting SiO₂ Shock Temperatures and the Melt Curve, <i>J. Geophysical Research: Solid Earth</i>, 2026 (revised). [doi:10.5281/zenodo.24022025](https://doi.org/10.5281/zenodo.24022025)<p>
 
 The supplementary materials are collected in a Jupyter book that is deployed at:<br>
 https://ststewart.github.io/silica-supplement/
